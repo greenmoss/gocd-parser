@@ -13,7 +13,7 @@ All of these scripts output json. So they should be usable by any other
 scripts on your system, without needing to import as a Python module.
 
 ## Modules
-You can also import the modules in the `lib` directory. For examples of
+You can also import the modules and use them directly. For examples of
 how to do this, refer to the scripts in the `bin` directory.
 
 # Installation
