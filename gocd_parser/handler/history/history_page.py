@@ -99,6 +99,8 @@ class HistoryPage(object):
 
     def pipeline_passed(self, pipeline, status=['Passed']):
         for stage in pipeline['stages']:
+            if not stage.has_key('result'):
+                return False
             if stage['result'] not in status:
                 return False
         return True
