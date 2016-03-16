@@ -1,0 +1,133 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Connection: [close]
+      Host: ['localhost:8153']
+      User-Agent: [Python-urllib/2.7]
+    method: GET
+    uri: http://localhost:8153/go/api/pipelines/FunctionalTests/history/
+  response:
+    body: {string: !!python/unicode '
+      {
+        "pagination": {
+          "offset": 0,
+          "page_size": 10,
+          "total": 1
+        },
+        "pipelines": [
+          {
+            "build_cause": {
+              "approver": "",
+              "material_revisions": [
+                {
+                  "changed": true,
+                  "material": {
+                    "description": "AppDevelopment",
+                    "fingerprint": "713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a",
+                    "id": 5,
+                    "type": "Pipeline"
+                  },
+                  "modifications": [
+                    {
+                      "comment": "Unknown",
+                      "email_address": null,
+                      "id": 2,
+                      "modified_time": 1458082599508,
+                      "revision": "AppDevelopment/1/Package/1",
+                      "user_name": "Unknown"
+                    }
+                  ]
+                }
+              ],
+              "trigger_forced": false,
+              "trigger_message": "triggered by AppDevelopment/1/Package/1"
+            },
+            "can_run": true,
+            "comment": null,
+            "counter": 1,
+            "id": 3,
+            "label": "1",
+            "name": "FunctionalTests",
+            "natural_order": 1.0,
+            "preparing_to_schedule": false,
+            "stages": [
+              {
+                "approval_type": "success",
+                "approved_by": "changes",
+                "can_run": true,
+                "counter": "1",
+                "id": 9,
+                "jobs": [
+                  {
+                    "id": 9,
+                    "name": "deployApplications",
+                    "result": "Passed",
+                    "scheduled_date": 1458082611914,
+                    "state": "Completed"
+                  }
+                ],
+                "name": "Deploy",
+                "operate_permission": true,
+                "rerun_of_counter": null,
+                "result": "Passed",
+                "scheduled": true
+              },
+              {
+                "approval_type": "success",
+                "approved_by": "changes",
+                "can_run": true,
+                "counter": "1",
+                "id": 12,
+                "jobs": [
+                  {
+                    "id": 12,
+                    "name": "TestSuite001",
+                    "result": "Passed",
+                    "scheduled_date": 1458082628417,
+                    "state": "Completed"
+                  },
+                  {
+                    "id": 13,
+                    "name": "TestSuite002",
+                    "result": "Passed",
+                    "scheduled_date": 1458082628417,
+                    "state": "Completed"
+                  },
+                  {
+                    "id": 14,
+                    "name": "TestSuite003",
+                    "result": "Passed",
+                    "scheduled_date": 1458082628417,
+                    "state": "Completed"
+                  }
+                ],
+                "name": "functionalTests",
+                "operate_permission": true,
+                "rerun_of_counter": null,
+                "result": "Passed",
+                "scheduled": true
+              }
+            ]
+          }
+        ]
+      }
+      '}
+    headers:
+      cache-control: ['max-age=0, private, must-revalidate']
+      connection: [close]
+      content-type: [application/json; charset=utf-8]
+      date: ['Wed, 16 Mar 2016 19:54:15 GMT']
+      etag: ['"312b5456f2b9599660b9bda21c0ce322"']
+      expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
+      set-cookie: ['JSESSIONID=cit682lh0dcj6f0t6q0m92az;Path=/go;Expires=Wed, 30-Mar-2016
+          19:54:15 GMT']
+      vary: ['Accept-Encoding, User-Agent']
+      x-content-type-options: [nosniff]
+      x-frame-options: [SAMEORIGIN]
+      x-request-id: [ee1273f8-6dd1-4bb3-9429-a1983c457a16]
+      x-runtime: ['0.010000']
+      x-ua-compatible: [chrome=1]
+      x-xss-protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1
