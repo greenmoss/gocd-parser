@@ -22,6 +22,12 @@ how to do this, refer to the scripts in the `bin` directory.
 * See `requirements.txt`.
 
 # Testing
+
+## Automated
+* `pip install pytest`
+* `py.test`
+
+## As a user
 * Follow the [Thoughtworks instructions to set up a testing GoCD server](http://www.go.cd/2014/09/09/Go-Sample-Virtualbox.html)
 * Run your tests against [the test VM](http://localhost:8153/go)
     * Example invocation: `get_value_stream_status.py -g http://localhost:8153/go -n Deploy_Consumer`
@@ -29,9 +35,6 @@ how to do this, refer to the scripts in the `bin` directory.
   pipeline.
 * Now `get_value_stream_status.py` will show the above pipeline is
   blocking.
-
-# To Do
-* Unit tests
 
 # Authors
 

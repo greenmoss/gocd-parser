@@ -105,6 +105,7 @@ class HistoryPage(object):
                 return False
         return True
 
+    # TODO: This doesn't use "self", so it doesn't belong in this object. Move it elsewhere.
     def get_parent_names(self, pipeline):
         names = []
         revs = pipeline['build_cause']['material_revisions']
