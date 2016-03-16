@@ -41,3 +41,10 @@ class TestHistoryPage:
         assert p.first_of_current_failures is not None
         assert p.first_of_current_failures['counter'] == 3
         assert p.failure_duration is not None
+
+    @vcr.use_cassette(f+'page_of_failures.yaml')
+    def test_page_of_failures(self):
+        '''Pipeline passed before, but current page shows only failures.'''
+        p = HP(g, 'DeployStaging', '')
+        with pytest.raises(gocd_parser.handler.history.history_page.HistoryPageException):
+            p.set_info()
