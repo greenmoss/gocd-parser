@@ -6,7 +6,7 @@ import gocd_parser.retriever.server
 
 # reduce typing!
 g = gocd_parser.retriever.server.Server('http://localhost:8153/go')
-f = 'tests/fixtures/cassettes/test_'
+f = 'tests/fixtures/cassettes/TestHistoryPage/'
 HP = gocd_parser.handler.history.history_page.HistoryPage
 
 class TestHistoryPage:
