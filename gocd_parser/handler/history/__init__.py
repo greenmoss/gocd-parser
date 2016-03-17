@@ -1,6 +1,8 @@
 import logging
+logger = logging.getLogger(__name__)
 
 from gocd_parser.handler.history import history_page
+from gocd_parser.handler.history.history_page import HistoryPageException
 
 class HistoryPagerException(Exception):
     pass
@@ -14,7 +16,6 @@ class HistoryPager(object):
         self.go_server = go_server
         self.pipeline_name = pipeline_name
 
-        self.logger = logging.getLogger(__name__+'.HistoryPager')
 
         self.get_pages()
 
@@ -30,7 +31,7 @@ class HistoryPager(object):
             # look for first successful completion
             success = self.get_page(offset)
             previous_page = self.pages[-1]
-            self.logger.debug('pagination: %s', previous_page.pagination)
+            logger.debug('pagination: %s', previous_page.pagination)
             if not success:
                 offset += previous_page.pagination['page_size']
                 if offset > previous_page.pagination['total']:
@@ -45,14 +46,16 @@ class HistoryPager(object):
         this destroys "fidelity"; you would not want to look at
         self.pages after doing this.'''
 
-        if len(self.pages) > 1:
+        assert len(self.pages) > 0
+
+        if len(self.pages) == 1:
             return
 
         for index in range(1, len(self.pages)):
             self.pages[0].add(self.pages[index])
 
     def get_page(self, offset=0):
-        self.logger.debug('getting page: %d', offset)
+        logger.debug('getting page: %d', offset)
 
         handler = history_page.HistoryPage(self.go_server,
                 self.pipeline_name, str(offset))
@@ -60,8 +63,8 @@ class HistoryPager(object):
 
         try:
             handler.set_info()
-        except HistoryPagerException:
-            self.logger.debug('Failed; will look for another page.')
+        except HistoryPageException:
+            logger.debug('Failed; will look for another page.')
             return False
 
         return True

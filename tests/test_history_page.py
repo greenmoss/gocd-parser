@@ -48,3 +48,22 @@ class TestHistoryPage:
         p = HP(g, 'DeployStaging', '')
         with pytest.raises(gocd_parser.handler.history.history_page.HistoryPageException):
             p.set_info()
+
+    @vcr.use_cassette(f+'two_pages.yaml')
+    def test_two_pages(self):
+        '''After joining two pages of history into one, the sum of pages has the correct info.'''
+        p = HP(g, 'DeployProduction', '')
+        p2 = HP(g, 'DeployProduction', '10')
+        p.add(p2)
+        assert len(p.pipelines) == 11
+        assert p.first['counter'] == 11
+        assert p.pipelines[0]['counter'] == 11
+        assert p.pipelines[-1]['counter'] == 1
+
+    @vcr.use_cassette(f+'two_nonmatching_pages.yaml')
+    def test_two_nonmatching_pages(self):
+        '''Ensure we can't join two disparate pipeline histories.'''
+        p = HP(g, 'DeployProduction', '')
+        p2 = HP(g, 'UserAcceptance', '')
+        with pytest.raises(gocd_parser.handler.history.history_page.HistoryPageException):
+            p.add(p2)
