@@ -37,6 +37,12 @@ class HistoryPage(object):
                 (self.first['name'], pprint.pformat(self.first)))
 
     def add(self, new, accept_failure = True):
+        # never accept this kind of failure!
+        try:
+            assert self.first['name'] == new.first['name']
+        except:
+            raise HistoryPageException("Unable to join two non-matching histories!")
+
         self.pipelines.extend(new.pipelines)
         self.first = self.pipelines[0]
         try:
