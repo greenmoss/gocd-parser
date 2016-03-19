@@ -1,5 +1,5 @@
 import logging
-#logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.DEBUG)
 
 import pytest
 import vcr
@@ -21,8 +21,11 @@ class TestCompare:
         assert c.materials[0].name == 'https://github.com/greenmoss/gocd_source'
         assert c.materials[0].branch == 'master'
         assert c.materials[0].type == 'git'
+        assert c.materials[0].changes[0].revision == 'dd154416726d3e813145777baef747f411dc1fca'
+
         assert c.materials[9].name == 'AppDevelopment'
         assert c.materials[9].type == 'pipeline'
+        assert c.materials[9].changes[0].revision == 'AppDevelopment/5/Package/1'
 
     @vcr.use_cassette(f+'unknown_material.yaml')
     def test_none_passing(self):
