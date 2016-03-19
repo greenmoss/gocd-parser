@@ -5,6 +5,7 @@ logger = logging.getLogger(__name__)
 from lxml import html, etree
 
 from gocd_parser.retriever import url
+from . import material
 
 class CompareException(Exception):
     pass
@@ -67,52 +68,7 @@ class Compare(object):
                 raise CompareException("Material does not match any known types in Compare.material_regexes!")
 
     def get_git(self, matches):
-        return GitMaterial(matches.group(1), matches.group(2))
+        return material.GitMaterial(matches.group(1), matches.group(2))
 
     def get_pipeline(self, matches):
-        return PipelineMaterial(matches.group(1))
-
-class GitMaterial(object):
-    '''Add information about a git commit from a GoCD material.'''
-    def __init__(self, name, branch):
-        self.name = name
-        self.branch = branch
-        self.type = 'git'
-
-        logger.debug('adding GitMaterial: %s, branch %s', self.name, self.branch)
-
-        self.changes = []
-
-    def add_change(self, change):
-        self.changes.append(GitChange(change))
-
-class PipelineMaterial(object):
-    '''Add information about a pipeline from a GoCD material.'''
-    def __init__(self, name):
-        self.name = name
-        self.type = 'pipeline'
-
-        logger.debug('adding PipelineMaterial: %s', self.name)
-
-        self.changes = []
-
-    def add_change(self, change):
-        self.changes.append(PipelineChange(change))
-
-class CommonChange(object):
-    '''Common methods for handling material changes.'''
-    def set_revision(self):
-        self.revision = ''.join(self.change.find('td[@class="revision"]').itertext()).strip()
-        logger.debug('adding change revision %s',self.revision)
-
-class GitChange(CommonChange):
-    '''Add information about a git change from a GoCD material.'''
-    def __init__(self, change):
-        self.change = change
-        self.set_revision()
-
-class PipelineChange(CommonChange):
-    '''Add information about a pipeline change from a GoCD material.'''
-    def __init__(self, change):
-        self.change = change
-        self.set_revision()
+        return material.PipelineMaterial(matches.group(1))
