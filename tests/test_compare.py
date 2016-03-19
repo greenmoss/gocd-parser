@@ -24,13 +24,18 @@ class TestCompare:
         assert c.materials[0].type == 'git'
         assert len(c.materials[0].changes) == 2
         assert c.materials[0].changes[0].revision == 'dd154416726d3e813145777baef747f411dc1fca'
+        assert c.materials[0].changes[0].modifier_name == 'Kurt Yoder'
+        assert c.materials[0].changes[0].modifier_email == 'ktygithub@yoderhome.com'
+        assert c.materials[0].changes[0].modifier_time == 1458403792
         assert c.materials[0].changes[0].comment == 'Get diagnostic output from run.sh'
 
         assert c.materials[9].name == 'AppDevelopment'
         assert c.materials[9].type == 'pipeline'
         assert len(c.materials[9].changes) == 4
         assert c.materials[9].changes[0].revision == 'AppDevelopment/5/Package/1'
+        assert c.materials[9].changes[0].revision_url == '/go/pipelines/AppDevelopment/5/Package/1'
         assert c.materials[9].changes[0].label == '5'
+        assert c.materials[9].changes[0].label_url == '/go/pipelines/value_stream_map/AppDevelopment/5'
         assert c.materials[9].changes[0].completed == 1458404255
 
     @vcr.use_cassette(f+'unknown_material.yaml')
