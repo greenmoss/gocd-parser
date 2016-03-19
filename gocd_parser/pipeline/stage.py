@@ -1,4 +1,5 @@
 import logging
+logger = logging.getLogger(__name__)
 
 from gocd_parser.pipeline import job, common
 
@@ -10,7 +11,6 @@ class Stages(common.History):
     parser.'''
 
     def __init__(self, data):
-        self.logger = logging.getLogger(__name__+'.Stages')
 
         # don't set_scalars; we are a list
         self.stages = []
@@ -33,7 +33,6 @@ class Stage(common.History):
 
     def __init__(self, data):
         self.data = data
-        self.logger = logging.getLogger(__name__+'.Stage')
 
         self.set_scalars()
         self.jobs = job.Jobs(data['jobs'])

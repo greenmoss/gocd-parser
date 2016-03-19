@@ -1,0 +1,477 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Connection: [close]
+      Host: ['localhost:8153']
+      User-Agent: [Python-urllib/2.7]
+    method: GET
+    uri: http://localhost:8153/go/api/pipelines/UserAcceptance/history/0
+  response:
+    body: {string: !!python/unicode '
+      {
+        "pagination": {
+          "offset": 0,
+          "page_size": 10,
+          "total": 5
+        },
+        "pipelines": [
+          {
+            "build_cause": {
+              "approver": "",
+              "material_revisions": [
+                {
+                  "changed": true,
+                  "material": {
+                    "description": "AppDevelopment",
+                    "fingerprint": "713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a",
+                    "id": 5,
+                    "type": "Pipeline"
+                  },
+                  "modifications": [
+                    {
+                      "comment": "Unknown",
+                      "email_address": null,
+                      "id": 33,
+                      "modified_time": 1458423067438,
+                      "revision": "AppDevelopment/7/Package/1",
+                      "user_name": "Unknown"
+                    }
+                  ]
+                },
+                {
+                  "changed": false,
+                  "material": {
+                    "description": "URL: https://github.com/greenmoss/gocd_source, Branch: UA",
+                    "fingerprint": "555cb917a3d7845df076d382d097fca85deced49d5be55495cebc604b894a31c",
+                    "id": 9,
+                    "type": "Git"
+                  },
+                  "modifications": [
+                    {
+                      "comment": "Get diagnostic output from run.sh",
+                      "email_address": null,
+                      "id": 24,
+                      "modified_time": 1458403792000,
+                      "revision": "dd154416726d3e813145777baef747f411dc1fca",
+                      "user_name": "Kurt Yoder <ktygithub@yoderhome.com>"
+                    }
+                  ]
+                }
+              ],
+              "trigger_forced": false,
+              "trigger_message": "triggered by AppDevelopment/7/Package/1"
+            },
+            "can_run": true,
+            "comment": null,
+            "counter": 5,
+            "id": 50,
+            "label": "5",
+            "name": "UserAcceptance",
+            "natural_order": 5.0,
+            "preparing_to_schedule": false,
+            "stages": [
+              {
+                "approval_type": "success",
+                "approved_by": "changes",
+                "can_run": true,
+                "counter": "1",
+                "id": 106,
+                "jobs": [
+                  {
+                    "id": 121,
+                    "name": "deployApplications",
+                    "result": "Passed",
+                    "scheduled_date": 1458423091247,
+                    "state": "Completed"
+                  }
+                ],
+                "name": "Deploy",
+                "operate_permission": true,
+                "rerun_of_counter": null,
+                "result": "Passed",
+                "scheduled": true
+              },
+              {
+                "approval_type": null,
+                "approved_by": null,
+                "can_run": true,
+                "counter": "1",
+                "id": 0,
+                "jobs": [],
+                "name": "Approved",
+                "operate_permission": true,
+                "rerun_of_counter": null,
+                "scheduled": false
+              }
+            ]
+          },
+          {
+            "build_cause": {
+              "approver": "",
+              "material_revisions": [
+                {
+                  "changed": false,
+                  "material": {
+                    "description": "AppDevelopment",
+                    "fingerprint": "713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a",
+                    "id": 5,
+                    "type": "Pipeline"
+                  },
+                  "modifications": [
+                    {
+                      "comment": "Unknown",
+                      "email_address": null,
+                      "id": 22,
+                      "modified_time": 1458404255932,
+                      "revision": "AppDevelopment/5/Package/1",
+                      "user_name": "Unknown"
+                    }
+                  ]
+                },
+                {
+                  "changed": true,
+                  "material": {
+                    "description": "URL: https://github.com/greenmoss/gocd_source, Branch: UA",
+                    "fingerprint": "555cb917a3d7845df076d382d097fca85deced49d5be55495cebc604b894a31c",
+                    "id": 9,
+                    "type": "Git"
+                  },
+                  "modifications": [
+                    {
+                      "comment": "Get diagnostic output from run.sh",
+                      "email_address": null,
+                      "id": 24,
+                      "modified_time": 1458403792000,
+                      "revision": "dd154416726d3e813145777baef747f411dc1fca",
+                      "user_name": "Kurt Yoder <ktygithub@yoderhome.com>"
+                    }
+                  ]
+                }
+              ],
+              "trigger_forced": false,
+              "trigger_message": "modified by Kurt Yoder <ktygithub@yoderhome.com>"
+            },
+            "can_run": true,
+            "comment": null,
+            "counter": 4,
+            "id": 43,
+            "label": "4",
+            "name": "UserAcceptance",
+            "natural_order": 4.0,
+            "preparing_to_schedule": false,
+            "stages": [
+              {
+                "approval_type": "success",
+                "approved_by": "changes",
+                "can_run": true,
+                "counter": "1",
+                "id": 93,
+                "jobs": [
+                  {
+                    "id": 108,
+                    "name": "deployApplications",
+                    "result": "Passed",
+                    "scheduled_date": 1458404349596,
+                    "state": "Completed"
+                  }
+                ],
+                "name": "Deploy",
+                "operate_permission": true,
+                "rerun_of_counter": null,
+                "result": "Passed",
+                "scheduled": true
+              },
+              {
+                "approval_type": "manual",
+                "approved_by": "anonymous",
+                "can_run": true,
+                "counter": "1",
+                "id": 94,
+                "jobs": [
+                  {
+                    "id": 109,
+                    "name": "Approve",
+                    "result": "Passed",
+                    "scheduled_date": 1458404591289,
+                    "state": "Completed"
+                  }
+                ],
+                "name": "Approved",
+                "operate_permission": true,
+                "rerun_of_counter": null,
+                "result": "Passed",
+                "scheduled": true
+              }
+            ]
+          },
+          {
+            "build_cause": {
+              "approver": "",
+              "material_revisions": [
+                {
+                  "changed": true,
+                  "material": {
+                    "description": "AppDevelopment",
+                    "fingerprint": "713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a",
+                    "id": 5,
+                    "type": "Pipeline"
+                  },
+                  "modifications": [
+                    {
+                      "comment": "Unknown",
+                      "email_address": null,
+                      "id": 22,
+                      "modified_time": 1458404255932,
+                      "revision": "AppDevelopment/5/Package/1",
+                      "user_name": "Unknown"
+                    }
+                  ]
+                }
+              ],
+              "trigger_forced": false,
+              "trigger_message": "triggered by AppDevelopment/5/Package/1"
+            },
+            "can_run": true,
+            "comment": null,
+            "counter": 3,
+            "id": 41,
+            "label": "3",
+            "name": "UserAcceptance",
+            "natural_order": 3.0,
+            "preparing_to_schedule": false,
+            "stages": [
+              {
+                "approval_type": "success",
+                "approved_by": "changes",
+                "can_run": true,
+                "counter": "1",
+                "id": 90,
+                "jobs": [
+                  {
+                    "id": 103,
+                    "name": "deployApplications",
+                    "result": "Passed",
+                    "scheduled_date": 1458404279555,
+                    "state": "Completed"
+                  }
+                ],
+                "name": "Deploy",
+                "operate_permission": true,
+                "rerun_of_counter": null,
+                "result": "Passed",
+                "scheduled": true
+              },
+              {
+                "approval_type": null,
+                "approved_by": null,
+                "can_run": true,
+                "counter": "1",
+                "id": 0,
+                "jobs": [],
+                "name": "Approved",
+                "operate_permission": true,
+                "rerun_of_counter": null,
+                "scheduled": false
+              }
+            ]
+          },
+          {
+            "build_cause": {
+              "approver": "",
+              "material_revisions": [
+                {
+                  "changed": true,
+                  "material": {
+                    "description": "AppDevelopment",
+                    "fingerprint": "713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a",
+                    "id": 5,
+                    "type": "Pipeline"
+                  },
+                  "modifications": [
+                    {
+                      "comment": "Unknown",
+                      "email_address": null,
+                      "id": 17,
+                      "modified_time": 1458403446145,
+                      "revision": "AppDevelopment/4/Package/1",
+                      "user_name": "Unknown"
+                    }
+                  ]
+                }
+              ],
+              "trigger_forced": false,
+              "trigger_message": "triggered by AppDevelopment/4/Package/1"
+            },
+            "can_run": true,
+            "comment": null,
+            "counter": 2,
+            "id": 38,
+            "label": "2",
+            "name": "UserAcceptance",
+            "natural_order": 2.0,
+            "preparing_to_schedule": false,
+            "stages": [
+              {
+                "approval_type": "success",
+                "approved_by": "changes",
+                "can_run": true,
+                "counter": "1",
+                "id": 83,
+                "jobs": [
+                  {
+                    "id": 92,
+                    "name": "deployApplications",
+                    "result": "Passed",
+                    "scheduled_date": 1458403470066,
+                    "state": "Completed"
+                  }
+                ],
+                "name": "Deploy",
+                "operate_permission": true,
+                "rerun_of_counter": null,
+                "result": "Passed",
+                "scheduled": true
+              },
+              {
+                "approval_type": null,
+                "approved_by": null,
+                "can_run": true,
+                "counter": "1",
+                "id": 0,
+                "jobs": [],
+                "name": "Approved",
+                "operate_permission": true,
+                "rerun_of_counter": null,
+                "scheduled": false
+              }
+            ]
+          },
+          {
+            "build_cause": {
+              "approver": "",
+              "material_revisions": [
+                {
+                  "changed": true,
+                  "material": {
+                    "description": "AppDevelopment",
+                    "fingerprint": "713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a",
+                    "id": 5,
+                    "type": "Pipeline"
+                  },
+                  "modifications": [
+                    {
+                      "comment": "Unknown",
+                      "email_address": null,
+                      "id": 2,
+                      "modified_time": 1458082599508,
+                      "revision": "AppDevelopment/1/Package/1",
+                      "user_name": "Unknown"
+                    }
+                  ]
+                }
+              ],
+              "trigger_forced": false,
+              "trigger_message": "triggered by AppDevelopment/1/Package/1"
+            },
+            "can_run": true,
+            "comment": null,
+            "counter": 1,
+            "id": 4,
+            "label": "1",
+            "name": "UserAcceptance",
+            "natural_order": 1.0,
+            "preparing_to_schedule": false,
+            "stages": [
+              {
+                "approval_type": "success",
+                "approved_by": "changes",
+                "can_run": true,
+                "counter": "1",
+                "id": 11,
+                "jobs": [
+                  {
+                    "id": 11,
+                    "name": "deployApplications",
+                    "result": "Passed",
+                    "scheduled_date": 1458082611961,
+                    "state": "Completed"
+                  }
+                ],
+                "name": "Deploy",
+                "operate_permission": true,
+                "rerun_of_counter": null,
+                "result": "Passed",
+                "scheduled": true
+              },
+              {
+                "approval_type": "manual",
+                "approved_by": "anonymous",
+                "can_run": true,
+                "counter": "1",
+                "id": 14,
+                "jobs": [
+                  {
+                    "id": 16,
+                    "name": "Approve",
+                    "result": "Passed",
+                    "scheduled_date": 1458082811675,
+                    "state": "Completed"
+                  }
+                ],
+                "name": "Approved",
+                "operate_permission": true,
+                "rerun_of_counter": null,
+                "result": "Passed",
+                "scheduled": true
+              }
+            ]
+          }
+        ]
+      }
+    '}
+    headers:
+      cache-control: ['max-age=0, private, must-revalidate']
+      connection: [close]
+      content-type: [application/json; charset=utf-8]
+      date: ['Sat, 19 Mar 2016 21:50:11 GMT']
+      etag: ['"bb368ecd6247d9dcc5f05cd41b124b14"']
+      expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
+      set-cookie: ['JSESSIONID=3gm82fqof9iy1dnzg27hbv9we;Path=/go;Expires=Sat, 02-Apr-2016
+          21:50:11 GMT']
+      vary: ['Accept-Encoding, User-Agent']
+      x-content-type-options: [nosniff]
+      x-frame-options: [SAMEORIGIN]
+      x-request-id: [323fa8be-3bf4-447f-9e27-7d8cc947c955]
+      x-runtime: ['0.012000']
+      x-ua-compatible: [chrome=1]
+      x-xss-protection: [1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Connection: [close]
+      Host: ['localhost:8153']
+      User-Agent: [Python-urllib/2.7]
+    method: GET
+    uri: http://localhost:8153/go/api/pipelines/UserAcceptance/status/
+  response:
+    body: {string: !!python/unicode '{"paused":false,"schedulable":true,"pausedBy":"","pausedCause":"","locked":false}'}
+    headers:
+      cache-control: ['max-age=0, private, must-revalidate']
+      connection: [close]
+      content-type: [application/json; charset=utf-8]
+      date: ['Sat, 19 Mar 2016 21:50:11 GMT']
+      etag: ['"c5e866f279ed30423c9733e7ca7bc274"']
+      expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
+      set-cookie: ['JSESSIONID=1vz5w8buhkzbbov0ignyqpjy;Path=/go;Expires=Sat, 02-Apr-2016
+          21:50:11 GMT']
+      vary: ['Accept-Encoding, User-Agent']
+      x-content-type-options: [nosniff]
+      x-frame-options: [SAMEORIGIN]
+      x-request-id: [9c4989cb-6860-4765-b5c1-f4e096036cc0]
+      x-runtime: ['0.005000']
+      x-ua-compatible: [chrome=1]
+      x-xss-protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1

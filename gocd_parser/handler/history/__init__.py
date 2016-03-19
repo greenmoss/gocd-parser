@@ -16,7 +16,6 @@ class HistoryPager(object):
         self.go_server = go_server
         self.pipeline_name = pipeline_name
 
-
         self.get_pages()
 
         self.merged = self.pages[0]

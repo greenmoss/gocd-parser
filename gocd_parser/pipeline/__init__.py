@@ -1,4 +1,5 @@
 import logging
+logger = logging.getLogger(__name__)
 
 from gocd_parser.handler import history, status
 from gocd_parser.pipeline import stage
@@ -7,8 +8,6 @@ class Pipeline(object):
     def __init__(self, name, go_server):
         self.name = name
         self.go_server = go_server
-
-        self.logger = logging.getLogger(__name__+'.Pipeline')
 
         self.set_history()
 
@@ -21,7 +20,7 @@ class Pipeline(object):
 
         self.parent_names = self.history.get_parent_names(
                 self.history.first)
-        self.logger.debug('parents: %s'%self.parent_names)
+        logger.debug('parents: %s'%self.parent_names)
 
     def set_history(self):
         all_history = history.HistoryPager(self.go_server, self.name)
@@ -39,21 +38,25 @@ class Pipeline(object):
             self.stopped_duration = self.history.get_duration_since(
                     self.history.last_completed)
             self.problem_duration = self.stopped_duration
+            logger.debug('pipeline status: paused')
 
         if not self.history.passing:
             self.human_status = 'failing'
             self.failing_duration = self.history.failure_duration
             self.problem_duration = self.failing_duration
+            logger.debug('pipeline status: failing')
 
         if self.is_stopped() and self.is_failing():
             if self.failing_duration > self.stopped_duration:
                 self.problem_duration = self.failing_duration
             else:
                 self.problem_duration = self.stopped_duration
+            logger.debug('pipeline status: paused and failing')
 
         if self.human_status == 'passing':
             self.passing_duration = self.history.get_duration_since(
                     self.history.last_completed)
+            logger.debug('pipeline status: passing')
 
     def set_from_groups_handler(self, groups_handler):
         '''Given groups as returned by the pipeline_groups handler, set
@@ -123,7 +126,7 @@ class Pipeline(object):
         if self.is_passing() or self.is_stopped():
             return paths
 
-        self.logger.debug('setting failing stage paths')
+        logger.debug('setting failing stage paths')
 
         failing_paths = []
         path = 'tab/build/detail/%s/'%self.name

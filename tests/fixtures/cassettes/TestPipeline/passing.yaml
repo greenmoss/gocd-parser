@@ -1,0 +1,86 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Connection: [close]
+      Host: ['localhost:8153']
+      User-Agent: [Python-urllib/2.7]
+    method: GET
+    uri: http://localhost:8153/go/api/pipelines/AppDevelopment/history/0
+  response:
+    body: {string: !!python/unicode '{"pipelines":[{"build_cause":{"approver":"","material_revisions":[{"modifications":[{"email_address":null,"id":1,"modified_time":1457352141000,"user_name":"Ken
+        Mugrage \u003Ckmugrage@users.noreply.github.com\u003E","comment":"Update triggerfile.txt","revision":"ae7fb35f266b4abe0d9c65d604ddd7280bdddadc"}],"material":{"description":"URL:
+        https://github.com/gocd-demo/webinar-code.git, Branch: master","fingerprint":"93c90510b74bdc41e0a15b8f2ebfd470f445089651b50238857f6b17819bb0ee","type":"Git","id":4},"changed":false},{"modifications":[{"email_address":null,"id":32,"modified_time":1458423670000,"user_name":"Kurt
+        Yoder \u003Cktygithub@yoderhome.com\u003E","comment":"pass AD","revision":"c64c66a620e7c3e2ce49ed434f85210cf5e519fd"}],"material":{"description":"URL:
+        https://github.com/greenmoss/gocd_source, Branch: AD","fingerprint":"94c49bc9743cfa848dbbdab2a007c7427f4d057fb648cc888f5f6457a2c458a4","type":"Git","id":7},"changed":true}],"trigger_forced":false,"trigger_message":"modified
+        by Kurt Yoder \u003Cktygithub@yoderhome.com\u003E"},"name":"AppDevelopment","natural_order":7.0,"can_run":true,"comment":null,"stages":[{"name":"Commit","approved_by":"changes","jobs":[{"name":"FirstJob","result":"Passed","state":"Completed","id":117,"scheduled_date":1458423011176}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":102,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"UnitTest","approved_by":"changes","jobs":[{"name":"FirstJob","result":"Passed","state":"Completed","id":118,"scheduled_date":1458423029285}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":103,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"Package","approved_by":"changes","jobs":[{"name":"FirstJob","result":"Passed","state":"Completed","id":119,"scheduled_date":1458423047885}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":104,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":7,"id":48,"preparing_to_schedule":false,"label":"7"},{"build_cause":{"approver":"","material_revisions":[{"modifications":[{"email_address":null,"id":1,"modified_time":1457352141000,"user_name":"Ken
+        Mugrage \u003Ckmugrage@users.noreply.github.com\u003E","comment":"Update triggerfile.txt","revision":"ae7fb35f266b4abe0d9c65d604ddd7280bdddadc"}],"material":{"description":"URL:
+        https://github.com/gocd-demo/webinar-code.git, Branch: master","fingerprint":"93c90510b74bdc41e0a15b8f2ebfd470f445089651b50238857f6b17819bb0ee","type":"Git","id":4},"changed":false},{"modifications":[{"email_address":null,"id":30,"modified_time":1458423314000,"user_name":"Kurt
+        Yoder \u003Cktygithub@yoderhome.com\u003E","comment":"Fail the AD branch","revision":"ef7b1cb587f01646ecd3022150b0ba4b5dbddd58"}],"material":{"description":"URL:
+        https://github.com/greenmoss/gocd_source, Branch: AD","fingerprint":"94c49bc9743cfa848dbbdab2a007c7427f4d057fb648cc888f5f6457a2c458a4","type":"Git","id":7},"changed":true}],"trigger_forced":false,"trigger_message":"modified
+        by Kurt Yoder \u003Cktygithub@yoderhome.com\u003E"},"name":"AppDevelopment","natural_order":6.0,"can_run":true,"comment":null,"stages":[{"name":"Commit","approved_by":"changes","jobs":[{"name":"FirstJob","result":"Passed","state":"Completed","id":114,"scheduled_date":1458422650893}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":99,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"UnitTest","approved_by":"changes","jobs":[{"name":"FirstJob","result":"Failed","state":"Completed","id":115,"scheduled_date":1458422667597}],"can_run":true,"result":"Failed","approval_type":"success","counter":"1","id":100,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"Package","approved_by":null,"jobs":[],"can_run":true,"approval_type":null,"counter":"1","id":0,"operate_permission":true,"rerun_of_counter":null,"scheduled":false}],"counter":6,"id":46,"preparing_to_schedule":false,"label":"6"},{"build_cause":{"approver":"","material_revisions":[{"modifications":[{"email_address":null,"id":1,"modified_time":1457352141000,"user_name":"Ken
+        Mugrage \u003Ckmugrage@users.noreply.github.com\u003E","comment":"Update triggerfile.txt","revision":"ae7fb35f266b4abe0d9c65d604ddd7280bdddadc"}],"material":{"description":"URL:
+        https://github.com/gocd-demo/webinar-code.git, Branch: master","fingerprint":"93c90510b74bdc41e0a15b8f2ebfd470f445089651b50238857f6b17819bb0ee","type":"Git","id":4},"changed":false},{"modifications":[{"email_address":null,"id":21,"modified_time":1458403792000,"user_name":"Kurt
+        Yoder \u003Cktygithub@yoderhome.com\u003E","comment":"Get diagnostic output
+        from run.sh","revision":"dd154416726d3e813145777baef747f411dc1fca"}],"material":{"description":"URL:
+        https://github.com/greenmoss/gocd_source, Branch: AD","fingerprint":"94c49bc9743cfa848dbbdab2a007c7427f4d057fb648cc888f5f6457a2c458a4","type":"Git","id":7},"changed":true}],"trigger_forced":false,"trigger_message":"modified
+        by Kurt Yoder \u003Cktygithub@yoderhome.com\u003E"},"name":"AppDevelopment","natural_order":5.0,"can_run":true,"comment":null,"stages":[{"name":"Commit","approved_by":"changes","jobs":[{"name":"FirstJob","result":"Passed","state":"Completed","id":100,"scheduled_date":1458404199510}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":87,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"UnitTest","approved_by":"changes","jobs":[{"name":"FirstJob","result":"Passed","state":"Completed","id":101,"scheduled_date":1458404217733}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":88,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"Package","approved_by":"changes","jobs":[{"name":"FirstJob","result":"Passed","state":"Completed","id":102,"scheduled_date":1458404236535}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":89,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":5,"id":40,"preparing_to_schedule":false,"label":"5"},{"build_cause":{"approver":"","material_revisions":[{"modifications":[{"email_address":null,"id":1,"modified_time":1457352141000,"user_name":"Ken
+        Mugrage \u003Ckmugrage@users.noreply.github.com\u003E","comment":"Update triggerfile.txt","revision":"ae7fb35f266b4abe0d9c65d604ddd7280bdddadc"}],"material":{"description":"URL:
+        https://github.com/gocd-demo/webinar-code.git, Branch: master","fingerprint":"93c90510b74bdc41e0a15b8f2ebfd470f445089651b50238857f6b17819bb0ee","type":"Git","id":4},"changed":false},{"modifications":[{"email_address":null,"id":15,"modified_time":1458403249000,"user_name":"Kurt
+        Yoder \u003Cktygithub@yoderhome.com\u003E","comment":"Create run.sh","revision":"7bbd2e379efd90532bb351758409f682cd4df2dc"}],"material":{"description":"URL:
+        https://github.com/greenmoss/gocd_source, Branch: AD","fingerprint":"94c49bc9743cfa848dbbdab2a007c7427f4d057fb648cc888f5f6457a2c458a4","type":"Git","id":7},"changed":true}],"trigger_forced":false,"trigger_message":"modified
+        by Kurt Yoder \u003Cktygithub@yoderhome.com\u003E"},"name":"AppDevelopment","natural_order":4.0,"can_run":true,"comment":null,"stages":[{"name":"Commit","approved_by":"changes","jobs":[{"name":"FirstJob","result":"Passed","state":"Completed","id":88,"scheduled_date":1458403389973}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":79,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"UnitTest","approved_by":"changes","jobs":[{"name":"FirstJob","result":"Passed","state":"Completed","id":89,"scheduled_date":1458403407518}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":80,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"Package","approved_by":"changes","jobs":[{"name":"FirstJob","result":"Passed","state":"Completed","id":90,"scheduled_date":1458403426173}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":81,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":4,"id":36,"preparing_to_schedule":false,"label":"4"},{"build_cause":{"approver":"","material_revisions":[{"modifications":[{"email_address":null,"id":1,"modified_time":1457352141000,"user_name":"Ken
+        Mugrage \u003Ckmugrage@users.noreply.github.com\u003E","comment":"Update triggerfile.txt","revision":"ae7fb35f266b4abe0d9c65d604ddd7280bdddadc"}],"material":{"description":"URL:
+        https://github.com/gocd-demo/webinar-code.git, Branch: master","fingerprint":"93c90510b74bdc41e0a15b8f2ebfd470f445089651b50238857f6b17819bb0ee","type":"Git","id":4},"changed":false}],"trigger_forced":false,"trigger_message":"modified
+        by Ken Mugrage \u003Ckmugrage@users.noreply.github.com\u003E"},"name":"AppDevelopment","natural_order":3.0,"can_run":true,"comment":null,"stages":[{"name":"Commit","approved_by":"changes","jobs":[{"name":"FirstJob","result":"Passed","state":"Completed","id":84,"scheduled_date":1458403339944}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":75,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"UnitTest","approved_by":"changes","jobs":[{"name":"FirstJob","result":"Passed","state":"Completed","id":86,"scheduled_date":1458403356720}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":77,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"Package","approved_by":"changes","jobs":[{"name":"FirstJob","result":"Passed","state":"Completed","id":87,"scheduled_date":1458403376392}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":78,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":3,"id":35,"preparing_to_schedule":false,"label":"3"},{"build_cause":{"approver":"","material_revisions":[{"modifications":[{"email_address":null,"id":1,"modified_time":1457352141000,"user_name":"Ken
+        Mugrage \u003Ckmugrage@users.noreply.github.com\u003E","comment":"Update triggerfile.txt","revision":"ae7fb35f266b4abe0d9c65d604ddd7280bdddadc"}],"material":{"description":"URL:
+        https://github.com/gocd-demo/webinar-code.git, Branch: master","fingerprint":"93c90510b74bdc41e0a15b8f2ebfd470f445089651b50238857f6b17819bb0ee","type":"Git","id":4},"changed":false}],"trigger_forced":false,"trigger_message":"modified
+        by Ken Mugrage \u003Ckmugrage@users.noreply.github.com\u003E"},"name":"AppDevelopment","natural_order":2.0,"can_run":true,"comment":null,"stages":[{"name":"Commit","approved_by":"changes","jobs":[{"name":"FirstJob","result":"Passed","state":"Completed","id":82,"scheduled_date":1458403319936}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":73,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"UnitTest","approved_by":"changes","jobs":[{"name":"FirstJob","result":"Passed","state":"Completed","id":83,"scheduled_date":1458403336324}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":74,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"Package","approved_by":"changes","jobs":[{"name":"FirstJob","result":"Passed","state":"Completed","id":85,"scheduled_date":1458403355451}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":76,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":2,"id":34,"preparing_to_schedule":false,"label":"2"},{"build_cause":{"approver":"","material_revisions":[{"modifications":[{"email_address":null,"id":1,"modified_time":1457352141000,"user_name":"Ken
+        Mugrage \u003Ckmugrage@users.noreply.github.com\u003E","comment":"Update triggerfile.txt","revision":"ae7fb35f266b4abe0d9c65d604ddd7280bdddadc"}],"material":{"description":"URL:
+        https://github.com/gocd-demo/webinar-code.git, Branch: master","fingerprint":"93c90510b74bdc41e0a15b8f2ebfd470f445089651b50238857f6b17819bb0ee","type":"Git","id":4},"changed":true}],"trigger_forced":false,"trigger_message":"modified
+        by Ken Mugrage \u003Ckmugrage@users.noreply.github.com\u003E"},"name":"AppDevelopment","natural_order":1.0,"can_run":true,"comment":null,"stages":[{"name":"Commit","approved_by":"changes","jobs":[{"name":"FirstJob","result":"Passed","state":"Completed","id":2,"scheduled_date":1458082521874}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":2,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"UnitTest","approved_by":"changes","jobs":[{"name":"FirstJob","result":"Passed","state":"Completed","id":4,"scheduled_date":1458082563597}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":4,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"Package","approved_by":"changes","jobs":[{"name":"FirstJob","result":"Passed","state":"Completed","id":7,"scheduled_date":1458082579738}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":7,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":1,"id":2,"preparing_to_schedule":false,"label":"1"}],"pagination":{"offset":0,"total":7,"page_size":10}}'}
+    headers:
+      cache-control: ['max-age=0, private, must-revalidate']
+      connection: [close]
+      content-type: [application/json; charset=utf-8]
+      date: ['Sat, 19 Mar 2016 21:57:38 GMT']
+      etag: ['"9abdf74beef8b57e95567ec9637bf640"']
+      expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
+      set-cookie: ['JSESSIONID=1qk3hbriepyw01of5pzcsbcrno;Path=/go;Expires=Sat, 02-Apr-2016
+          21:57:38 GMT']
+      vary: ['Accept-Encoding, User-Agent']
+      x-content-type-options: [nosniff]
+      x-frame-options: [SAMEORIGIN]
+      x-request-id: [199c2685-9590-44de-9304-97a7c57a7856]
+      x-runtime: ['0.016000']
+      x-ua-compatible: [chrome=1]
+      x-xss-protection: [1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Connection: [close]
+      Host: ['localhost:8153']
+      User-Agent: [Python-urllib/2.7]
+    method: GET
+    uri: http://localhost:8153/go/api/pipelines/AppDevelopment/status/
+  response:
+    body: {string: !!python/unicode '{"paused":false,"schedulable":true,"pausedBy":"","pausedCause":"","locked":false}'}
+    headers:
+      cache-control: ['max-age=0, private, must-revalidate']
+      connection: [close]
+      content-type: [application/json; charset=utf-8]
+      date: ['Sat, 19 Mar 2016 21:57:38 GMT']
+      etag: ['"c5e866f279ed30423c9733e7ca7bc274"']
+      expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
+      set-cookie: ['JSESSIONID=uprhpyyitt7a1nhxa6byym0mu;Path=/go;Expires=Sat, 02-Apr-2016
+          21:57:38 GMT']
+      vary: ['Accept-Encoding, User-Agent']
+      x-content-type-options: [nosniff]
+      x-frame-options: [SAMEORIGIN]
+      x-request-id: [45f6da47-790b-4309-8be8-def781d375f0]
+      x-runtime: ['0.003000']
+      x-ua-compatible: [chrome=1]
+      x-xss-protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1
