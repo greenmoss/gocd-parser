@@ -18,3 +18,14 @@ class TestCompare:
         '''All expected git commits and pipelines appear in the list of changes.'''
         c = C(g, 'DeployProduction', '12', '13')
         assert len(c.materials) == 10
+        assert c.materials[0].name == 'https://github.com/greenmoss/gocd_source'
+        assert c.materials[0].branch == 'master'
+        assert c.materials[0].type == 'git'
+        assert c.materials[9].name == 'AppDevelopment'
+        assert c.materials[9].type == 'pipeline'
+
+    @vcr.use_cassette(f+'unknown_material.yaml')
+    def test_none_passing(self):
+        '''Unrecognized material should raise an exception.'''
+        with pytest.raises(gocd_parser.handler.compare.CompareException):
+            c = C(g, 'DeployProduction', '12', '13')
