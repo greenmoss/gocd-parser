@@ -1,0 +1,363 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Connection: [close]
+      Host: ['localhost:8153']
+      User-Agent: [Python-urllib/2.7]
+    method: GET
+    uri: http://localhost:8153/go/pipelines/value_stream_map/DeployProduction/14.json
+  response:
+    body: {string: !!python/unicode '
+      {
+        "current_pipeline": "DeployProduction",
+        "levels": [
+          {
+            "nodes": [
+              {
+                "dependents": [
+                  "AppDevelopment"
+                ],
+                "depth": 1,
+                "id": "93c90510b74bdc41e0a15b8f2ebfd470f445089651b50238857f6b17819bb0ee",
+                "instances": [
+                  {
+                    "comment": "Update triggerfile.txt",
+                    "locator": "/go/materials/value_stream_map/93c90510b74bdc41e0a15b8f2ebfd470f445089651b50238857f6b17819bb0ee/ae7fb35f266b4abe0d9c65d604ddd7280bdddadc",
+                    "modified_time": "12 days ago",
+                    "revision": "ae7fb35f266b4abe0d9c65d604ddd7280bdddadc",
+                    "user": "Ken Mugrage <kmugrage@users.noreply.github.com>"
+                  }
+                ],
+                "locator": "",
+                "material_names": [
+                  "webinar-code"
+                ],
+                "name": "https://github.com/gocd-demo/webinar-code.git",
+                "node_type": "GIT",
+                "parents": []
+              },
+              {
+                "dependents": [
+                  "AppDevelopment"
+                ],
+                "depth": 2,
+                "id": "94c49bc9743cfa848dbbdab2a007c7427f4d057fb648cc888f5f6457a2c458a4",
+                "instances": [
+                  {
+                    "comment": "Get diagnostic output from run.sh",
+                    "locator": "/go/materials/value_stream_map/94c49bc9743cfa848dbbdab2a007c7427f4d057fb648cc888f5f6457a2c458a4/dd154416726d3e813145777baef747f411dc1fca",
+                    "modified_time": "about 11 hours ago",
+                    "revision": "dd154416726d3e813145777baef747f411dc1fca",
+                    "user": "Kurt Yoder <ktygithub@yoderhome.com>"
+                  }
+                ],
+                "locator": "",
+                "material_names": [
+                  "gocd_source"
+                ],
+                "name": "https://github.com/greenmoss/gocd_source",
+                "node_type": "GIT",
+                "parents": []
+              }
+            ]
+          },
+          {
+            "nodes": [
+              {
+                "dependents": [
+                  "UserAcceptance"
+                ],
+                "depth": 1,
+                "id": "555cb917a3d7845df076d382d097fca85deced49d5be55495cebc604b894a31c",
+                "instances": [
+                  {
+                    "comment": "Get diagnostic output from run.sh",
+                    "locator": "/go/materials/value_stream_map/555cb917a3d7845df076d382d097fca85deced49d5be55495cebc604b894a31c/dd154416726d3e813145777baef747f411dc1fca",
+                    "modified_time": "about 11 hours ago",
+                    "revision": "dd154416726d3e813145777baef747f411dc1fca",
+                    "user": "Kurt Yoder <ktygithub@yoderhome.com>"
+                  }
+                ],
+                "locator": "",
+                "material_names": [
+                  "gocd_source"
+                ],
+                "name": "https://github.com/greenmoss/gocd_source",
+                "node_type": "GIT",
+                "parents": []
+              },
+              {
+                "dependents": [
+                  "UserAcceptance",
+                  "FunctionalTests"
+                ],
+                "depth": 2,
+                "id": "AppDevelopment",
+                "instances": [
+                  {
+                    "counter": 5,
+                    "label": "5",
+                    "locator": "/go/pipelines/value_stream_map/AppDevelopment/5",
+                    "stages": [
+                      {
+                        "locator": "/go/pipelines/AppDevelopment/5/Commit/1",
+                        "name": "Commit",
+                        "status": "Passed"
+                      },
+                      {
+                        "locator": "/go/pipelines/AppDevelopment/5/UnitTest/1",
+                        "name": "UnitTest",
+                        "status": "Passed"
+                      },
+                      {
+                        "locator": "/go/pipelines/AppDevelopment/5/Package/1",
+                        "name": "Package",
+                        "status": "Passed"
+                      }
+                    ]
+                  }
+                ],
+                "locator": "/go/tab/pipeline/history/AppDevelopment",
+                "name": "AppDevelopment",
+                "node_type": "PIPELINE",
+                "parents": [
+                  "93c90510b74bdc41e0a15b8f2ebfd470f445089651b50238857f6b17819bb0ee",
+                  "94c49bc9743cfa848dbbdab2a007c7427f4d057fb648cc888f5f6457a2c458a4"
+                ]
+              },
+              {
+                "dependents": [
+                  "FunctionalTests"
+                ],
+                "depth": 3,
+                "id": "6ce0a4977c6f3238d0117d59229ff759ff6346c3f7481276d91c55cc80135f3d",
+                "instances": [
+                  {
+                    "comment": "Get diagnostic output from run.sh",
+                    "locator": "/go/materials/value_stream_map/6ce0a4977c6f3238d0117d59229ff759ff6346c3f7481276d91c55cc80135f3d/dd154416726d3e813145777baef747f411dc1fca",
+                    "modified_time": "about 11 hours ago",
+                    "revision": "dd154416726d3e813145777baef747f411dc1fca",
+                    "user": "Kurt Yoder <ktygithub@yoderhome.com>"
+                  }
+                ],
+                "locator": "",
+                "material_names": [
+                  "gocd_source"
+                ],
+                "name": "https://github.com/greenmoss/gocd_source",
+                "node_type": "GIT",
+                "parents": []
+              }
+            ]
+          },
+          {
+            "nodes": [
+              {
+                "dependents": [
+                  "DeployStaging"
+                ],
+                "depth": 1,
+                "id": "UserAcceptance",
+                "instances": [
+                  {
+                    "counter": 4,
+                    "label": "4",
+                    "locator": "/go/pipelines/value_stream_map/UserAcceptance/4",
+                    "stages": [
+                      {
+                        "locator": "/go/pipelines/UserAcceptance/4/Deploy/1",
+                        "name": "Deploy",
+                        "status": "Passed"
+                      },
+                      {
+                        "locator": "/go/pipelines/UserAcceptance/4/Approved/1",
+                        "name": "Approved",
+                        "status": "Passed"
+                      }
+                    ]
+                  }
+                ],
+                "locator": "/go/tab/pipeline/history/UserAcceptance",
+                "name": "UserAcceptance",
+                "node_type": "PIPELINE",
+                "parents": [
+                  "AppDevelopment",
+                  "555cb917a3d7845df076d382d097fca85deced49d5be55495cebc604b894a31c"
+                ]
+              },
+              {
+                "dependents": [
+                  "DeployStaging"
+                ],
+                "depth": 2,
+                "id": "FunctionalTests",
+                "instances": [
+                  {
+                    "counter": 6,
+                    "label": "6",
+                    "locator": "/go/pipelines/value_stream_map/FunctionalTests/6",
+                    "stages": [
+                      {
+                        "locator": "/go/pipelines/FunctionalTests/6/Deploy/1",
+                        "name": "Deploy",
+                        "status": "Passed"
+                      },
+                      {
+                        "locator": "/go/pipelines/FunctionalTests/6/functionalTests/1",
+                        "name": "functionalTests",
+                        "status": "Passed"
+                      }
+                    ]
+                  }
+                ],
+                "locator": "/go/tab/pipeline/history/FunctionalTests",
+                "name": "FunctionalTests",
+                "node_type": "PIPELINE",
+                "parents": [
+                  "AppDevelopment",
+                  "6ce0a4977c6f3238d0117d59229ff759ff6346c3f7481276d91c55cc80135f3d"
+                ]
+              },
+              {
+                "dependents": [
+                  "DeployStaging"
+                ],
+                "depth": 3,
+                "id": "5039b132753172a03a2de061de75b8fea9910f6e2be22b1f28f8a545350abbd9",
+                "instances": [
+                  {
+                    "comment": "Get diagnostic output from run.sh",
+                    "locator": "/go/materials/value_stream_map/5039b132753172a03a2de061de75b8fea9910f6e2be22b1f28f8a545350abbd9/dd154416726d3e813145777baef747f411dc1fca",
+                    "modified_time": "about 11 hours ago",
+                    "revision": "dd154416726d3e813145777baef747f411dc1fca",
+                    "user": "Kurt Yoder <ktygithub@yoderhome.com>"
+                  }
+                ],
+                "locator": "",
+                "material_names": [
+                  "gocd_source"
+                ],
+                "name": "https://github.com/greenmoss/gocd_source",
+                "node_type": "GIT",
+                "parents": []
+              }
+            ]
+          },
+          {
+            "nodes": [
+              {
+                "dependents": [
+                  "DeployProduction"
+                ],
+                "depth": 1,
+                "id": "DeployStaging",
+                "instances": [
+                  {
+                    "counter": 15,
+                    "label": "15",
+                    "locator": "/go/pipelines/value_stream_map/DeployStaging/15",
+                    "stages": [
+                      {
+                        "locator": "/go/pipelines/DeployStaging/15/Deploy/1",
+                        "name": "Deploy",
+                        "status": "Passed"
+                      },
+                      {
+                        "locator": "/go/pipelines/DeployStaging/15/Verify/1",
+                        "name": "Verify",
+                        "status": "Passed"
+                      }
+                    ]
+                  }
+                ],
+                "locator": "/go/tab/pipeline/history/DeployStaging",
+                "name": "DeployStaging",
+                "node_type": "PIPELINE",
+                "parents": [
+                  "UserAcceptance",
+                  "FunctionalTests",
+                  "5039b132753172a03a2de061de75b8fea9910f6e2be22b1f28f8a545350abbd9"
+                ]
+              },
+              {
+                "dependents": [
+                  "DeployProduction"
+                ],
+                "depth": 2,
+                "id": "dfa6e27cc0f89d83d5844a9fde6d2ab3732712a204264cd7189f8dd5cd4a77db",
+                "instances": [
+                  {
+                    "comment": "Get diagnostic output from run.sh",
+                    "locator": "/go/materials/value_stream_map/dfa6e27cc0f89d83d5844a9fde6d2ab3732712a204264cd7189f8dd5cd4a77db/dd154416726d3e813145777baef747f411dc1fca",
+                    "modified_time": "about 11 hours ago",
+                    "revision": "dd154416726d3e813145777baef747f411dc1fca",
+                    "user": "Kurt Yoder <ktygithub@yoderhome.com>"
+                  }
+                ],
+                "locator": "",
+                "material_names": [
+                  "gocd_source"
+                ],
+                "name": "https://github.com/greenmoss/gocd_source",
+                "node_type": "GIT",
+                "parents": []
+              }
+            ]
+          },
+          {
+            "nodes": [
+              {
+                "dependents": [],
+                "depth": 1,
+                "id": "DeployProduction",
+                "instances": [
+                  {
+                    "counter": 14,
+                    "label": "14",
+                    "locator": "/go/pipelines/value_stream_map/DeployProduction/14",
+                    "stages": [
+                      {
+                        "locator": "/go/pipelines/DeployProduction/14/Deploy/1",
+                        "name": "Deploy",
+                        "status": "Passed"
+                      },
+                      {
+                        "locator": "/go/pipelines/DeployProduction/14/Verify/1",
+                        "name": "Verify",
+                        "status": "Passed"
+                      }
+                    ]
+                  }
+                ],
+                "locator": "/go/tab/pipeline/history/DeployProduction",
+                "name": "DeployProduction",
+                "node_type": "PIPELINE",
+                "parents": [
+                  "DeployStaging",
+                  "dfa6e27cc0f89d83d5844a9fde6d2ab3732712a204264cd7189f8dd5cd4a77db"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    '}
+    headers:
+      cache-control: ['max-age=0, private, must-revalidate']
+      connection: [close]
+      content-type: [application/json; charset=utf-8]
+      date: ['Sun, 20 Mar 2016 02:57:49 GMT']
+      etag: ['"33268b43783c5e743076b178c10c925c"']
+      expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
+      set-cookie: ['JSESSIONID=1mauj7eatxi53831ez42y6sja;Path=/go;Expires=Sun, 03-Apr-2016
+          02:57:49 GMT']
+      vary: ['Accept-Encoding, User-Agent']
+      x-content-type-options: [nosniff]
+      x-frame-options: [SAMEORIGIN]
+      x-request-id: [68399817-f750-4339-ba10-7fdcea2fa216]
+      x-runtime: ['0.017000']
+      x-ua-compatible: [chrome=1]
+      x-xss-protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1
