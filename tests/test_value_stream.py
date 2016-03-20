@@ -17,6 +17,8 @@ class TestValueStream:
     def test_only_stream(self):
         '''Ensure a value stream with only upstream nodes gives us expected data.'''
         vsm = V(g, 'DeployProduction', '14')
+        assert vsm.graph.graph['pipeline'] == 'DeployProduction'
+        assert vsm.graph.graph['label'] == '14'
         assert len(vsm.graph) == 11
 
         node = vsm.graph.node['DeployStaging']
@@ -35,3 +37,16 @@ class TestValueStream:
         assert node['depth'] == 1
         assert node['node_type'] == 'GIT'
         assert node['instances'][0]['comment'] == 'Update triggerfile.txt'
+
+        assert len(vsm.graph.edges()) == 11
+        assert 'parent_of' in vsm.graph['DeployStaging']['DeployProduction']
+        assert vsm.graph['DeployStaging']['DeployProduction']['relationship'] == 'parent_of'
+        assert len(vsm.leaf_nodes()) == 6
+
+        only_pipelines = vsm.filter_by_type('PIPELINE')
+        assert len(only_pipelines) == 5
+        assert len(only_pipelines.edges()) == 5
+        assert len(vsm.leaf_nodes(only_pipelines)) == 1
+
+        two_types = vsm.filter_by_type(('GIT', 'PIPELINE'))
+        assert len(two_types) == 11
