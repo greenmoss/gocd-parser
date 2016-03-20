@@ -17,21 +17,18 @@ class ValueStream(object):
 
         logger.debug("handling value stream")
 
-        self.graph = nx.Graph()
+        self.graph = nx.DiGraph()
 
         path = '/pipelines/value_stream_map/'+pipeline_name+'/'+label+'.json'
         retrieved = url.URL( self.go_server, path)
         data = json.loads(retrieved.contents[0])
 
         # populate nodes
-        for level in data['levels']:
-            for node in level['nodes']:
-                n = Node(node['id'], node['name'])
-                self.graph.add_node(n)
+        for level_index, level_info in enumerate(data['levels']):
+            for node in level_info['nodes']:
+                id = node['id']
+                self.graph.add_node(node['id'])
+                self.graph.node[node['id']] = node
+                self.graph.node[node['id']]['level'] = level_index
 
         logger.debug('graph is %s',self.graph.nodes())
-
-class Node(object):
-    def __init__(self, id, name):
-        self.id = id
-        self.name = name
