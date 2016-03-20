@@ -22,6 +22,8 @@ class TestPipeline:
         assert p.is_passing() is True
         assert p.passing_duration is not None
         assert p.human_status == 'passing'
+        l = p.get_last_passing()
+        assert l['label'] == '13'
 
         assert p.is_stopped() is False
         assert p.is_failing() is False
@@ -42,6 +44,8 @@ class TestPipeline:
     #    assert p.stopped_duration is not None
     #    assert p.is_stopped() is True
     #    assert p.human_status == 'stopped'
+    #    l = p.get_last_passing()
+    #    assert l['label'] == '7'
 
     #    assert p.is_passing() is False
     #    assert p.is_failing() is False
@@ -56,13 +60,16 @@ class TestPipeline:
 
         assert p.name == 'AppDevelopment'
         assert p.is_passing() is True
+        assert p.passing_duration is not None
+        assert p.human_status == 'passing'
+        l = p.get_last_passing()
+        assert l['label'] == '7'
+
         assert p.is_stopped() is False
         assert p.is_failing() is False
         assert p.stopped_duration is None
         assert p.failing_duration is None
         assert p.problem_duration is None
-        assert p.passing_duration is not None
-        assert p.human_status == 'passing'
 
     @vcr.use_cassette(f+'failing.yaml')
     def test_failing(self):
@@ -70,11 +77,14 @@ class TestPipeline:
         p = P('FunctionalTests', g)
 
         assert p.name == 'FunctionalTests'
-        assert p.is_passing() is False
-        assert p.is_stopped() is False
         assert p.is_failing() is True
-        assert p.stopped_duration is None
         assert p.failing_duration is not None
         assert p.problem_duration is not None
-        assert p.passing_duration is None
         assert p.human_status == 'failing'
+        l = p.get_last_passing()
+        assert l['label'] == '6'
+
+        assert p.is_passing() is False
+        assert p.is_stopped() is False
+        assert p.stopped_duration is None
+        assert p.passing_duration is None
