@@ -17,6 +17,15 @@ class TestCctray:
     def test_failing_stream(self):
         '''Ensure cctray shows expected results.'''
         c = C(g)
+        assert c.pipelines['AppDevelopment']['build_count'] == 7
+        assert c.pipelines['AppDevelopment']['lastBuildLabel'] == '7'
+        assert c.pipelines['AppDevelopment']['stages']['UnitTest']['activity'] == 'Sleeping'
+        assert c.pipelines['AppDevelopment']['stages']['UnitTest']['lastBuildEpoch'] == 1458423047
+
+        assert c.pipelines['FunctionalTests']['lastBuildStatus'] == 'Failure'
+        assert c.pipelines['FunctionalTests']['lastBuildLabel'] == '9'
+        assert c.pipelines['FunctionalTests']['lastBuildEpoch'] == 1458437100
+
         assert c.metrics['stages'] == 18
         assert c.metrics['pipelines'] == 6
         assert c.metrics['builds'] == 53
