@@ -15,6 +15,7 @@ class ParentRecursor(object):
         self.pipeline_groups = pipeline_groups
 
         self.logger = logging.getLogger(__name__+'.ParentRecursor')
+        self.logger.info('This will be deprecated!')
 
         self.tree = tree.Tree(pipeline_name)
         self.traverse_pipeline(pipeline_name)

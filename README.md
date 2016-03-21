@@ -24,7 +24,7 @@ how to do this, refer to the scripts in the `bin` directory.
 # Testing
 
 ## Automated
-* `pip install pytest`
+* `pip install -r requirements-testing.txt`
 * `py.test`
 
 ## As a user

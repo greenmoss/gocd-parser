@@ -10,6 +10,7 @@ class Tree(object):
     def __init__(self, base_pipeline):
         self.base_pipeline = base_pipeline
         self.logger = logging.getLogger(__name__+'.Tree')
+        self.logger.info('This will be deprecated!')
 
         self.failing = []
         self.stopped = []

@@ -1,8 +1,12 @@
+import logging
+logger = logging.getLogger(__name__)
+
 class Node(object):
     '''While recursing through the value stream map tree, keep the state
     of a pipeline within this object.'''
 
     def __init__(self, pipeline_groups, tree):
+        logger.info('This will be deprecated!')
         self.pipeline_groups = pipeline_groups
         self.tree = tree
 

@@ -15,6 +15,7 @@ class Graph(object):
         self.pipeline_name = pipeline_name
 
         self.logger = logging.getLogger(__name__+'.Graph')
+        self.logger.info('This will be deprecated!')
 
         self.pipeline_groups = pipeline_groups.PipelineGroups(
                 self.go_server)
