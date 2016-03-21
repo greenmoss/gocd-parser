@@ -25,7 +25,8 @@ for thing in listdir('bin'):
     if isfile(path):
         scripts.append(path)
 
-install_requires=open(join(setup_dir, 'requirements.txt')).readlines()
+def req(file_name):
+    return open(join(setup_dir, file_name)).readlines()
 
 setup(
     name=package_name,
@@ -33,9 +34,11 @@ setup(
     description='Libraries for parsing GoCD APIs',
     author='Kurt Yoder',
     author_email='kyoder@gmail.com',
-    url='https://github.com/DataTacticsCorp/gocd-parser',
+    url='https://github.com/greenmoss/gocd-parser',
     package_dir={ package_name: 'gocd_parser' },
     packages=find_packages(),
-    install_requires=install_requires,
-    scripts=scripts
+    install_requires=req('requirements.txt'),
+    scripts=scripts,
+    tests_require=req('requirements-testing.txt'),
+    test_suite='py.test',
     )
