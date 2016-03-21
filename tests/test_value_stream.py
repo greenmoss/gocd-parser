@@ -43,10 +43,9 @@ class TestValueStream:
         assert vsm.graph['DeployStaging']['DeployProduction']['relationship'] == 'parent_of'
         assert len(vsm.leaf_nodes()) == 6
 
-        only_pipelines = vsm.filter_by_type('PIPELINE')
-        assert len(only_pipelines) == 5
-        assert len(only_pipelines.edges()) == 5
-        assert len(vsm.leaf_nodes(only_pipelines)) == 1
+        assert len(vsm.pipeline_graph) == 5
+        assert len(vsm.pipeline_graph.edges()) == 5
+        assert len(vsm.leaf_nodes(vsm.pipeline_graph)) == 1
 
         two_types = vsm.filter_by_type(('GIT', 'PIPELINE'))
         assert len(two_types) == 11

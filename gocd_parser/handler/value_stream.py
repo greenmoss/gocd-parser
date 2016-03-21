@@ -42,6 +42,9 @@ class ValueStream(object):
                 # node['dependents'] contains same connection in reverse
                 # to keep things simple, we will only set a parent relationship
 
+        # create a sub-graph with only the pipelines
+        self.pipeline_graph = self.filter_by_type('PIPELINE')
+
         logger.debug('graph nodes are %s',self.graph.nodes())
         logger.debug('graph edges %s',self.graph.edges(data='relationship'))
 

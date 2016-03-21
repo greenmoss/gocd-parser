@@ -8,7 +8,10 @@ interactions:
     method: GET
     uri: http://localhost:8153/go/api/pipelines/FunctionalTests/history/0
   response:
-    body: {string: !!python/unicode '{"pipelines":[{"build_cause":{"approver":"","material_revisions":[{"modifications":[{"email_address":null,"id":33,"modified_time":1458423067438,"user_name":"Unknown","comment":"Unknown","revision":"AppDevelopment/7/Package/1"}],"material":{"description":"AppDevelopment","fingerprint":"713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a","type":"Pipeline","id":5},"changed":true},{"modifications":[{"email_address":null,"id":31,"modified_time":1458423698000,"user_name":"Kurt
+    body: {string: !!python/unicode '{"pipelines":[{"build_cause":{"approver":"","material_revisions":[{"modifications":[{"email_address":null,"id":33,"modified_time":1458423067438,"user_name":"Unknown","comment":"Unknown","revision":"AppDevelopment/7/Package/1"}],"material":{"description":"AppDevelopment","fingerprint":"713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a","type":"Pipeline","id":5},"changed":false},{"modifications":[{"email_address":null,"id":35,"modified_time":1458438055000,"user_name":"Kurt
+        Yoder \u003Cktygithub@yoderhome.com\u003E","comment":"Update run.sh","revision":"e6bace8a6a972ff1ac80ac0191f81602103fe3d2"}],"material":{"description":"URL:
+        https://github.com/greenmoss/gocd_source, Branch: FT","fingerprint":"6ce0a4977c6f3238d0117d59229ff759ff6346c3f7481276d91c55cc80135f3d","type":"Git","id":8},"changed":true}],"trigger_forced":false,"trigger_message":"modified
+        by Kurt Yoder \u003Cktygithub@yoderhome.com\u003E"},"name":"FunctionalTests","natural_order":9.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"changes","jobs":[{"name":"deployApplications","result":"Failed","state":"Completed","id":126,"scheduled_date":1458437085073}],"can_run":true,"result":"Failed","approval_type":"success","counter":"1","id":111,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"functionalTests","approved_by":null,"jobs":[],"can_run":true,"approval_type":null,"counter":"1","id":0,"operate_permission":true,"rerun_of_counter":null,"scheduled":false}],"counter":9,"id":53,"preparing_to_schedule":false,"label":"9"},{"build_cause":{"approver":"","material_revisions":[{"modifications":[{"email_address":null,"id":33,"modified_time":1458423067438,"user_name":"Unknown","comment":"Unknown","revision":"AppDevelopment/7/Package/1"}],"material":{"description":"AppDevelopment","fingerprint":"713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a","type":"Pipeline","id":5},"changed":true},{"modifications":[{"email_address":null,"id":31,"modified_time":1458423698000,"user_name":"Kurt
         Yoder \u003Cktygithub@yoderhome.com\u003E","comment":"fail FT","revision":"f8ac58380b2f53c1f55ebef181e23c38468d54ef"}],"material":{"description":"URL:
         https://github.com/greenmoss/gocd_source, Branch: FT","fingerprint":"6ce0a4977c6f3238d0117d59229ff759ff6346c3f7481276d91c55cc80135f3d","type":"Git","id":8},"changed":false}],"trigger_forced":false,"trigger_message":"triggered
         by AppDevelopment/7/Package/1"},"name":"FunctionalTests","natural_order":8.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"changes","jobs":[{"name":"deployApplications","result":"Failed","state":"Completed","id":120,"scheduled_date":1458423091232}],"can_run":true,"result":"Failed","approval_type":"success","counter":"1","id":105,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"functionalTests","approved_by":null,"jobs":[],"can_run":true,"approval_type":null,"counter":"1","id":0,"operate_permission":true,"rerun_of_counter":null,"scheduled":false}],"counter":8,"id":49,"preparing_to_schedule":false,"label":"8"},{"build_cause":{"approver":"","material_revisions":[{"modifications":[{"email_address":null,"id":22,"modified_time":1458404255932,"user_name":"Unknown","comment":"Unknown","revision":"AppDevelopment/5/Package/1"}],"material":{"description":"AppDevelopment","fingerprint":"713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a","type":"Pipeline","id":5},"changed":false},{"modifications":[{"email_address":null,"id":31,"modified_time":1458423698000,"user_name":"Kurt
@@ -32,21 +35,21 @@ interactions:
         Yoder \u003Cktygithub@yoderhome.com\u003E","comment":"Initial commit","revision":"2e81363b8eee9627286a3531844e140ff0fb8f51"}],"material":{"description":"URL:
         https://github.com/greenmoss/gocd_source, Branch: master","fingerprint":"871ca4e80381f5d1a4d07e6259c6a65288ff4aa527a7890e5ada217471cfe7af","type":"Git","id":6},"changed":true}],"trigger_forced":false,"trigger_message":"modified
         by Kurt Yoder \u003Cktygithub@yoderhome.com\u003E"},"name":"FunctionalTests","natural_order":2.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"changes","jobs":[{"name":"deployApplications","result":"Passed","state":"Completed","id":68,"scheduled_date":1458402879661}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":63,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"functionalTests","approved_by":"changes","jobs":[{"name":"TestSuite001","result":"Passed","state":"Completed","id":69,"scheduled_date":1458402897310},{"name":"TestSuite002","result":"Passed","state":"Completed","id":70,"scheduled_date":1458402897310},{"name":"TestSuite003","result":"Passed","state":"Completed","id":71,"scheduled_date":1458402897310}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":64,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":2,"id":29,"preparing_to_schedule":false,"label":"2"},{"build_cause":{"approver":"","material_revisions":[{"modifications":[{"email_address":null,"id":2,"modified_time":1458082599508,"user_name":"Unknown","comment":"Unknown","revision":"AppDevelopment/1/Package/1"}],"material":{"description":"AppDevelopment","fingerprint":"713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a","type":"Pipeline","id":5},"changed":true}],"trigger_forced":false,"trigger_message":"triggered
-        by AppDevelopment/1/Package/1"},"name":"FunctionalTests","natural_order":1.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"anonymous","jobs":[{"name":"deployApplications","result":"Passed","state":"Completed","id":45,"scheduled_date":1458159145022}],"can_run":true,"result":"Passed","approval_type":"success","counter":"3","id":42,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"functionalTests","approved_by":"changes","jobs":[{"name":"TestSuite001","result":"Passed","state":"Completed","id":46,"scheduled_date":1458159155811},{"name":"TestSuite002","result":"Passed","state":"Completed","id":47,"scheduled_date":1458159155811},{"name":"TestSuite003","result":"Passed","state":"Completed","id":48,"scheduled_date":1458159155811}],"can_run":true,"result":"Passed","approval_type":"success","counter":"2","id":43,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":1,"id":3,"preparing_to_schedule":false,"label":"1"}],"pagination":{"offset":0,"total":8,"page_size":10}}'}
+        by AppDevelopment/1/Package/1"},"name":"FunctionalTests","natural_order":1.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"anonymous","jobs":[{"name":"deployApplications","result":"Passed","state":"Completed","id":45,"scheduled_date":1458159145022}],"can_run":true,"result":"Passed","approval_type":"success","counter":"3","id":42,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"functionalTests","approved_by":"changes","jobs":[{"name":"TestSuite001","result":"Passed","state":"Completed","id":46,"scheduled_date":1458159155811},{"name":"TestSuite002","result":"Passed","state":"Completed","id":47,"scheduled_date":1458159155811},{"name":"TestSuite003","result":"Passed","state":"Completed","id":48,"scheduled_date":1458159155811}],"can_run":true,"result":"Passed","approval_type":"success","counter":"2","id":43,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":1,"id":3,"preparing_to_schedule":false,"label":"1"}],"pagination":{"offset":0,"total":9,"page_size":10}}'}
     headers:
       cache-control: ['max-age=0, private, must-revalidate']
       connection: [close]
       content-type: [application/json; charset=utf-8]
-      date: ['Sat, 19 Mar 2016 22:02:10 GMT']
-      etag: ['"3033aacffde23c40e72e2b1d89ee656c"']
+      date: ['Sun, 20 Mar 2016 23:00:29 GMT']
+      etag: ['"a21151aaa757c617ef7b602a9095c00d"']
       expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
-      set-cookie: ['JSESSIONID=tlhk32trsspo1qduwdgtj4a4a;Path=/go;Expires=Sat, 02-Apr-2016
-          22:02:10 GMT']
+      set-cookie: ['JSESSIONID=ysljr19ig60t1vxjwoc4my3wd;Path=/go;Expires=Sun, 03-Apr-2016
+          23:00:29 GMT']
       vary: ['Accept-Encoding, User-Agent']
       x-content-type-options: [nosniff]
       x-frame-options: [SAMEORIGIN]
-      x-request-id: [8f9d5443-1f2a-43e7-af99-eaac9fb2a1d7]
-      x-runtime: ['0.026000']
+      x-request-id: [b0480e18-6e41-420b-be61-72f729270ae6]
+      x-runtime: ['0.017000']
       x-ua-compatible: [chrome=1]
       x-xss-protection: [1; mode=block]
     status: {code: 200, message: OK}
@@ -64,16 +67,50 @@ interactions:
       cache-control: ['max-age=0, private, must-revalidate']
       connection: [close]
       content-type: [application/json; charset=utf-8]
-      date: ['Sat, 19 Mar 2016 22:02:10 GMT']
+      date: ['Sun, 20 Mar 2016 23:00:29 GMT']
       etag: ['"c5e866f279ed30423c9733e7ca7bc274"']
       expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
-      set-cookie: ['JSESSIONID=2poo2axopaa61jng5rffkafb5;Path=/go;Expires=Sat, 02-Apr-2016
-          22:02:10 GMT']
+      set-cookie: ['JSESSIONID=uxo92v3sxlqqeulks890egmc;Path=/go;Expires=Sun, 03-Apr-2016
+          23:00:29 GMT']
       vary: ['Accept-Encoding, User-Agent']
       x-content-type-options: [nosniff]
       x-frame-options: [SAMEORIGIN]
-      x-request-id: [ceeda7d0-4f2c-43d9-9eaa-e335ee4c3f9a]
+      x-request-id: [525427f3-3e28-4a2f-992c-8913f55e0569]
       x-runtime: ['0.004000']
+      x-ua-compatible: [chrome=1]
+      x-xss-protection: [1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Connection: [close]
+      Host: ['localhost:8153']
+      User-Agent: [Python-urllib/2.7]
+    method: GET
+    uri: http://localhost:8153/go/api/config/pipeline_groups/
+  response:
+    body: {string: !!python/unicode '[{"pipelines":[{"stages":[{"name":"Commit"},{"name":"UnitTest"},{"name":"Package"},{"name":"FunctionalTest"},{"name":"UserAcceptance"},{"name":"DeployStaging"},{"name":"DeployProduction"}],"name":"LinearPipeline","materials":[{"description":"URL:
+        https://github.com/gocd-demo/webinar-code.git, Branch: master","fingerprint":"93c90510b74bdc41e0a15b8f2ebfd470f445089651b50238857f6b17819bb0ee","type":"Git"}],"label":"${COUNT}"}],"name":"BasicExamples"},{"pipelines":[{"stages":[{"name":"Commit"},{"name":"UnitTest"},{"name":"Package"}],"name":"AppDevelopment","materials":[{"description":"URL:
+        https://github.com/gocd-demo/webinar-code.git, Branch: master","fingerprint":"93c90510b74bdc41e0a15b8f2ebfd470f445089651b50238857f6b17819bb0ee","type":"Git"},{"description":"URL:
+        https://github.com/greenmoss/gocd_source, Branch: AD","fingerprint":"94c49bc9743cfa848dbbdab2a007c7427f4d057fb648cc888f5f6457a2c458a4","type":"Git"}],"label":"${COUNT}"},{"stages":[{"name":"Deploy"},{"name":"functionalTests"}],"name":"FunctionalTests","materials":[{"description":"AppDevelopment","fingerprint":"713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a","type":"Pipeline"},{"description":"URL:
+        https://github.com/greenmoss/gocd_source, Branch: FT","fingerprint":"6ce0a4977c6f3238d0117d59229ff759ff6346c3f7481276d91c55cc80135f3d","type":"Git"}],"label":"${COUNT}"},{"stages":[{"name":"Deploy"},{"name":"Approved"}],"name":"UserAcceptance","materials":[{"description":"AppDevelopment","fingerprint":"713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a","type":"Pipeline"},{"description":"URL:
+        https://github.com/greenmoss/gocd_source, Branch: UA","fingerprint":"555cb917a3d7845df076d382d097fca85deced49d5be55495cebc604b894a31c","type":"Git"}],"label":"${COUNT}"},{"stages":[{"name":"Deploy"},{"name":"Verify"}],"name":"DeployStaging","materials":[{"description":"UserAcceptance","fingerprint":"eef662f23116e3b49e932b34e9bbbf10ffe727ef6b61d55a51f84ae3a469f613","type":"Pipeline"},{"description":"FunctionalTests","fingerprint":"f3dec0cc10fd6f4c182ca8cde67dd50924d8e5096e94407071422a0be7a211bf","type":"Pipeline"},{"description":"URL:
+        https://github.com/greenmoss/gocd_source, Branch: DS","fingerprint":"5039b132753172a03a2de061de75b8fea9910f6e2be22b1f28f8a545350abbd9","type":"Git"}],"label":"${COUNT}"}],"name":"Development"},{"pipelines":[{"stages":[{"name":"Deploy"},{"name":"Verify"}],"name":"DeployProduction","materials":[{"description":"DeployStaging","fingerprint":"8493a8d238955a79c3cf4247ff6f72ad837b6f0756090d4598ee3aa396408c13","type":"Pipeline"},{"description":"URL:
+        https://github.com/greenmoss/gocd_source, Branch: DP","fingerprint":"dfa6e27cc0f89d83d5844a9fde6d2ab3732712a204264cd7189f8dd5cd4a77db","type":"Git"}],"label":"${COUNT}"}],"name":"Production"}]'}
+    headers:
+      cache-control: ['max-age=0, private, must-revalidate']
+      connection: [close]
+      content-type: [application/json; charset=utf-8]
+      date: ['Sun, 20 Mar 2016 23:00:29 GMT']
+      etag: ['"7a816bfb51dfc3935cf3bbb5b4b35828"']
+      expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
+      set-cookie: ['JSESSIONID=ir6ygmql7kui1go01tb637x8h;Path=/go;Expires=Sun, 03-Apr-2016
+          23:00:29 GMT']
+      vary: ['Accept-Encoding, User-Agent']
+      x-content-type-options: [nosniff]
+      x-frame-options: [SAMEORIGIN]
+      x-request-id: [d2dcdf84-c3cd-4c52-9f2f-02394815c7c9]
+      x-runtime: ['0.005000']
       x-ua-compatible: [chrome=1]
       x-xss-protection: [1; mode=block]
     status: {code: 200, message: OK}

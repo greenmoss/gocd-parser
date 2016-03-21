@@ -43,16 +43,16 @@ interactions:
       cache-control: ['max-age=0, private, must-revalidate']
       connection: [close]
       content-type: [application/json; charset=utf-8]
-      date: ['Sat, 19 Mar 2016 21:57:38 GMT']
+      date: ['Sun, 20 Mar 2016 23:00:29 GMT']
       etag: ['"9abdf74beef8b57e95567ec9637bf640"']
       expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
-      set-cookie: ['JSESSIONID=1qk3hbriepyw01of5pzcsbcrno;Path=/go;Expires=Sat, 02-Apr-2016
-          21:57:38 GMT']
+      set-cookie: ['JSESSIONID=7g2alilugxwc1d8pzjc1nucdx;Path=/go;Expires=Sun, 03-Apr-2016
+          23:00:29 GMT']
       vary: ['Accept-Encoding, User-Agent']
       x-content-type-options: [nosniff]
       x-frame-options: [SAMEORIGIN]
-      x-request-id: [199c2685-9590-44de-9304-97a7c57a7856]
-      x-runtime: ['0.016000']
+      x-request-id: [f79bc0a1-2317-4540-a375-a7ac68c190bd]
+      x-runtime: ['0.017000']
       x-ua-compatible: [chrome=1]
       x-xss-protection: [1; mode=block]
     status: {code: 200, message: OK}
@@ -70,16 +70,50 @@ interactions:
       cache-control: ['max-age=0, private, must-revalidate']
       connection: [close]
       content-type: [application/json; charset=utf-8]
-      date: ['Sat, 19 Mar 2016 21:57:38 GMT']
+      date: ['Sun, 20 Mar 2016 23:00:29 GMT']
       etag: ['"c5e866f279ed30423c9733e7ca7bc274"']
       expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
-      set-cookie: ['JSESSIONID=uprhpyyitt7a1nhxa6byym0mu;Path=/go;Expires=Sat, 02-Apr-2016
-          21:57:38 GMT']
+      set-cookie: ['JSESSIONID=1459oc2h8av0c1m2gwyqj5b7wv;Path=/go;Expires=Sun, 03-Apr-2016
+          23:00:29 GMT']
       vary: ['Accept-Encoding, User-Agent']
       x-content-type-options: [nosniff]
       x-frame-options: [SAMEORIGIN]
-      x-request-id: [45f6da47-790b-4309-8be8-def781d375f0]
+      x-request-id: [3dfd7c45-1ae7-4461-a9fb-949e6d47d0a3]
       x-runtime: ['0.003000']
+      x-ua-compatible: [chrome=1]
+      x-xss-protection: [1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Connection: [close]
+      Host: ['localhost:8153']
+      User-Agent: [Python-urllib/2.7]
+    method: GET
+    uri: http://localhost:8153/go/api/config/pipeline_groups/
+  response:
+    body: {string: !!python/unicode '[{"pipelines":[{"stages":[{"name":"Commit"},{"name":"UnitTest"},{"name":"Package"},{"name":"FunctionalTest"},{"name":"UserAcceptance"},{"name":"DeployStaging"},{"name":"DeployProduction"}],"name":"LinearPipeline","materials":[{"description":"URL:
+        https://github.com/gocd-demo/webinar-code.git, Branch: master","fingerprint":"93c90510b74bdc41e0a15b8f2ebfd470f445089651b50238857f6b17819bb0ee","type":"Git"}],"label":"${COUNT}"}],"name":"BasicExamples"},{"pipelines":[{"stages":[{"name":"Commit"},{"name":"UnitTest"},{"name":"Package"}],"name":"AppDevelopment","materials":[{"description":"URL:
+        https://github.com/gocd-demo/webinar-code.git, Branch: master","fingerprint":"93c90510b74bdc41e0a15b8f2ebfd470f445089651b50238857f6b17819bb0ee","type":"Git"},{"description":"URL:
+        https://github.com/greenmoss/gocd_source, Branch: AD","fingerprint":"94c49bc9743cfa848dbbdab2a007c7427f4d057fb648cc888f5f6457a2c458a4","type":"Git"}],"label":"${COUNT}"},{"stages":[{"name":"Deploy"},{"name":"functionalTests"}],"name":"FunctionalTests","materials":[{"description":"AppDevelopment","fingerprint":"713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a","type":"Pipeline"},{"description":"URL:
+        https://github.com/greenmoss/gocd_source, Branch: FT","fingerprint":"6ce0a4977c6f3238d0117d59229ff759ff6346c3f7481276d91c55cc80135f3d","type":"Git"}],"label":"${COUNT}"},{"stages":[{"name":"Deploy"},{"name":"Approved"}],"name":"UserAcceptance","materials":[{"description":"AppDevelopment","fingerprint":"713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a","type":"Pipeline"},{"description":"URL:
+        https://github.com/greenmoss/gocd_source, Branch: UA","fingerprint":"555cb917a3d7845df076d382d097fca85deced49d5be55495cebc604b894a31c","type":"Git"}],"label":"${COUNT}"},{"stages":[{"name":"Deploy"},{"name":"Verify"}],"name":"DeployStaging","materials":[{"description":"UserAcceptance","fingerprint":"eef662f23116e3b49e932b34e9bbbf10ffe727ef6b61d55a51f84ae3a469f613","type":"Pipeline"},{"description":"FunctionalTests","fingerprint":"f3dec0cc10fd6f4c182ca8cde67dd50924d8e5096e94407071422a0be7a211bf","type":"Pipeline"},{"description":"URL:
+        https://github.com/greenmoss/gocd_source, Branch: DS","fingerprint":"5039b132753172a03a2de061de75b8fea9910f6e2be22b1f28f8a545350abbd9","type":"Git"}],"label":"${COUNT}"}],"name":"Development"},{"pipelines":[{"stages":[{"name":"Deploy"},{"name":"Verify"}],"name":"DeployProduction","materials":[{"description":"DeployStaging","fingerprint":"8493a8d238955a79c3cf4247ff6f72ad837b6f0756090d4598ee3aa396408c13","type":"Pipeline"},{"description":"URL:
+        https://github.com/greenmoss/gocd_source, Branch: DP","fingerprint":"dfa6e27cc0f89d83d5844a9fde6d2ab3732712a204264cd7189f8dd5cd4a77db","type":"Git"}],"label":"${COUNT}"}],"name":"Production"}]'}
+    headers:
+      cache-control: ['max-age=0, private, must-revalidate']
+      connection: [close]
+      content-type: [application/json; charset=utf-8]
+      date: ['Sun, 20 Mar 2016 23:00:29 GMT']
+      etag: ['"7a816bfb51dfc3935cf3bbb5b4b35828"']
+      expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
+      set-cookie: ['JSESSIONID=4rmy7c0kitm11fubkqm1glyim;Path=/go;Expires=Sun, 03-Apr-2016
+          23:00:29 GMT']
+      vary: ['Accept-Encoding, User-Agent']
+      x-content-type-options: [nosniff]
+      x-frame-options: [SAMEORIGIN]
+      x-request-id: [549fb2a3-a395-478c-bb87-65775b3ec7ea]
+      x-runtime: ['0.005000']
       x-ua-compatible: [chrome=1]
       x-xss-protection: [1; mode=block]
     status: {code: 200, message: OK}
