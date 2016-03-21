@@ -25,6 +25,7 @@ class TestStreamStatus:
         external = status.dump()
         assert external['base_name'] == 'DeployProduction'
         assert external['schema_version'] == '1.1.0'
+        assert external['status'] == 'blocked'
         assert external['base_status']['status'] == 'passing'
         assert external['base_status']['paths'] == {'passing': u'pipelines/DeployProduction/14/Deploy/1', 'failing': []}
         assert external['base_status']['seconds'] is not None

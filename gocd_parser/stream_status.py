@@ -4,9 +4,9 @@ logger = logging.getLogger(__name__)
 import networkx as nx
 
 import gocd_parser.pipeline
-import gocd_parser.value_stream
 import gocd_parser.handler.cctray
 from gocd_parser.handler import pipeline_groups
+from gocd_parser.handler import value_stream
 
 class StreamStatus(object):
     '''Get the status of a pipeline's value stream: passing, blocked, or
@@ -21,17 +21,30 @@ class StreamStatus(object):
             label = self.pipeline.get_last_passing()['label']
         self.label = label
 
-        self.value_stream = gocd_parser.handler.value_stream.ValueStream(
+        self.value_stream = value_stream.ValueStream(
                 self.go_server, self.pipeline.name, self.label)
         self.ancestors = nx.ancestors(self.value_stream.pipeline_graph,
                 self.pipeline.name)
 
         self.cctray = gocd_parser.handler.cctray.Cctray(go_server)
         self.pipeline_groups = pipeline_groups.PipelineGroups(go_server)
+        self.pipeline.set_from_groups_handler(self.pipeline_groups)
+
+        self.blockers = {}
+        for blocker_name in self.get_blocker_names():
+            logger.debug('getting blocker info for %s', blocker_name)
+            pipeline = gocd_parser.pipeline.Pipeline(blocker_name, self.go_server)
+            pipeline.set_from_groups_handler(self.pipeline_groups)
+            self.blockers[blocker_name] = pipeline
+
+        self.status = 'passing'
+        if len(self.blockers) > 0:
+            self.status = 'blocked'
+        if self.pipeline.is_failing():
+            self.status = 'failing'
 
     def get_pipeline_dump_info(self, pipeline):
         '''Set information that will be needed in dump() for this pipeline.'''
-        pipeline.set_from_groups_handler(self.pipeline_groups)
         return {
                 'status': pipeline.human_status,
                 'paths': pipeline.get_url_paths(),
@@ -64,12 +77,11 @@ class StreamStatus(object):
                 'base_name': self.pipeline.name,
                 'schema_version': '1.1.0',
                 'base_status': self.get_pipeline_dump_info(self.pipeline),
+                'status': self.status,
                 'blocking': {},
                 }
 
-        for blocker_name in self.get_blocker_names():
-            logger.debug('getting blocker info for %s', blocker_name)
-            pipeline = gocd_parser.pipeline.Pipeline(blocker_name, self.go_server)
+        for blocker_name, pipeline in self.blockers.items():
             out['blocking'][blocker_name] = self.get_pipeline_dump_info(pipeline)
 
         return out

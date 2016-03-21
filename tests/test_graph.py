@@ -26,6 +26,7 @@ class TestCompare:
         logging.debug(status)
         assert status['base_name'] == 'DeployProduction'
         assert status['schema_version'] == '1.1.0'
+        assert status['status'] == 'blocked'
         assert status['base_status']['status'] == 'passing'
         assert status['base_status']['paths'] == {'passing': u'pipelines/DeployProduction/14/Deploy/1', 'failing': []}
         assert status['base_status']['seconds'] is not None
@@ -54,6 +55,7 @@ class TestCompare:
         logging.debug(status)
         assert status['base_name'] == 'UserAcceptance'
         assert status['schema_version'] == '1.1.0'
+        assert status['status'] == 'passing'
         assert status['base_status']['status'] == 'passing'
         assert status['base_status']['paths'] == {'passing': u'pipelines/UserAcceptance/6/Deploy/1', 'failing': []}
         assert status['base_status']['seconds'] is not None
