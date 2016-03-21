@@ -108,10 +108,13 @@ class StreamStatus(object):
                                 }
                     pipelines[name]['run_count'] += 1
 
-        for committer_id, committer_info in committers.items():
-            info['changes']['committers'].append(committer_info)
-        for pipeline_name, pipeline_info in pipelines.items():
-            info['changes']['pipelines'].append(pipeline_info)
+        info['changes']['committers'] = sorted(
+                committers.values(), key = lambda committer:
+                committer['first_commit_epoch'])
+
+        info['changes']['pipelines'] = sorted(
+                pipelines.values(), key = lambda pipeline:
+                pipeline['name'])
 
         return info
 
