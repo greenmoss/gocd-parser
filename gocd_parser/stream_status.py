@@ -29,12 +29,14 @@ class StreamStatus(object):
         self.cctray = gocd_parser.handler.cctray.Cctray(go_server)
         self.pipeline_groups = pipeline_groups.PipelineGroups(go_server)
         self.pipeline.set_from_groups_handler(self.pipeline_groups)
+        self.pipeline.set_failing_comparison()
 
         self.blockers = {}
         for blocker_name in self.get_blocker_names():
             logger.debug('getting blocker info for %s', blocker_name)
             pipeline = gocd_parser.pipeline.Pipeline(blocker_name, self.go_server)
             pipeline.set_from_groups_handler(self.pipeline_groups)
+            pipeline.set_failing_comparison()
             self.blockers[blocker_name] = pipeline
 
         self.status = 'passing'
@@ -45,7 +47,7 @@ class StreamStatus(object):
 
     def get_pipeline_dump_info(self, pipeline):
         '''Set information that will be needed in dump() for this pipeline.'''
-        return {
+        info = {
                 'status': pipeline.human_status,
                 'paths': pipeline.get_url_paths(),
                 'seconds': pipeline.get_duration(in_seconds=True),
@@ -54,6 +56,48 @@ class StreamStatus(object):
                 'ancestor_groups': self.get_ancestor_groups(pipeline.name),
                 'human_time': pipeline.get_duration(),
                 }
+
+        if not pipeline.is_failing(): return info
+
+        info['changes'] = {'committers': [], 'pipelines': []}
+        logger.debug('pipeline %s with changes: %s', pipeline.name, info)
+
+        committers = {}
+        pipelines = {}
+
+        for material in pipeline.failing_comparison.materials:
+            if material.type == 'git':
+                for change in material.changes:
+                    name = change.modifier_name
+                    email = change.modifier_email
+                    id = name+'|'+email
+                    time = change.modifier_time
+                    if not committers.has_key(id):
+                        committers[id] = {
+                                'name': name,
+                                'email': email,
+                                'commit_count': 0,
+                                }
+                    committers[id]['commit_count'] += 1
+
+            else:
+                for change in material.changes:
+                    name = material.name
+                    label = change.label
+                    time = change.completed
+                    if not pipelines.has_key(name):
+                        pipelines[name] = {
+                                'name': name,
+                                'run_count': 0,
+                                }
+                    pipelines[name]['run_count'] += 1
+
+        for committer_id, committer_info in committers.items():
+            info['changes']['committers'].append(committer_info)
+        for pipeline_name, pipeline_info in pipelines.items():
+            info['changes']['pipelines'].append(pipeline_info)
+
+        return info
 
     def get_blocker_names(self):
         '''Look through cctray for any failing pipelines that are my ancestors.'''

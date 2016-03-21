@@ -40,3 +40,8 @@ class TestStreamStatus:
         assert external['blocking']['FunctionalTests']['passing_label'] == '6'
         assert external['blocking']['FunctionalTests']['ancestor_groups'] == [u'Development']
         assert external['blocking']['FunctionalTests']['human_time'] is not None
+        assert external['blocking']['FunctionalTests']['changes']['committers'][0]['name'] == 'Kurt Yoder'
+        assert external['blocking']['FunctionalTests']['changes']['committers'][0]['email'] == 'ktygithub@yoderhome.com'
+        assert external['blocking']['FunctionalTests']['changes']['committers'][0]['commit_count'] == 4
+        assert external['blocking']['FunctionalTests']['changes']['pipelines'][0]['name'] == 'AppDevelopment'
+        assert external['blocking']['FunctionalTests']['changes']['pipelines'][0]['run_count'] == 1
