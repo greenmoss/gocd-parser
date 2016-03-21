@@ -3,6 +3,7 @@ logger = logging.getLogger(__name__)
 
 from gocd_parser.handler import history, status
 from gocd_parser.pipeline import stage
+import gocd_parser.handler.compare
 
 class Pipeline(object):
     def __init__(self, name, go_server):
@@ -21,6 +22,10 @@ class Pipeline(object):
         self.parent_names = self.history.get_parent_names(
                 self.history.first)
         logger.debug('parents: %s'%self.parent_names)
+
+        # if we fail, we can invoke set_failing_comparison to populate this
+        # since it requires another REST call, we don't do it automatically
+        self.failing_comparison = None
 
     def set_history(self):
         all_history = history.HistoryPager(self.go_server, self.name)
@@ -159,6 +164,17 @@ class Pipeline(object):
 
     def get_last_passing(self):
         return(self.history.last_passing)
+
+    def set_failing_comparison(self):
+        '''Get all code and pipeline changes since the last passing history.'''
+        if not self.is_failing(): return
+
+        older = self.get_last_passing()['label']
+        newer = self.get_last_completed()['label']
+        logger.debug('finding changes between %s and %s', older, newer )
+
+        self.failing_comparison = gocd_parser.handler.compare.Compare(
+                self.go_server, self.name, older, newer)
 
     def is_stopped(self):
         return(self.human_status == 'stopped')

@@ -25,12 +25,14 @@ class TestPipeline:
         paths = p.get_url_paths()
         seconds = p.get_duration(in_seconds=True)
         human_time = p.get_duration()
+        p.set_failing_comparison()
 
         assert p.name == 'DeployProduction'
         assert p.is_passing() is True
         assert p.passing_duration is not None
         assert p.human_status == 'passing'
         assert l['label'] == '13'
+        assert p.failing_comparison is None
 
         assert p.is_stopped() is False
         assert p.is_failing() is False
@@ -52,12 +54,14 @@ class TestPipeline:
     #    paths = p.get_url_paths()
     #    seconds = p.get_duration(in_seconds=True)
     #    human_time = p.get_duration()
+    #    p.set_failing_comparison()
 
     #    assert p.name == 'UserAcceptance'
     #    assert p.stopped_duration is not None
     #    assert p.is_stopped() is True
     #    assert p.human_status == 'stopped'
     #    assert l['label'] == '7'
+    #    assert p.failing_comparison is None
 
     #    assert p.is_passing() is False
     #    assert p.is_failing() is False
@@ -75,6 +79,7 @@ class TestPipeline:
         paths = p.get_url_paths()
         seconds = p.get_duration(in_seconds=True)
         human_time = p.get_duration()
+        p.set_failing_comparison()
 
         assert p.name == 'AppDevelopment'
         assert p.is_passing() is True
@@ -87,6 +92,7 @@ class TestPipeline:
         assert paths['passing'] == 'pipelines/AppDevelopment/7/Commit/1'
         assert seconds >= 0
         assert type(human_time) == str
+        assert p.failing_comparison is None
 
         assert p.is_stopped() is False
         assert p.is_failing() is False
@@ -104,6 +110,7 @@ class TestPipeline:
         paths = p.get_url_paths()
         seconds = p.get_duration(in_seconds=True)
         human_time = p.get_duration()
+        p.set_failing_comparison()
 
         assert p.name == 'FunctionalTests'
         assert p.is_failing() is True
@@ -111,6 +118,13 @@ class TestPipeline:
         assert p.problem_duration is not None
         assert p.human_status == 'failing'
         assert l['label'] == '6'
+
+        fc = p.failing_comparison
+        assert fc is not None
+        assert len(fc.materials) == 3
+        assert fc.materials[0].type == 'git'
+        assert len(fc.materials[0].changes) == 2
+        assert len(fc.materials[2].changes) == 1
 
         assert p.is_passing() is False
         assert p.is_stopped() is False
