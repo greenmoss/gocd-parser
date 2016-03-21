@@ -72,13 +72,29 @@ class StreamStatus(object):
                     email = change.modifier_email
                     id = name+'|'+email
                     time = change.modifier_time
+                    message = change.comment
+                    revision = change.revision
+                    repo = material.name
+                    branch = material.branch
                     if not committers.has_key(id):
                         committers[id] = {
                                 'name': name,
                                 'email': email,
                                 'commit_count': 0,
+                                'first_commit_epoch': time,
+                                'first_commit_message': message,
+                                'first_commit_revision': revision,
+                                'first_commit_repo': repo,
+                                'first_commit_branch': branch,
                                 }
-                    committers[id]['commit_count'] += 1
+                    person = committers[id]
+                    person['commit_count'] += 1
+                    if time < person['first_commit_epoch']:
+                        person['first_commit_epoch'] = time
+                        person['first_commit_message'] = message
+                        person['first_commit_revision'] = revision
+                        person['first_commit_repo'] = repo
+                        person['first_commit_branch'] = branch
 
             else:
                 for change in material.changes:

@@ -43,5 +43,10 @@ class TestStreamStatus:
         assert external['blocking']['FunctionalTests']['changes']['committers'][0]['name'] == 'Kurt Yoder'
         assert external['blocking']['FunctionalTests']['changes']['committers'][0]['email'] == 'ktygithub@yoderhome.com'
         assert external['blocking']['FunctionalTests']['changes']['committers'][0]['commit_count'] == 4
+        assert external['blocking']['FunctionalTests']['changes']['committers'][0]['first_commit_epoch'] == 1458423314
+        assert external['blocking']['FunctionalTests']['changes']['committers'][0]['first_commit_message'] == 'Fail the AD branch'
+        assert external['blocking']['FunctionalTests']['changes']['committers'][0]['first_commit_revision'] == 'ef7b1cb587f01646ecd3022150b0ba4b5dbddd58'
+        assert external['blocking']['FunctionalTests']['changes']['committers'][0]['first_commit_repo'] == 'https://github.com/greenmoss/gocd_source'
+        assert external['blocking']['FunctionalTests']['changes']['committers'][0]['first_commit_branch'] == 'AD'
         assert external['blocking']['FunctionalTests']['changes']['pipelines'][0]['name'] == 'AppDevelopment'
         assert external['blocking']['FunctionalTests']['changes']['pipelines'][0]['run_count'] == 1
