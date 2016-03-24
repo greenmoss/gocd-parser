@@ -1,0 +1,34 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Basic Y2hlc3RlcjpiYWRnZXI=]
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.9.1]
+    method: GET
+    uri: http://localhost:8153/go/api/pipelines/AppDevelopment/status/
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAKtWKkgsLU5NUbJKS8wpTtVRKk7OSE0pzUlMyklVsiopKgUKQVQ4VSpZKSnBeM4g
+        EiKQk5+cDTegFgDjYEoAUQAAAA==
+    headers:
+      cache-control: ['max-age=0, private, must-revalidate']
+      content-encoding: [gzip]
+      content-type: [application/json; charset=utf-8]
+      date: ['Thu, 24 Mar 2016 20:04:29 GMT']
+      etag: ['"c5e866f279ed30423c9733e7ca7bc274--gzip"']
+      expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
+      set-cookie: ['JSESSIONID=b22taxgg659z5e39ck9dfnrj;Path=/go;Expires=Thu, 07-Apr-2016
+          20:04:29 GMT']
+      vary: ['Accept-Encoding, User-Agent']
+      x-content-type-options: [nosniff]
+      x-frame-options: [SAMEORIGIN]
+      x-request-id: [2c4ea43e-dacc-44cc-bc12-ed114aed8183]
+      x-runtime: ['0.008000']
+      x-ua-compatible: [chrome=1]
+      x-xss-protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1

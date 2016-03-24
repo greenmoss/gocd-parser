@@ -48,10 +48,11 @@ class GitChange(CommonChange):
 
         self.set_revision()
 
-        lines = self.text_from_class('modified_by').splitlines()
-        assert len(lines) == 2
-        (self.modifier_name, self.modifier_email) = parseaddr(lines[0])
-        self.modifier_time = self.to_epoch(lines[1])
+        # Kurt Yoder <kurt@example.xyz>                                        2016-03-19T21:41:10+00:00
+        parts = self.text_from_class('modified_by').split()
+        assert len(parts) > 2
+        self.modifier_time = self.to_epoch(parts.pop())
+        (self.modifier_name, self.modifier_email) = parseaddr(' '.join(parts))
 
         self.comment = self.text_from_class('comment')
 

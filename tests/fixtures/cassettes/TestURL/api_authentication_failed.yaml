@@ -1,0 +1,48 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Basic Y2hlc3RlcjpiYWRnZXIx]
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.9.1]
+    method: GET
+    uri: http://localhost:8153/go/api/pipelines/AppDevelopment/status/
+  response:
+    body: {string: !!python/unicode '<html>
+
+        <head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+        <title>Error 401 Invalid credentials. Either your username and password are
+        incorrect, or there is a problem with your browser cookies. Please check with
+        your administrator.</title>
+
+        </head>
+
+        <body><h2>HTTP ERROR 401</h2>
+
+        <p>Problem accessing /go/api/pipelines/AppDevelopment/status/. Reason:
+
+        <pre>    Invalid credentials. Either your username and password are incorrect,
+        or there is a problem with your browser cookies. Please check with your administrator.</pre></p><hr><i><small>Powered
+        by Jetty://</small></i><hr/>
+
+
+        </body>
+
+        </html>
+
+        '}
+    headers:
+      cache-control: ['must-revalidate,no-cache,no-store']
+      content-length: ['617']
+      content-type: [text/html; charset=ISO-8859-1]
+      date: ['Thu, 24 Mar 2016 20:04:29 GMT']
+      www-authenticate: [Basic realm="GoCD"]
+    status: {code: 401, message: 'Invalid credentials. Either your username and password
+        are incorrect, or there is a problem with your browser cookies. Please check
+        with your administrator.'}
+version: 1
