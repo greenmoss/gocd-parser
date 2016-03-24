@@ -1,0 +1,145 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Basic Y2hlc3RlcjpiYWRnZXI=]
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.9.1]
+    method: GET
+    uri: http://localhost:8153/go/cctray.xml
+  response:
+    body: {string: !!python/unicode "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n\
+        <Projects>\n  <Project name=\"LinearPipeline :: Commit\" activity=\"Sleeping\"\
+        \ lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"2016-03-16T18:53:56\"\
+        \ webUrl=\"http://localhost:8153/go/pipelines/LinearPipeline/2/Commit/1\"\
+        \ />\n  <Project name=\"LinearPipeline :: Commit :: FirstJob\" activity=\"\
+        Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"\
+        2016-03-16T18:53:56\" webUrl=\"http://localhost:8153/go/tab/build/detail/LinearPipeline/2/Commit/1/FirstJob\"\
+        \ />\n  <Project name=\"LinearPipeline :: UnitTest\" activity=\"Sleeping\"\
+        \ lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"2016-03-16T18:54:15\"\
+        \ webUrl=\"http://localhost:8153/go/pipelines/LinearPipeline/2/UnitTest/1\"\
+        \ />\n  <Project name=\"LinearPipeline :: UnitTest :: FirstJob\" activity=\"\
+        Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"\
+        2016-03-16T18:54:15\" webUrl=\"http://localhost:8153/go/tab/build/detail/LinearPipeline/2/UnitTest/1/FirstJob\"\
+        \ />\n  <Project name=\"LinearPipeline :: Package\" activity=\"Sleeping\"\
+        \ lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"2016-03-16T18:54:35\"\
+        \ webUrl=\"http://localhost:8153/go/pipelines/LinearPipeline/2/Package/1\"\
+        \ />\n  <Project name=\"LinearPipeline :: Package :: FirstJob\" activity=\"\
+        Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"\
+        2016-03-16T18:54:35\" webUrl=\"http://localhost:8153/go/tab/build/detail/LinearPipeline/2/Package/1/FirstJob\"\
+        \ />\n  <Project name=\"LinearPipeline :: FunctionalTest\" activity=\"Sleeping\"\
+        \ lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"2016-03-16T18:54:55\"\
+        \ webUrl=\"http://localhost:8153/go/pipelines/LinearPipeline/2/FunctionalTest/1\"\
+        \ />\n  <Project name=\"LinearPipeline :: FunctionalTest :: FirstJob\" activity=\"\
+        Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"\
+        2016-03-16T18:54:55\" webUrl=\"http://localhost:8153/go/tab/build/detail/LinearPipeline/2/FunctionalTest/1/FirstJob\"\
+        \ />\n  <Project name=\"LinearPipeline :: UserAcceptance\" activity=\"Sleeping\"\
+        \ lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"2016-03-16T18:55:15\"\
+        \ webUrl=\"http://localhost:8153/go/pipelines/LinearPipeline/2/UserAcceptance/1\"\
+        \ />\n  <Project name=\"LinearPipeline :: UserAcceptance :: FirstJob\" activity=\"\
+        Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"\
+        2016-03-16T18:55:15\" webUrl=\"http://localhost:8153/go/tab/build/detail/LinearPipeline/2/UserAcceptance/1/FirstJob\"\
+        \ />\n  <Project name=\"LinearPipeline :: DeployStaging\" activity=\"Sleeping\"\
+        \ lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"2016-03-16T18:55:39\"\
+        \ webUrl=\"http://localhost:8153/go/pipelines/LinearPipeline/2/DeployStaging/1\"\
+        \ />\n  <Project name=\"LinearPipeline :: DeployStaging :: FirstJob\" activity=\"\
+        Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"\
+        2016-03-16T18:55:39\" webUrl=\"http://localhost:8153/go/tab/build/detail/LinearPipeline/2/DeployStaging/1/FirstJob\"\
+        \ />\n  <Project name=\"LinearPipeline :: DeployProduction\" activity=\"Sleeping\"\
+        \ lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"2016-03-16T18:55:56\"\
+        \ webUrl=\"http://localhost:8153/go/pipelines/LinearPipeline/2/DeployProduction/1\"\
+        \ />\n  <Project name=\"LinearPipeline :: DeployProduction :: FirstJob\" activity=\"\
+        Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"\
+        2016-03-16T18:55:56\" webUrl=\"http://localhost:8153/go/tab/build/detail/LinearPipeline/2/DeployProduction/1/FirstJob\"\
+        \ />\n  <Project name=\"AppDevelopment :: Commit\" activity=\"Sleeping\" lastBuildStatus=\"\
+        Success\" lastBuildLabel=\"7\" lastBuildTime=\"2016-03-19T21:30:29\" webUrl=\"\
+        http://localhost:8153/go/pipelines/AppDevelopment/7/Commit/1\" />\n  <Project\
+        \ name=\"AppDevelopment :: Commit :: FirstJob\" activity=\"Sleeping\" lastBuildStatus=\"\
+        Success\" lastBuildLabel=\"7\" lastBuildTime=\"2016-03-19T21:30:29\" webUrl=\"\
+        http://localhost:8153/go/tab/build/detail/AppDevelopment/7/Commit/1/FirstJob\"\
+        \ />\n  <Project name=\"AppDevelopment :: UnitTest\" activity=\"Sleeping\"\
+        \ lastBuildStatus=\"Success\" lastBuildLabel=\"7\" lastBuildTime=\"2016-03-19T21:30:47\"\
+        \ webUrl=\"http://localhost:8153/go/pipelines/AppDevelopment/7/UnitTest/1\"\
+        \ />\n  <Project name=\"AppDevelopment :: UnitTest :: FirstJob\" activity=\"\
+        Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"7\" lastBuildTime=\"\
+        2016-03-19T21:30:47\" webUrl=\"http://localhost:8153/go/tab/build/detail/AppDevelopment/7/UnitTest/1/FirstJob\"\
+        \ />\n  <Project name=\"AppDevelopment :: Package\" activity=\"Sleeping\"\
+        \ lastBuildStatus=\"Success\" lastBuildLabel=\"7 :: 3\" lastBuildTime=\"2016-03-24T21:24:30\"\
+        \ webUrl=\"http://localhost:8153/go/pipelines/AppDevelopment/7/Package/3\"\
+        \ />\n  <Project name=\"AppDevelopment :: Package :: FirstJob\" activity=\"\
+        Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"7 :: 3\" lastBuildTime=\"\
+        2016-03-24T21:24:30\" webUrl=\"http://localhost:8153/go/tab/build/detail/AppDevelopment/7/Package/3/FirstJob\"\
+        \ />\n  <Project name=\"FunctionalTests :: Deploy\" activity=\"Sleeping\"\
+        \ lastBuildStatus=\"Failure\" lastBuildLabel=\"10\" lastBuildTime=\"2016-03-24T21:26:02\"\
+        \ webUrl=\"http://localhost:8153/go/pipelines/FunctionalTests/10/Deploy/1\"\
+        ><messages><message text=\"Kurt Yoder &lt;ktygithub@yoderhome.com&gt;\" kind=\"\
+        Breakers\" /></messages></Project>\n  <Project name=\"FunctionalTests :: Deploy\
+        \ :: deployApplications\" activity=\"Sleeping\" lastBuildStatus=\"Failure\"\
+        \ lastBuildLabel=\"10\" lastBuildTime=\"2016-03-24T21:26:02\" webUrl=\"http://localhost:8153/go/tab/build/detail/FunctionalTests/10/Deploy/1/deployApplications\"\
+        ><messages><message text=\"Kurt Yoder &lt;ktygithub@yoderhome.com&gt;\" kind=\"\
+        Breakers\" /></messages></Project>\n  <Project name=\"FunctionalTests :: functionalTests\"\
+        \ activity=\"Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"6\" lastBuildTime=\"\
+        2016-03-19T16:18:48\" webUrl=\"http://localhost:8153/go/pipelines/FunctionalTests/6/functionalTests/1\"\
+        \ />\n  <Project name=\"FunctionalTests :: functionalTests :: TestSuite001\"\
+        \ activity=\"Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"6\" lastBuildTime=\"\
+        2016-03-19T16:18:45\" webUrl=\"http://localhost:8153/go/tab/build/detail/FunctionalTests/6/functionalTests/1/TestSuite001\"\
+        \ />\n  <Project name=\"FunctionalTests :: functionalTests :: TestSuite002\"\
+        \ activity=\"Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"6\" lastBuildTime=\"\
+        2016-03-19T16:18:46\" webUrl=\"http://localhost:8153/go/tab/build/detail/FunctionalTests/6/functionalTests/1/TestSuite002\"\
+        \ />\n  <Project name=\"FunctionalTests :: functionalTests :: TestSuite003\"\
+        \ activity=\"Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"6\" lastBuildTime=\"\
+        2016-03-19T16:18:48\" webUrl=\"http://localhost:8153/go/tab/build/detail/FunctionalTests/6/functionalTests/1/TestSuite003\"\
+        \ />\n  <Project name=\"UserAcceptance :: Deploy\" activity=\"Sleeping\" lastBuildStatus=\"\
+        Success\" lastBuildLabel=\"7\" lastBuildTime=\"2016-03-24T21:26:08\" webUrl=\"\
+        http://localhost:8153/go/pipelines/UserAcceptance/7/Deploy/1\" />\n  <Project\
+        \ name=\"UserAcceptance :: Deploy :: deployApplications\" activity=\"Sleeping\"\
+        \ lastBuildStatus=\"Success\" lastBuildLabel=\"7\" lastBuildTime=\"2016-03-24T21:26:08\"\
+        \ webUrl=\"http://localhost:8153/go/tab/build/detail/UserAcceptance/7/Deploy/1/deployApplications\"\
+        \ />\n  <Project name=\"UserAcceptance :: Approved\" activity=\"Sleeping\"\
+        \ lastBuildStatus=\"Success\" lastBuildLabel=\"6\" lastBuildTime=\"2016-03-19T23:11:09\"\
+        \ webUrl=\"http://localhost:8153/go/pipelines/UserAcceptance/6/Approved/1\"\
+        \ />\n  <Project name=\"UserAcceptance :: Approved :: Approve\" activity=\"\
+        Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"6\" lastBuildTime=\"\
+        2016-03-19T23:11:09\" webUrl=\"http://localhost:8153/go/tab/build/detail/UserAcceptance/6/Approved/1/Approve\"\
+        \ />\n  <Project name=\"DeployStaging :: Deploy\" activity=\"Sleeping\" lastBuildStatus=\"\
+        Success\" lastBuildLabel=\"15\" lastBuildTime=\"2016-03-19T16:24:17\" webUrl=\"\
+        http://localhost:8153/go/pipelines/DeployStaging/15/Deploy/1\" />\n  <Project\
+        \ name=\"DeployStaging :: Deploy :: DeployApplication\" activity=\"Sleeping\"\
+        \ lastBuildStatus=\"Success\" lastBuildLabel=\"15\" lastBuildTime=\"2016-03-19T16:24:17\"\
+        \ webUrl=\"http://localhost:8153/go/tab/build/detail/DeployStaging/15/Deploy/1/DeployApplication\"\
+        \ />\n  <Project name=\"DeployStaging :: Verify\" activity=\"Sleeping\" lastBuildStatus=\"\
+        Success\" lastBuildLabel=\"15\" lastBuildTime=\"2016-03-19T16:24:35\" webUrl=\"\
+        http://localhost:8153/go/pipelines/DeployStaging/15/Verify/1\" />\n  <Project\
+        \ name=\"DeployStaging :: Verify :: verify\" activity=\"Sleeping\" lastBuildStatus=\"\
+        Success\" lastBuildLabel=\"15\" lastBuildTime=\"2016-03-19T16:24:35\" webUrl=\"\
+        http://localhost:8153/go/tab/build/detail/DeployStaging/15/Verify/1/verify\"\
+        \ />\n  <Project name=\"DeployProduction :: Deploy\" activity=\"Sleeping\"\
+        \ lastBuildStatus=\"Success\" lastBuildLabel=\"14 :: 2\" lastBuildTime=\"\
+        2016-03-24T21:42:49\" webUrl=\"http://localhost:8153/go/pipelines/DeployProduction/14/Deploy/2\"\
+        \ />\n  <Project name=\"DeployProduction :: Deploy :: DeployApplication\"\
+        \ activity=\"Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"14 ::\
+        \ 2\" lastBuildTime=\"2016-03-24T21:42:49\" webUrl=\"http://localhost:8153/go/tab/build/detail/DeployProduction/14/Deploy/2/DeployApplication\"\
+        \ />\n  <Project name=\"DeployProduction :: Verify\" activity=\"Sleeping\"\
+        \ lastBuildStatus=\"Success\" lastBuildLabel=\"14 :: 2\" lastBuildTime=\"\
+        2016-03-24T21:43:02\" webUrl=\"http://localhost:8153/go/pipelines/DeployProduction/14/Verify/2\"\
+        \ />\n  <Project name=\"DeployProduction :: Verify :: verify\" activity=\"\
+        Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"14 :: 2\" lastBuildTime=\"\
+        2016-03-24T21:43:02\" webUrl=\"http://localhost:8153/go/tab/build/detail/DeployProduction/14/Verify/2/verify\"\
+        \ />\n</Projects>"}
+    headers:
+      cache-control: ['max-age=0, private, must-revalidate']
+      content-type: [application/xml; charset=utf-8]
+      date: ['Thu, 24 Mar 2016 21:43:33 GMT']
+      expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
+      set-cookie: ['JSESSIONID=oriac5rg9z041rgvjcet6v093;Path=/go;Expires=Thu, 07-Apr-2016
+          21:43:33 GMT']
+      x-content-type-options: [nosniff]
+      x-frame-options: [SAMEORIGIN]
+      x-request-id: [d6def19a-25f1-4630-8e8a-0abbf81630ee]
+      x-runtime: ['0.005000']
+      x-ua-compatible: [chrome=1]
+      x-xss-protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1

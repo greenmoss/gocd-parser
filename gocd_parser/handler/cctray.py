@@ -71,7 +71,9 @@ class Cctray(object):
     def parse_pipeline(self, project, pipeline_name):
         # TODO: test labels that are not convertible to an int!
         # TODO: deprecate 'build_count', since it's actually a label
-        build_count = int( project['@lastBuildLabel'] )
+        parts = project['@lastBuildLabel'].split()
+            # it can look like '14' OR '14 :: 2'
+        build_count = int( parts[0] )
         logger.debug('pipeline %s has build count %d', pipeline_name,
                 build_count)
 
