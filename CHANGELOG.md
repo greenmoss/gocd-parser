@@ -1,3 +1,7 @@
+# 1.1.1
+* Switch to Python requests; handles non-api authentication for free!
+* Handle corner case of cctray parser
+
 # 1.1.0
 * Realize I neglected the change log!
 * Add unit tests with vcrpy, enabling major refactoring
