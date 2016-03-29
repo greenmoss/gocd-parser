@@ -11,7 +11,7 @@ class URLException(Exception):
 class URL(object):
     '''Retrieve from a Go server.'''
 
-    def __init__(self, go_server, path=''):
+    def __init__(self, go_server, path='', headers=None):
         self.go_server = go_server
 
         self.contents = []
@@ -19,12 +19,24 @@ class URL(object):
         full_url = go_server.url + path
         logger.debug("reading url %s"%full_url)
 
+        # TODO: session would be better?
+        #s = requests.Session()
+        #if self.go_server.user and self.go_server.password:
+        #    logger.debug("logging in as %s"%self.go_server.user)
+        #    s.auth = (self.go_server.user, self.go_server.password)
+        #if headers is not None:
+        #    s.headers.update(headers)
+        #r = requests.get(full_url)
+
+        if headers is None:
+            headers = {}
+
         if self.go_server.user and self.go_server.password:
             logger.debug("logging in as %s"%self.go_server.user)
             r = requests.get(full_url, auth=(self.go_server.user,
-                self.go_server.password))
+                self.go_server.password), headers=headers)
         else:
-            r = requests.get(full_url)
+            r = requests.get(full_url, headers=headers)
 
         # TODO: return r instead! Let objects just use this as is!
 

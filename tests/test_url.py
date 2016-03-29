@@ -39,3 +39,12 @@ class TestURL:
         assert len(u.contents) == 1
         assert u.path_parts == ['', 'go', 'pipelines', 'value_stream_map', 'AppDevelopment', '7.json']
         assert u.file_path == '/go/pipelines/value_stream_map/AppDevelopment'
+
+    @vcr.use_cassette(f+'with_header.yaml')
+    def test_with_header(self):
+        '''Ensure retrieving api pages that require headers works properly.'''
+        g = gocd_parser.retriever.server.Server('http://localhost:8153/go', 'chester', 'badger')
+        # https://api.go.cd/current/#get-dashboard
+        u = U(g, '/api/dashboard', headers={'Accept': 'application/vnd.go.cd.v1+json'})
+        assert u.contents[3] == '      "href": "http://localhost:8153/go/api/dashboard"'
+        assert u.contents[14] == '            "href": "http://localhost:8153/go/api/config/pipeline_groups"'
