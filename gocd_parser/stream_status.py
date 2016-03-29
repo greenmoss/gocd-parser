@@ -4,7 +4,7 @@ logger = logging.getLogger(__name__)
 import networkx as nx
 
 import gocd_parser.pipeline
-import gocd_parser.handler.cctray
+import gocd_parser.handler.dashboard
 from gocd_parser.handler import pipeline_groups
 from gocd_parser.handler import value_stream
 
@@ -26,7 +26,7 @@ class StreamStatus(object):
         self.ancestors = nx.ancestors(self.value_stream.pipeline_graph,
                 self.pipeline.name)
 
-        self.cctray = gocd_parser.handler.cctray.Cctray(go_server)
+        self.dashboard = gocd_parser.handler.dashboard.Dashboard(go_server)
         self.pipeline_groups = pipeline_groups.PipelineGroups(go_server)
         self.pipeline.set_from_groups_handler(self.pipeline_groups)
         self.pipeline.set_failing_comparison()
@@ -57,10 +57,23 @@ class StreamStatus(object):
                 'human_time': pipeline.get_duration(),
                 }
 
-        if not pipeline.is_failing(): return info
+        if pipeline.is_failing():
+            info['changes'] = self.get_changes(pipeline)
 
-        info['changes'] = {'committers': [], 'pipelines': []}
-        logger.debug('pipeline %s with changes: %s', pipeline.name, info)
+        if pipeline.is_stopped():
+            info['paused'] = self.get_paused(pipeline)
+
+        return info
+
+    def get_paused(self, pipeline):
+        pause_info = self.dashboard.pipelines[pipeline.name]['pause_info']
+        return {
+                'paused_by': pause_info['paused_by'],
+                'pause_reason': pause_info['pause_reason'],
+                }
+
+    def get_changes(self, pipeline):
+        changes = {'committers': [], 'pipelines': []}
 
         committers = {}
         pipelines = {}
@@ -108,23 +121,28 @@ class StreamStatus(object):
                                 }
                     pipelines[name]['run_count'] += 1
 
-        info['changes']['committers'] = sorted(
+        changes['committers'] = sorted(
                 committers.values(), key = lambda committer:
                 committer['first_commit_epoch'])
 
-        info['changes']['pipelines'] = sorted(
+        changes['pipelines'] = sorted(
                 pipelines.values(), key = lambda pipeline:
                 pipeline['name'])
 
-        return info
+        return changes
 
     def get_blocker_names(self):
-        '''Look through cctray for any failing pipelines that are my ancestors.'''
+        '''Look through dashboard for any failing pipelines that are my
+        ancestors.'''
+
         blockers = []
-        for pipeline_name, pipeline_info in self.cctray.pipelines.items():
-            if pipeline_info['lastBuildStatus'] == 'Success': continue
-            if pipeline_name not in self.ancestors: continue
-            blockers.append(pipeline_name)
+        for pipeline_name in self.ancestors:
+            if self.dashboard.paused(pipeline_name):
+                blockers.append(pipeline_name)
+                continue
+            if not self.dashboard.passing(pipeline_name):
+                blockers.append(pipeline_name)
+                continue
         return blockers
 
     def get_ancestor_groups(self, pipeline_name):
@@ -138,7 +156,7 @@ class StreamStatus(object):
         '''Output stream status so it can be serialized.'''
         out = {
                 'base_name': self.pipeline.name,
-                'schema_version': '1.1.0',
+                'schema_version': '1.2.0',
                 'base_status': self.get_pipeline_dump_info(self.pipeline),
                 'status': self.status,
                 'blocking': {},

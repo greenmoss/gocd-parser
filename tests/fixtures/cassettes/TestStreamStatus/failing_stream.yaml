@@ -2,69 +2,85 @@ interactions:
 - request:
     body: null
     headers:
-      Connection: [close]
-      Host: ['localhost:8153']
-      User-Agent: [Python-urllib/2.7]
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Basic Y2hlc3RlcjpiYWRnZXI=]
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.9.1]
     method: GET
     uri: http://localhost:8153/go/api/pipelines/DeployProduction/history/0
   response:
-    body: {string: !!python/unicode '{"pipelines":[{"build_cause":{"approver":"anonymous","material_revisions":[{"modifications":[{"email_address":null,"id":29,"modified_time":1458404675034,"user_name":"Unknown","comment":"Unknown","revision":"DeployStaging/15/Verify/1"}],"material":{"description":"DeployStaging","fingerprint":"8493a8d238955a79c3cf4247ff6f72ad837b6f0756090d4598ee3aa396408c13","type":"Pipeline","id":1},"changed":false},{"modifications":[{"email_address":null,"id":26,"modified_time":1458403792000,"user_name":"Kurt
-        Yoder \u003Cktygithub@yoderhome.com\u003E","comment":"Get diagnostic output
-        from run.sh","revision":"dd154416726d3e813145777baef747f411dc1fca"}],"material":{"description":"URL:
-        https://github.com/greenmoss/gocd_source, Branch: DP","fingerprint":"dfa6e27cc0f89d83d5844a9fde6d2ab3732712a204264cd7189f8dd5cd4a77db","type":"Git","id":10},"changed":false}],"trigger_forced":true,"trigger_message":"Forced
-        by anonymous"},"name":"DeployProduction","natural_order":14.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"anonymous","jobs":[{"name":"DeployApplication","result":"Passed","state":"Completed","id":123,"scheduled_date":1458426777036}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":108,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"Verify","approved_by":"changes","jobs":[{"name":"verify","result":"Passed","state":"Completed","id":125,"scheduled_date":1458429058138}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":110,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":14,"id":52,"preparing_to_schedule":false,"label":"14"},{"build_cause":{"approver":"","material_revisions":[{"modifications":[{"email_address":null,"id":29,"modified_time":1458404675034,"user_name":"Unknown","comment":"Unknown","revision":"DeployStaging/15/Verify/1"}],"material":{"description":"DeployStaging","fingerprint":"8493a8d238955a79c3cf4247ff6f72ad837b6f0756090d4598ee3aa396408c13","type":"Pipeline","id":1},"changed":true},{"modifications":[{"email_address":null,"id":26,"modified_time":1458403792000,"user_name":"Kurt
-        Yoder \u003Cktygithub@yoderhome.com\u003E","comment":"Get diagnostic output
-        from run.sh","revision":"dd154416726d3e813145777baef747f411dc1fca"}],"material":{"description":"URL:
-        https://github.com/greenmoss/gocd_source, Branch: DP","fingerprint":"dfa6e27cc0f89d83d5844a9fde6d2ab3732712a204264cd7189f8dd5cd4a77db","type":"Git","id":10},"changed":true}],"trigger_forced":false,"trigger_message":"triggered
-        by DeployStaging/15/Verify/1"},"name":"DeployProduction","natural_order":13.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"changes","jobs":[{"name":"DeployApplication","result":"Passed","state":"Completed","id":112,"scheduled_date":1458404729852}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":97,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"Verify","approved_by":"changes","jobs":[{"name":"verify","result":"Passed","state":"Completed","id":113,"scheduled_date":1458404746669}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":98,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":13,"id":45,"preparing_to_schedule":false,"label":"13"},{"build_cause":{"approver":"","material_revisions":[{"modifications":[{"email_address":null,"id":10,"modified_time":1458402973465,"user_name":"Unknown","comment":"Unknown","revision":"DeployStaging/13/Verify/1"}],"material":{"description":"DeployStaging","fingerprint":"8493a8d238955a79c3cf4247ff6f72ad837b6f0756090d4598ee3aa396408c13","type":"Pipeline","id":1},"changed":true}],"trigger_forced":false,"trigger_message":"triggered
-        by DeployStaging/13/Verify/1"},"name":"DeployProduction","natural_order":12.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"changes","jobs":[{"name":"DeployApplication","result":"Passed","state":"Completed","id":74,"scheduled_date":1458403029754}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":67,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"Verify","approved_by":"changes","jobs":[{"name":"verify","result":"Passed","state":"Completed","id":75,"scheduled_date":1458403044941}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":68,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":12,"id":31,"preparing_to_schedule":false,"label":"12"},{"build_cause":{"approver":"anonymous","material_revisions":[{"modifications":[{"email_address":null,"id":6,"modified_time":1458149914033,"user_name":"Unknown","comment":"Unknown","revision":"DeployStaging/1/Verify/2"}],"material":{"description":"DeployStaging","fingerprint":"8493a8d238955a79c3cf4247ff6f72ad837b6f0756090d4598ee3aa396408c13","type":"Pipeline","id":1},"changed":false}],"trigger_forced":true,"trigger_message":"Forced
-        by anonymous"},"name":"DeployProduction","natural_order":11.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"anonymous","jobs":[{"name":"DeployApplication","result":"Passed","state":"Completed","id":66,"scheduled_date":1458252113310}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":61,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"Verify","approved_by":"changes","jobs":[{"name":"verify","result":"Passed","state":"Completed","id":67,"scheduled_date":1458252132380}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":62,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":11,"id":28,"preparing_to_schedule":false,"label":"11"},{"build_cause":{"approver":"anonymous","material_revisions":[{"modifications":[{"email_address":null,"id":6,"modified_time":1458149914033,"user_name":"Unknown","comment":"Unknown","revision":"DeployStaging/1/Verify/2"}],"material":{"description":"DeployStaging","fingerprint":"8493a8d238955a79c3cf4247ff6f72ad837b6f0756090d4598ee3aa396408c13","type":"Pipeline","id":1},"changed":false}],"trigger_forced":true,"trigger_message":"Forced
-        by anonymous"},"name":"DeployProduction","natural_order":10.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"anonymous","jobs":[{"name":"DeployApplication","result":"Passed","state":"Completed","id":64,"scheduled_date":1458252055277}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":59,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"Verify","approved_by":"changes","jobs":[{"name":"verify","result":"Passed","state":"Completed","id":65,"scheduled_date":1458252072184}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":60,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":10,"id":27,"preparing_to_schedule":false,"label":"10"},{"build_cause":{"approver":"anonymous","material_revisions":[{"modifications":[{"email_address":null,"id":6,"modified_time":1458149914033,"user_name":"Unknown","comment":"Unknown","revision":"DeployStaging/1/Verify/2"}],"material":{"description":"DeployStaging","fingerprint":"8493a8d238955a79c3cf4247ff6f72ad837b6f0756090d4598ee3aa396408c13","type":"Pipeline","id":1},"changed":false}],"trigger_forced":true,"trigger_message":"Forced
-        by anonymous"},"name":"DeployProduction","natural_order":9.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"anonymous","jobs":[{"name":"DeployApplication","result":"Passed","state":"Completed","id":62,"scheduled_date":1458252009248}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":57,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"Verify","approved_by":"changes","jobs":[{"name":"verify","result":"Passed","state":"Completed","id":63,"scheduled_date":1458252023524}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":58,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":9,"id":26,"preparing_to_schedule":false,"label":"9"},{"build_cause":{"approver":"anonymous","material_revisions":[{"modifications":[{"email_address":null,"id":6,"modified_time":1458149914033,"user_name":"Unknown","comment":"Unknown","revision":"DeployStaging/1/Verify/2"}],"material":{"description":"DeployStaging","fingerprint":"8493a8d238955a79c3cf4247ff6f72ad837b6f0756090d4598ee3aa396408c13","type":"Pipeline","id":1},"changed":false}],"trigger_forced":true,"trigger_message":"Forced
-        by anonymous"},"name":"DeployProduction","natural_order":8.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"anonymous","jobs":[{"name":"DeployApplication","result":"Passed","state":"Completed","id":60,"scheduled_date":1458251957216}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":55,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"Verify","approved_by":"changes","jobs":[{"name":"verify","result":"Passed","state":"Completed","id":61,"scheduled_date":1458251972166}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":56,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":8,"id":25,"preparing_to_schedule":false,"label":"8"},{"build_cause":{"approver":"anonymous","material_revisions":[{"modifications":[{"email_address":null,"id":6,"modified_time":1458149914033,"user_name":"Unknown","comment":"Unknown","revision":"DeployStaging/1/Verify/2"}],"material":{"description":"DeployStaging","fingerprint":"8493a8d238955a79c3cf4247ff6f72ad837b6f0756090d4598ee3aa396408c13","type":"Pipeline","id":1},"changed":false}],"trigger_forced":true,"trigger_message":"Forced
-        by anonymous"},"name":"DeployProduction","natural_order":7.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"anonymous","jobs":[{"name":"DeployApplication","result":"Passed","state":"Completed","id":58,"scheduled_date":1458251899181}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":53,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"Verify","approved_by":"changes","jobs":[{"name":"verify","result":"Passed","state":"Completed","id":59,"scheduled_date":1458251913576}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":54,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":7,"id":24,"preparing_to_schedule":false,"label":"7"},{"build_cause":{"approver":"anonymous","material_revisions":[{"modifications":[{"email_address":null,"id":6,"modified_time":1458149914033,"user_name":"Unknown","comment":"Unknown","revision":"DeployStaging/1/Verify/2"}],"material":{"description":"DeployStaging","fingerprint":"8493a8d238955a79c3cf4247ff6f72ad837b6f0756090d4598ee3aa396408c13","type":"Pipeline","id":1},"changed":false}],"trigger_forced":true,"trigger_message":"Forced
-        by anonymous"},"name":"DeployProduction","natural_order":6.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"anonymous","jobs":[{"name":"DeployApplication","result":"Passed","state":"Completed","id":56,"scheduled_date":1458251867156}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":51,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"Verify","approved_by":"changes","jobs":[{"name":"verify","result":"Passed","state":"Completed","id":57,"scheduled_date":1458251882236}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":52,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":6,"id":23,"preparing_to_schedule":false,"label":"6"},{"build_cause":{"approver":"anonymous","material_revisions":[{"modifications":[{"email_address":null,"id":6,"modified_time":1458149914033,"user_name":"Unknown","comment":"Unknown","revision":"DeployStaging/1/Verify/2"}],"material":{"description":"DeployStaging","fingerprint":"8493a8d238955a79c3cf4247ff6f72ad837b6f0756090d4598ee3aa396408c13","type":"Pipeline","id":1},"changed":false}],"trigger_forced":true,"trigger_message":"Forced
-        by anonymous"},"name":"DeployProduction","natural_order":5.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"anonymous","jobs":[{"name":"DeployApplication","result":"Passed","state":"Completed","id":54,"scheduled_date":1458251816124}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":49,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"Verify","approved_by":"changes","jobs":[{"name":"verify","result":"Passed","state":"Completed","id":55,"scheduled_date":1458251832689}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":50,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":5,"id":22,"preparing_to_schedule":false,"label":"5"}],"pagination":{"offset":0,"total":14,"page_size":10}}'}
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAO2aXY+jNhSG/0rEdTTB3yZXbXfbvWgvRq22UtWukINNQhcwArNVupr/3uNA5mMn
+        dLOtsxKaXI3GgD/e4/c55oSPUVM0pixq00Xr3z9Gm74odZqpvjPR+mOkmqa1H0wbrSNV23pf2b6L
+        llGlnGkLVaat+VB0ha2Hhyuri7zIlLtvMZUqylRp3ZoOWuq+LJdRoaM1Tpbj7UanrqhgNESZpDHl
+        gsWELiOYQZvWyl+J3tbva/tXDSNntqpM7Z60HScBja9NU9r9L05ti3q7Qmz1K8wz369QdPfuYdp+
+        Zdp0WVs07sRz0GUOf0zbtMVhKEkToqTGRCaMKZFkJMsppiLPeS6w0pKIDc9jwXicxJqyRBpDlCIJ
+        p7HMEIEO3b7xC7kdxY4GFdAdrGinYCz4J1dlZ+6WXyYjn5CRiATHcfxUxh/71i1+s9q0iz/6OCav
+        3rv9tnC7fvPN3rfubGVuQOHDxe+fqP3GuIUu1La2nSuyhe1d07tF3tpq0fb1Tbd7GgetEaMUcYG5
+        JkYiArMSQmyUyQXoRhHSGcoz9ZmwvP35p/Vi51zTrVerYaZ+fqtta0xd2a5bbW2m0872bWaWi+9a
+        VWe79eL17bMQ6lxxg0WWxblMIGAaRKIqybXhGqsNEQQLhBWOKeY00wLJJJdas0xTJYTePITwTeGO
+        0Yufhw+W49piCyOnuYVJwQXX9uahtYIIqq3v6IfD9cVmv3iwFnQ4xmrYkbet1X12UMNfcX0LprOt
+        9o5E9Abim6k6hQgch7mP2LBHOtjRo7Of9Au9jdbW6WYPzdnOdBAFaP/Tbk488G3TlOOWPES660sv
+        663qOljjYSDn735lq6Y07tB20IgguAi9676EsfThLr9FJWOCYcyll+yTRTzvfpgsrH0MQtdnmbeC
+        X3BfuwOg8HFIBKawjWlhrBT+VEU37Mpj5zBSavP0/slRquMkhxu9EUcFBoackMxHvjsh2YfjA1+i
+        E57WiScoxhfQSYTQ6d2jvhEdumawmKY1jQL3bVNn0+NDo02WUak2BgwfIRp5pafTzjXbXCbbHPf4
+        NdnMMdkcnfdprhnd9TzZjC1DvvmXffsl+YcEzT9TMP2f+QdNcBW8L3AiWTiuonHIJAhWv3L6QWRa
+        Jso5T8LLJINnHzL0TNnZ2Yd8jeyD4glu4kQQylmY7ENml31C8Yv8R37hGfBL0ClfEr99GA3uSz5D
+        fAk2rRKlCUXhVQpPLzz07F+YzqQX/gy9wpZsTp/+EE0SBDqTMBQ7WhnPAGJf/40fBSTW480Rllmc
+        n3YjZhjOGQROssHdiObHLM/ZKZUI7NwLqISDMwuNb4bybGahK7NeFrPieTBr4pwFbowZw0IEdyNL
+        ZsisiXOWV0lgJC9wGo2DMysemSXOZlZ8ZdaLYlYyD2RNVLa8GeME03C/rNwja4avhnyisOVVwoTh
+        8MhiwV8Nk4f6+3nESq7AelHAkvMAVjxlRZQwOD7w8FZkMwTWxA/mXiUv0gVUCvJ7+WNgyRFYZxfi
+        5RVYLwpYYhbA8pl8wooS9ooMX1ZmZH7A8i+yU8BChIkLAIuGBpYYgUXPBZa4AutFAYvPA1iTlXck
+        uUDsAlacYeWdTVbekZQYkwuoFLzyzkdgkXOBxa/AelHAYvMA1mTZHU5XHF2gOkNnWHZnk2V3JAnm
+        MvzHWSx42Z2NwDr7y2B2cHXjTTvsK/C1zfPOwKJgds4673X/xTHcY9Ku+NscvpK8+wfSdzce0zIA
+        AA==
     headers:
       cache-control: ['max-age=0, private, must-revalidate']
-      connection: [close]
+      content-encoding: [gzip]
       content-type: [application/json; charset=utf-8]
-      date: ['Mon, 21 Mar 2016 01:58:16 GMT']
-      etag: ['"d51bea9036067995d4931fa4f6d0d8cd"']
+      date: ['Tue, 29 Mar 2016 22:51:41 GMT']
+      etag: ['"8872d967f539a6e5ca9898fd55fdfc79--gzip"']
       expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
-      set-cookie: ['JSESSIONID=usim4af53lu62e8jj43yim83;Path=/go;Expires=Mon, 04-Apr-2016
-          01:58:16 GMT']
+      set-cookie: ['JSESSIONID=1fm3erzy1mkg4kpbqqcp55eqs;Path=/go;Expires=Tue, 12-Apr-2016
+          22:51:41 GMT']
       vary: ['Accept-Encoding, User-Agent']
       x-content-type-options: [nosniff]
       x-frame-options: [SAMEORIGIN]
-      x-request-id: [1a1bbe1d-3b31-42eb-b3c2-5853f561bbb9]
-      x-runtime: ['0.015000']
+      x-request-id: [f7dcaf61-7ffd-4b79-adf5-664fa089b515]
+      x-runtime: ['0.027000']
       x-ua-compatible: [chrome=1]
       x-xss-protection: [1; mode=block]
     status: {code: 200, message: OK}
 - request:
     body: null
     headers:
-      Connection: [close]
-      Host: ['localhost:8153']
-      User-Agent: [Python-urllib/2.7]
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Basic Y2hlc3RlcjpiYWRnZXI=]
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.9.1]
     method: GET
     uri: http://localhost:8153/go/api/pipelines/DeployProduction/status/
   response:
-    body: {string: !!python/unicode '{"paused":false,"schedulable":true,"pausedBy":"","pausedCause":"","locked":false}'}
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAKtWKkgsLU5NUbJKS8wpTtVRKk7OSE0pzUlMyklVsiopKgUKQVQ4VSpZKSnBeM4g
+        EiKQk5+cDTegFgDjYEoAUQAAAA==
     headers:
       cache-control: ['max-age=0, private, must-revalidate']
-      connection: [close]
+      content-encoding: [gzip]
       content-type: [application/json; charset=utf-8]
-      date: ['Mon, 21 Mar 2016 01:58:16 GMT']
-      etag: ['"c5e866f279ed30423c9733e7ca7bc274"']
+      date: ['Tue, 29 Mar 2016 22:51:42 GMT']
+      etag: ['"c5e866f279ed30423c9733e7ca7bc274--gzip"']
       expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
-      set-cookie: ['JSESSIONID=rk3to4rw56r7n5olanljg15b;Path=/go;Expires=Mon, 04-Apr-2016
-          01:58:16 GMT']
+      set-cookie: ['JSESSIONID=hv3fh5i9mzyabvx4s9tmned5;Path=/go;Expires=Tue, 12-Apr-2016
+          22:51:42 GMT']
       vary: ['Accept-Encoding, User-Agent']
       x-content-type-options: [nosniff]
       x-frame-options: [SAMEORIGIN]
-      x-request-id: [d702ba9a-b39b-4c91-a522-a104f4dad3ea]
+      x-request-id: [fb4cdb66-1a46-47c5-91cf-b6911696d699]
       x-runtime: ['0.004000']
       x-ua-compatible: [chrome=1]
       x-xss-protection: [1; mode=block]
@@ -72,579 +88,442 @@ interactions:
 - request:
     body: null
     headers:
-      Connection: [close]
-      Host: [!!python/unicode 'localhost:8153']
-      User-Agent: [Python-urllib/2.7]
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Basic Y2hlc3RlcjpiYWRnZXI=]
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.9.1]
     method: GET
     uri: http://localhost:8153/go/pipelines/value_stream_map/DeployProduction/14.json
   response:
-    body: {string: !!python/unicode '{"current_pipeline":"DeployProduction","levels":[{"nodes":[{"name":"https://github.com/gocd-demo/webinar-code.git","node_type":"GIT","instances":[{"locator":"/go/materials/value_stream_map/93c90510b74bdc41e0a15b8f2ebfd470f445089651b50238857f6b17819bb0ee/ae7fb35f266b4abe0d9c65d604ddd7280bdddadc","modified_time":"13
-        days ago","user":"Ken Mugrage \u003Ckmugrage@users.noreply.github.com\u003E","comment":"Update
-        triggerfile.txt","revision":"ae7fb35f266b4abe0d9c65d604ddd7280bdddadc"}],"depth":1,"parents":[],"locator":"","id":"93c90510b74bdc41e0a15b8f2ebfd470f445089651b50238857f6b17819bb0ee","dependents":["AppDevelopment"],"material_names":["webinar-code"]},{"name":"https://github.com/greenmoss/gocd_source","node_type":"GIT","instances":[{"locator":"/go/materials/value_stream_map/94c49bc9743cfa848dbbdab2a007c7427f4d057fb648cc888f5f6457a2c458a4/dd154416726d3e813145777baef747f411dc1fca","modified_time":"1
-        day ago","user":"Kurt Yoder \u003Cktygithub@yoderhome.com\u003E","comment":"Get
-        diagnostic output from run.sh","revision":"dd154416726d3e813145777baef747f411dc1fca"}],"depth":2,"parents":[],"locator":"","id":"94c49bc9743cfa848dbbdab2a007c7427f4d057fb648cc888f5f6457a2c458a4","dependents":["AppDevelopment"],"material_names":["gocd_source"]}]},{"nodes":[{"name":"https://github.com/greenmoss/gocd_source","node_type":"GIT","instances":[{"locator":"/go/materials/value_stream_map/555cb917a3d7845df076d382d097fca85deced49d5be55495cebc604b894a31c/dd154416726d3e813145777baef747f411dc1fca","modified_time":"1
-        day ago","user":"Kurt Yoder \u003Cktygithub@yoderhome.com\u003E","comment":"Get
-        diagnostic output from run.sh","revision":"dd154416726d3e813145777baef747f411dc1fca"}],"depth":1,"parents":[],"locator":"","id":"555cb917a3d7845df076d382d097fca85deced49d5be55495cebc604b894a31c","dependents":["UserAcceptance"],"material_names":["gocd_source"]},{"name":"AppDevelopment","node_type":"PIPELINE","locator":"/go/tab/pipeline/history/AppDevelopment","parents":["93c90510b74bdc41e0a15b8f2ebfd470f445089651b50238857f6b17819bb0ee","94c49bc9743cfa848dbbdab2a007c7427f4d057fb648cc888f5f6457a2c458a4"],"depth":2,"instances":[{"stages":[{"locator":"/go/pipelines/AppDevelopment/5/Commit/1","name":"Commit","status":"Passed"},{"locator":"/go/pipelines/AppDevelopment/5/UnitTest/1","name":"UnitTest","status":"Passed"},{"locator":"/go/pipelines/AppDevelopment/5/Package/1","name":"Package","status":"Passed"}],"locator":"/go/pipelines/value_stream_map/AppDevelopment/5","counter":5,"label":"5"}],"id":"AppDevelopment","dependents":["UserAcceptance","FunctionalTests"]},{"name":"https://github.com/greenmoss/gocd_source","node_type":"GIT","instances":[{"locator":"/go/materials/value_stream_map/6ce0a4977c6f3238d0117d59229ff759ff6346c3f7481276d91c55cc80135f3d/dd154416726d3e813145777baef747f411dc1fca","modified_time":"1
-        day ago","user":"Kurt Yoder \u003Cktygithub@yoderhome.com\u003E","comment":"Get
-        diagnostic output from run.sh","revision":"dd154416726d3e813145777baef747f411dc1fca"}],"depth":3,"parents":[],"locator":"","id":"6ce0a4977c6f3238d0117d59229ff759ff6346c3f7481276d91c55cc80135f3d","dependents":["FunctionalTests"],"material_names":["gocd_source"]}]},{"nodes":[{"name":"UserAcceptance","node_type":"PIPELINE","locator":"/go/tab/pipeline/history/UserAcceptance","parents":["AppDevelopment","555cb917a3d7845df076d382d097fca85deced49d5be55495cebc604b894a31c"],"depth":1,"instances":[{"stages":[{"locator":"/go/pipelines/UserAcceptance/4/Deploy/1","name":"Deploy","status":"Passed"},{"locator":"/go/pipelines/UserAcceptance/4/Approved/1","name":"Approved","status":"Passed"}],"locator":"/go/pipelines/value_stream_map/UserAcceptance/4","counter":4,"label":"4"}],"id":"UserAcceptance","dependents":["DeployStaging"]},{"name":"FunctionalTests","node_type":"PIPELINE","locator":"/go/tab/pipeline/history/FunctionalTests","parents":["AppDevelopment","6ce0a4977c6f3238d0117d59229ff759ff6346c3f7481276d91c55cc80135f3d"],"depth":2,"instances":[{"stages":[{"locator":"/go/pipelines/FunctionalTests/6/Deploy/1","name":"Deploy","status":"Passed"},{"locator":"/go/pipelines/FunctionalTests/6/functionalTests/1","name":"functionalTests","status":"Passed"}],"locator":"/go/pipelines/value_stream_map/FunctionalTests/6","counter":6,"label":"6"}],"id":"FunctionalTests","dependents":["DeployStaging"]},{"name":"https://github.com/greenmoss/gocd_source","node_type":"GIT","instances":[{"locator":"/go/materials/value_stream_map/5039b132753172a03a2de061de75b8fea9910f6e2be22b1f28f8a545350abbd9/dd154416726d3e813145777baef747f411dc1fca","modified_time":"1
-        day ago","user":"Kurt Yoder \u003Cktygithub@yoderhome.com\u003E","comment":"Get
-        diagnostic output from run.sh","revision":"dd154416726d3e813145777baef747f411dc1fca"}],"depth":3,"parents":[],"locator":"","id":"5039b132753172a03a2de061de75b8fea9910f6e2be22b1f28f8a545350abbd9","dependents":["DeployStaging"],"material_names":["gocd_source"]}]},{"nodes":[{"name":"DeployStaging","node_type":"PIPELINE","locator":"/go/tab/pipeline/history/DeployStaging","parents":["UserAcceptance","FunctionalTests","5039b132753172a03a2de061de75b8fea9910f6e2be22b1f28f8a545350abbd9"],"depth":1,"instances":[{"stages":[{"locator":"/go/pipelines/DeployStaging/15/Deploy/1","name":"Deploy","status":"Passed"},{"locator":"/go/pipelines/DeployStaging/15/Verify/1","name":"Verify","status":"Passed"}],"locator":"/go/pipelines/value_stream_map/DeployStaging/15","counter":15,"label":"15"}],"id":"DeployStaging","dependents":["DeployProduction"]},{"name":"https://github.com/greenmoss/gocd_source","node_type":"GIT","instances":[{"locator":"/go/materials/value_stream_map/dfa6e27cc0f89d83d5844a9fde6d2ab3732712a204264cd7189f8dd5cd4a77db/dd154416726d3e813145777baef747f411dc1fca","modified_time":"1
-        day ago","user":"Kurt Yoder \u003Cktygithub@yoderhome.com\u003E","comment":"Get
-        diagnostic output from run.sh","revision":"dd154416726d3e813145777baef747f411dc1fca"}],"depth":2,"parents":[],"locator":"","id":"dfa6e27cc0f89d83d5844a9fde6d2ab3732712a204264cd7189f8dd5cd4a77db","dependents":["DeployProduction"],"material_names":["gocd_source"]}]},{"nodes":[{"name":"DeployProduction","node_type":"PIPELINE","locator":"/go/tab/pipeline/history/DeployProduction","parents":["DeployStaging","dfa6e27cc0f89d83d5844a9fde6d2ab3732712a204264cd7189f8dd5cd4a77db"],"depth":1,"instances":[{"stages":[{"locator":"/go/pipelines/DeployProduction/14/Deploy/1","name":"Deploy","status":"Passed"},{"locator":"/go/pipelines/DeployProduction/14/Verify/1","name":"Verify","status":"Passed"}],"locator":"/go/pipelines/value_stream_map/DeployProduction/14","counter":14,"label":"14"}],"id":"DeployProduction","dependents":[]}]}]}'}
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAO2YXW/bNhSG/4qh6zQiKVKkctWi7YpgHwiwZsCwBQbJQzpCbUmQqGxGkf++IzuZ
+        9ZE1bpSiF9lNbFPSS/I9D18y+hzZtq5dEZZVXrl1XrjoLHrnqnW5vahLaG3IyyI6idbuxq2b6OyP
+        z1FRgrv7pjfd7dchVM1ZHK/ycN2aU1tu4lVp4RW4TRn/5Uxe6PqVxadO8Q7U6gSWYVt1z344/4gt
+        edEEXdg72XVpdShrvIo68UYHV+d63cQ3et26ZRNqpzfLja7iLLEZEZQYyQ1YTh3RVBjlmTMeuCSe
+        c0FUlgpqBGGJUkL61FCpaGYMcS7WTnqTCM/S1HBtHIHMpgJSwgFAMkUMfmqwOMRNCbnPHSxDvps0
+        YwvQ22ahVyVebRvXjfdHVyx+ble1XrnFny0hydtPm/3P190dzWlR1ujt9vRg1e629yiB3zdYB1S5
+        rADnvAh1vlq52udrdxr+7oyr3U3edPU4i44e+e3VSQSuCtfRGT2JKt3VurMZmw8+dyUA/JxraLTr
+        yxVw10n0pqredeSU1W5u2Ol9OZcdPLt7+oREV7cnX+Sqdq7YlE2zI2zZlG1t3bMixS3PjM0kT6zX
+        iiswBrRhmhBpJWfScyA4a5NyZa1SygufciE1s1wozWMAKjinqWQpJE7RhOJVKY12XnJ8mlKw1Fv9
+        AFKUPIRUW4fF7zi9+p6osN0b8nrbtV6XG/cfHH1wYQG5XhVlE3K7KNtQtWHh63KzqNvitLkeInX0
+        yHtIsceRmmnok5Dqw3F1u2fqmNT61nQJIazJqNQJSMUFeCLRa8WAZBKdVQKcdcAzEMYJwTNhnbG4
+        po3KuE6ofWF0PR5Ycw2d0HWJvryxFvvvynsMXYe8GpE55Obi/OL9T+e/dB4OcQnaxPd7b3ydN3hl
+        G0+kDj48R0jPXpSDBBguBvy+enBd3E+yGc0uFvFbpCoPMe0823u5b8HfKBfapjNQN42DqPP7aN3L
+        Ig8fXTNQvm+bq32h7SecaV/6rukh5atx2Q/Kk5QYd7Vbdm0RuhUrUAe3+3XH/k51twwmuHwR6pPo
+        h7bYHez0unOi+e67bmoRYp5JaVOfILJAKJUgMsYy76XAP2nCU5tgVCjKcIln1OLKt4pQPAMl8MJy
+        MXk0F+caOkFoQsxTt90Ji08PyYlULyQnK2L2TjHYlr468oZjjXm8/x+rnx77lq+MpYkuTrwubxz0
+        le/b5gbTuLN+MPFDMPFDME1KNKRqP+Vf0b68WA1SaMzbHE6mWl8CZfbSmbc3jgYbp89FylTYj1p6
+        PfiJZbPAmfTdJyc9kJMeyJkW7Vh0vsvBniSZoQmTIqESj1GJZuBISsHJ7mjmdJZR4lPHjGPMUM+U
+        V1pwkQii8eiV/b+BjQ/2Mw19jJenbl9DmTmpNFbqZdKj57WT+f7M284Gg4+peK6Qmuj+hjXyA919
+        y9xEGnfUDyTaO2TT3il7XLGHAOu9NP3emQReY/2ltcSrDFQCQnGuMw8uBaZNIpEeyjQjnKXcgqQq
+        8wpAWOBaSjAvLJMef5U119AjkJkXS4M39nOTaSDWC6fJKpjrynMk0WGwMf33bM2eJYyG0nd5xL5N
+        Hg36GkRS73hN+TiSBqUaINbxcnX7D9re3BrlGQAA
     headers:
       cache-control: ['max-age=0, private, must-revalidate']
-      connection: [close]
+      content-encoding: [gzip]
       content-type: [application/json; charset=utf-8]
-      date: ['Mon, 21 Mar 2016 01:58:16 GMT']
-      etag: ['"7f0c9520afa319a1f2d0d51b9e15d37c"']
+      date: ['Tue, 29 Mar 2016 22:51:42 GMT']
+      etag: ['"f027fc01f1d54ef84757aef335bbd7ef--gzip"']
       expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
-      set-cookie: ['JSESSIONID=17s80kpflxqy91ugptb6h3ulc7;Path=/go;Expires=Mon, 04-Apr-2016
-          01:58:16 GMT']
+      set-cookie: ['JSESSIONID=1fxpumr30yl79pdk0bd10b7lu;Path=/go;Expires=Tue, 12-Apr-2016
+          22:51:42 GMT']
       vary: ['Accept-Encoding, User-Agent']
       x-content-type-options: [nosniff]
       x-frame-options: [SAMEORIGIN]
-      x-request-id: [f45901ea-aaa3-4cde-b78e-d1fffd17d270]
-      x-runtime: ['0.013000']
+      x-request-id: [a46dd3df-78ea-4b83-8631-f538657b7087]
+      x-runtime: ['0.017000']
       x-ua-compatible: [chrome=1]
       x-xss-protection: [1; mode=block]
     status: {code: 200, message: OK}
 - request:
     body: null
     headers:
-      Connection: [close]
-      Host: ['localhost:8153']
-      User-Agent: [Python-urllib/2.7]
+      Accept: [application/vnd.go.cd.v1+json]
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Basic Y2hlc3RlcjpiYWRnZXI=]
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.9.1]
     method: GET
-    uri: http://localhost:8153/go/cctray.xml
+    uri: http://localhost:8153/go/api/dashboard/
   response:
-    body: {string: !!python/unicode "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n\
-        <Projects>\n  <Project name=\"LinearPipeline :: Commit\" activity=\"Sleeping\"\
-        \ lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"2016-03-16T18:53:56\"\
-        \ webUrl=\"http://localhost:8153/go/pipelines/LinearPipeline/2/Commit/1\"\
-        \ />\n  <Project name=\"LinearPipeline :: Commit :: FirstJob\" activity=\"\
-        Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"\
-        2016-03-16T18:53:56\" webUrl=\"http://localhost:8153/go/tab/build/detail/LinearPipeline/2/Commit/1/FirstJob\"\
-        \ />\n  <Project name=\"LinearPipeline :: UnitTest\" activity=\"Sleeping\"\
-        \ lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"2016-03-16T18:54:15\"\
-        \ webUrl=\"http://localhost:8153/go/pipelines/LinearPipeline/2/UnitTest/1\"\
-        \ />\n  <Project name=\"LinearPipeline :: UnitTest :: FirstJob\" activity=\"\
-        Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"\
-        2016-03-16T18:54:15\" webUrl=\"http://localhost:8153/go/tab/build/detail/LinearPipeline/2/UnitTest/1/FirstJob\"\
-        \ />\n  <Project name=\"LinearPipeline :: Package\" activity=\"Sleeping\"\
-        \ lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"2016-03-16T18:54:35\"\
-        \ webUrl=\"http://localhost:8153/go/pipelines/LinearPipeline/2/Package/1\"\
-        \ />\n  <Project name=\"LinearPipeline :: Package :: FirstJob\" activity=\"\
-        Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"\
-        2016-03-16T18:54:35\" webUrl=\"http://localhost:8153/go/tab/build/detail/LinearPipeline/2/Package/1/FirstJob\"\
-        \ />\n  <Project name=\"LinearPipeline :: FunctionalTest\" activity=\"Sleeping\"\
-        \ lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"2016-03-16T18:54:55\"\
-        \ webUrl=\"http://localhost:8153/go/pipelines/LinearPipeline/2/FunctionalTest/1\"\
-        \ />\n  <Project name=\"LinearPipeline :: FunctionalTest :: FirstJob\" activity=\"\
-        Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"\
-        2016-03-16T18:54:55\" webUrl=\"http://localhost:8153/go/tab/build/detail/LinearPipeline/2/FunctionalTest/1/FirstJob\"\
-        \ />\n  <Project name=\"LinearPipeline :: UserAcceptance\" activity=\"Sleeping\"\
-        \ lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"2016-03-16T18:55:15\"\
-        \ webUrl=\"http://localhost:8153/go/pipelines/LinearPipeline/2/UserAcceptance/1\"\
-        \ />\n  <Project name=\"LinearPipeline :: UserAcceptance :: FirstJob\" activity=\"\
-        Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"\
-        2016-03-16T18:55:15\" webUrl=\"http://localhost:8153/go/tab/build/detail/LinearPipeline/2/UserAcceptance/1/FirstJob\"\
-        \ />\n  <Project name=\"LinearPipeline :: DeployStaging\" activity=\"Sleeping\"\
-        \ lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"2016-03-16T18:55:39\"\
-        \ webUrl=\"http://localhost:8153/go/pipelines/LinearPipeline/2/DeployStaging/1\"\
-        \ />\n  <Project name=\"LinearPipeline :: DeployStaging :: FirstJob\" activity=\"\
-        Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"\
-        2016-03-16T18:55:39\" webUrl=\"http://localhost:8153/go/tab/build/detail/LinearPipeline/2/DeployStaging/1/FirstJob\"\
-        \ />\n  <Project name=\"LinearPipeline :: DeployProduction\" activity=\"Sleeping\"\
-        \ lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"2016-03-16T18:55:56\"\
-        \ webUrl=\"http://localhost:8153/go/pipelines/LinearPipeline/2/DeployProduction/1\"\
-        \ />\n  <Project name=\"LinearPipeline :: DeployProduction :: FirstJob\" activity=\"\
-        Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"2\" lastBuildTime=\"\
-        2016-03-16T18:55:56\" webUrl=\"http://localhost:8153/go/tab/build/detail/LinearPipeline/2/DeployProduction/1/FirstJob\"\
-        \ />\n  <Project name=\"AppDevelopment :: Commit\" activity=\"Sleeping\" lastBuildStatus=\"\
-        Success\" lastBuildLabel=\"7\" lastBuildTime=\"2016-03-19T21:30:29\" webUrl=\"\
-        http://localhost:8153/go/pipelines/AppDevelopment/7/Commit/1\" />\n  <Project\
-        \ name=\"AppDevelopment :: Commit :: FirstJob\" activity=\"Sleeping\" lastBuildStatus=\"\
-        Success\" lastBuildLabel=\"7\" lastBuildTime=\"2016-03-19T21:30:29\" webUrl=\"\
-        http://localhost:8153/go/tab/build/detail/AppDevelopment/7/Commit/1/FirstJob\"\
-        \ />\n  <Project name=\"AppDevelopment :: UnitTest\" activity=\"Sleeping\"\
-        \ lastBuildStatus=\"Success\" lastBuildLabel=\"7\" lastBuildTime=\"2016-03-19T21:30:47\"\
-        \ webUrl=\"http://localhost:8153/go/pipelines/AppDevelopment/7/UnitTest/1\"\
-        \ />\n  <Project name=\"AppDevelopment :: UnitTest :: FirstJob\" activity=\"\
-        Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"7\" lastBuildTime=\"\
-        2016-03-19T21:30:47\" webUrl=\"http://localhost:8153/go/tab/build/detail/AppDevelopment/7/UnitTest/1/FirstJob\"\
-        \ />\n  <Project name=\"AppDevelopment :: Package\" activity=\"Sleeping\"\
-        \ lastBuildStatus=\"Success\" lastBuildLabel=\"7\" lastBuildTime=\"2016-03-19T21:31:07\"\
-        \ webUrl=\"http://localhost:8153/go/pipelines/AppDevelopment/7/Package/1\"\
-        \ />\n  <Project name=\"AppDevelopment :: Package :: FirstJob\" activity=\"\
-        Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"7\" lastBuildTime=\"\
-        2016-03-19T21:31:07\" webUrl=\"http://localhost:8153/go/tab/build/detail/AppDevelopment/7/Package/1/FirstJob\"\
-        \ />\n  <Project name=\"FunctionalTests :: Deploy\" activity=\"Sleeping\"\
-        \ lastBuildStatus=\"Failure\" lastBuildLabel=\"9\" lastBuildTime=\"2016-03-20T01:25:00\"\
-        \ webUrl=\"http://localhost:8153/go/pipelines/FunctionalTests/9/Deploy/1\"\
-        ><messages><message text=\"Kurt Yoder &lt;ktygithub@yoderhome.com&gt;\" kind=\"\
-        Breakers\" /></messages></Project>\n  <Project name=\"FunctionalTests :: Deploy\
-        \ :: deployApplications\" activity=\"Sleeping\" lastBuildStatus=\"Failure\"\
-        \ lastBuildLabel=\"9\" lastBuildTime=\"2016-03-20T01:25:00\" webUrl=\"http://localhost:8153/go/tab/build/detail/FunctionalTests/9/Deploy/1/deployApplications\"\
-        ><messages><message text=\"Kurt Yoder &lt;ktygithub@yoderhome.com&gt;\" kind=\"\
-        Breakers\" /></messages></Project>\n  <Project name=\"FunctionalTests :: functionalTests\"\
-        \ activity=\"Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"6\" lastBuildTime=\"\
-        2016-03-19T16:18:48\" webUrl=\"http://localhost:8153/go/pipelines/FunctionalTests/6/functionalTests/1\"\
-        \ />\n  <Project name=\"FunctionalTests :: functionalTests :: TestSuite001\"\
-        \ activity=\"Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"6\" lastBuildTime=\"\
-        2016-03-19T16:18:45\" webUrl=\"http://localhost:8153/go/tab/build/detail/FunctionalTests/6/functionalTests/1/TestSuite001\"\
-        \ />\n  <Project name=\"FunctionalTests :: functionalTests :: TestSuite002\"\
-        \ activity=\"Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"6\" lastBuildTime=\"\
-        2016-03-19T16:18:46\" webUrl=\"http://localhost:8153/go/tab/build/detail/FunctionalTests/6/functionalTests/1/TestSuite002\"\
-        \ />\n  <Project name=\"FunctionalTests :: functionalTests :: TestSuite003\"\
-        \ activity=\"Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"6\" lastBuildTime=\"\
-        2016-03-19T16:18:48\" webUrl=\"http://localhost:8153/go/tab/build/detail/FunctionalTests/6/functionalTests/1/TestSuite003\"\
-        \ />\n  <Project name=\"UserAcceptance :: Deploy\" activity=\"Sleeping\" lastBuildStatus=\"\
-        Success\" lastBuildLabel=\"6\" lastBuildTime=\"2016-03-19T22:13:10\" webUrl=\"\
-        http://localhost:8153/go/pipelines/UserAcceptance/6/Deploy/1\" />\n  <Project\
-        \ name=\"UserAcceptance :: Deploy :: deployApplications\" activity=\"Sleeping\"\
-        \ lastBuildStatus=\"Success\" lastBuildLabel=\"6\" lastBuildTime=\"2016-03-19T22:13:10\"\
-        \ webUrl=\"http://localhost:8153/go/tab/build/detail/UserAcceptance/6/Deploy/1/deployApplications\"\
-        \ />\n  <Project name=\"UserAcceptance :: Approved\" activity=\"Sleeping\"\
-        \ lastBuildStatus=\"Success\" lastBuildLabel=\"6\" lastBuildTime=\"2016-03-19T23:11:09\"\
-        \ webUrl=\"http://localhost:8153/go/pipelines/UserAcceptance/6/Approved/1\"\
-        \ />\n  <Project name=\"UserAcceptance :: Approved :: Approve\" activity=\"\
-        Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"6\" lastBuildTime=\"\
-        2016-03-19T23:11:09\" webUrl=\"http://localhost:8153/go/tab/build/detail/UserAcceptance/6/Approved/1/Approve\"\
-        \ />\n  <Project name=\"DeployStaging :: Deploy\" activity=\"Sleeping\" lastBuildStatus=\"\
-        Success\" lastBuildLabel=\"15\" lastBuildTime=\"2016-03-19T16:24:17\" webUrl=\"\
-        http://localhost:8153/go/pipelines/DeployStaging/15/Deploy/1\" />\n  <Project\
-        \ name=\"DeployStaging :: Deploy :: DeployApplication\" activity=\"Sleeping\"\
-        \ lastBuildStatus=\"Success\" lastBuildLabel=\"15\" lastBuildTime=\"2016-03-19T16:24:17\"\
-        \ webUrl=\"http://localhost:8153/go/tab/build/detail/DeployStaging/15/Deploy/1/DeployApplication\"\
-        \ />\n  <Project name=\"DeployStaging :: Verify\" activity=\"Sleeping\" lastBuildStatus=\"\
-        Success\" lastBuildLabel=\"15\" lastBuildTime=\"2016-03-19T16:24:35\" webUrl=\"\
-        http://localhost:8153/go/pipelines/DeployStaging/15/Verify/1\" />\n  <Project\
-        \ name=\"DeployStaging :: Verify :: verify\" activity=\"Sleeping\" lastBuildStatus=\"\
-        Success\" lastBuildLabel=\"15\" lastBuildTime=\"2016-03-19T16:24:35\" webUrl=\"\
-        http://localhost:8153/go/tab/build/detail/DeployStaging/15/Verify/1/verify\"\
-        \ />\n  <Project name=\"DeployProduction :: Deploy\" activity=\"Sleeping\"\
-        \ lastBuildStatus=\"Success\" lastBuildLabel=\"14\" lastBuildTime=\"2016-03-19T23:10:58\"\
-        \ webUrl=\"http://localhost:8153/go/pipelines/DeployProduction/14/Deploy/1\"\
-        \ />\n  <Project name=\"DeployProduction :: Deploy :: DeployApplication\"\
-        \ activity=\"Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"14\"\
-        \ lastBuildTime=\"2016-03-19T23:10:58\" webUrl=\"http://localhost:8153/go/tab/build/detail/DeployProduction/14/Deploy/1/DeployApplication\"\
-        \ />\n  <Project name=\"DeployProduction :: Verify\" activity=\"Sleeping\"\
-        \ lastBuildStatus=\"Success\" lastBuildLabel=\"14\" lastBuildTime=\"2016-03-19T23:11:16\"\
-        \ webUrl=\"http://localhost:8153/go/pipelines/DeployProduction/14/Verify/1\"\
-        \ />\n  <Project name=\"DeployProduction :: Verify :: verify\" activity=\"\
-        Sleeping\" lastBuildStatus=\"Success\" lastBuildLabel=\"14\" lastBuildTime=\"\
-        2016-03-19T23:11:16\" webUrl=\"http://localhost:8153/go/tab/build/detail/DeployProduction/14/Verify/1/verify\"\
-        \ />\n</Projects>"}
+    body:
+      string: !!binary |
+        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
     headers:
       cache-control: ['max-age=0, private, must-revalidate']
-      connection: [close]
-      content-type: [application/xml; charset=utf-8]
-      date: ['Mon, 21 Mar 2016 01:58:16 GMT']
+      content-encoding: [gzip]
+      content-type: [application/vnd.go.cd.v1+json; charset=utf-8]
+      date: ['Tue, 29 Mar 2016 22:51:42 GMT']
+      etag: ['"e96fa7a23f05348cbbe60093ef80037a--gzip"']
       expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
-      set-cookie: ['JSESSIONID=1r0s28q7jfqgi1kkqid1rspfy;Path=/go;Expires=Mon, 04-Apr-2016
-          01:58:16 GMT']
+      set-cookie: ['JSESSIONID=1fxsiw7ltvd001tvkrykmos1ff;Path=/go;Expires=Tue, 12-Apr-2016
+          22:51:42 GMT']
+      vary: ['Accept-Encoding, User-Agent']
       x-content-type-options: [nosniff]
       x-frame-options: [SAMEORIGIN]
-      x-request-id: [7b47e18e-0ed4-4a6b-8d40-51cf5a2d3ca5]
-      x-runtime: ['0.003000']
+      x-request-id: [1560fa01-9609-4b8c-9f0e-dffc4ea90ed4]
+      x-runtime: ['0.125000']
       x-ua-compatible: [chrome=1]
       x-xss-protection: [1; mode=block]
     status: {code: 200, message: OK}
 - request:
     body: null
     headers:
-      Connection: [close]
-      Host: ['localhost:8153']
-      User-Agent: [Python-urllib/2.7]
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Basic Y2hlc3RlcjpiYWRnZXI=]
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.9.1]
     method: GET
     uri: http://localhost:8153/go/api/config/pipeline_groups/
   response:
-    body: {string: !!python/unicode '[{"pipelines":[{"stages":[{"name":"Commit"},{"name":"UnitTest"},{"name":"Package"},{"name":"FunctionalTest"},{"name":"UserAcceptance"},{"name":"DeployStaging"},{"name":"DeployProduction"}],"name":"LinearPipeline","materials":[{"description":"URL:
-        https://github.com/gocd-demo/webinar-code.git, Branch: master","fingerprint":"93c90510b74bdc41e0a15b8f2ebfd470f445089651b50238857f6b17819bb0ee","type":"Git"}],"label":"${COUNT}"}],"name":"BasicExamples"},{"pipelines":[{"stages":[{"name":"Commit"},{"name":"UnitTest"},{"name":"Package"}],"name":"AppDevelopment","materials":[{"description":"URL:
-        https://github.com/gocd-demo/webinar-code.git, Branch: master","fingerprint":"93c90510b74bdc41e0a15b8f2ebfd470f445089651b50238857f6b17819bb0ee","type":"Git"},{"description":"URL:
-        https://github.com/greenmoss/gocd_source, Branch: AD","fingerprint":"94c49bc9743cfa848dbbdab2a007c7427f4d057fb648cc888f5f6457a2c458a4","type":"Git"}],"label":"${COUNT}"},{"stages":[{"name":"Deploy"},{"name":"functionalTests"}],"name":"FunctionalTests","materials":[{"description":"AppDevelopment","fingerprint":"713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a","type":"Pipeline"},{"description":"URL:
-        https://github.com/greenmoss/gocd_source, Branch: FT","fingerprint":"6ce0a4977c6f3238d0117d59229ff759ff6346c3f7481276d91c55cc80135f3d","type":"Git"}],"label":"${COUNT}"},{"stages":[{"name":"Deploy"},{"name":"Approved"}],"name":"UserAcceptance","materials":[{"description":"AppDevelopment","fingerprint":"713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a","type":"Pipeline"},{"description":"URL:
-        https://github.com/greenmoss/gocd_source, Branch: UA","fingerprint":"555cb917a3d7845df076d382d097fca85deced49d5be55495cebc604b894a31c","type":"Git"}],"label":"${COUNT}"},{"stages":[{"name":"Deploy"},{"name":"Verify"}],"name":"DeployStaging","materials":[{"description":"UserAcceptance","fingerprint":"eef662f23116e3b49e932b34e9bbbf10ffe727ef6b61d55a51f84ae3a469f613","type":"Pipeline"},{"description":"FunctionalTests","fingerprint":"f3dec0cc10fd6f4c182ca8cde67dd50924d8e5096e94407071422a0be7a211bf","type":"Pipeline"},{"description":"URL:
-        https://github.com/greenmoss/gocd_source, Branch: DS","fingerprint":"5039b132753172a03a2de061de75b8fea9910f6e2be22b1f28f8a545350abbd9","type":"Git"}],"label":"${COUNT}"}],"name":"Development"},{"pipelines":[{"stages":[{"name":"Deploy"},{"name":"Verify"}],"name":"DeployProduction","materials":[{"description":"DeployStaging","fingerprint":"8493a8d238955a79c3cf4247ff6f72ad837b6f0756090d4598ee3aa396408c13","type":"Pipeline"},{"description":"URL:
-        https://github.com/greenmoss/gocd_source, Branch: DP","fingerprint":"dfa6e27cc0f89d83d5844a9fde6d2ab3732712a204264cd7189f8dd5cd4a77db","type":"Git"}],"label":"${COUNT}"}],"name":"Production"}]'}
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAN1WS28bNxD+K4bQoxLzMXzp5sR1L0FrNHYvQVEMh0N7Ue0Du+u0huH/3pGTxpIV
+        JErhHtqLHuSS/F4z3Hd3i6EZeN10PC1W7+4W04xXH3922PJitXjdt20zL+6Xn0Yuu2a+4Gln7Bzp
+        d1m5PXR209Hc9B2unz58OfF4QsTDjB3trDnlYd3fvhUQTXe1P3E+9uXmYdPF/a/Lv+feCHoczz/y
+        WCwXLc48Nrj+wKPwRGMzPKySs39+szq6nudhWh0fXzXz9U1+SX17fNVTeVG47Y//4Nx0OL6gvvBL
+        eWJ59GoUnNeroxYn2VgOqIKOx2Fsulm2TJaSclrlALkQaFaoXY7VcK4FgqoATsXknc5OGRujC9Vn
+        HaJOOSveIJ5vhw2THzZCC7E1Zl7L/+/uXv90+ePF/TbbVzg19P2f2A5rMWoj0TM7+HjUyTCc8nte
+        90PLwvS/LuzyYMgjc9f20/QA/repvxmJH9GenO4jBYKUKQWwVDFCLDkXzAaVChTAhApFCbrsIRLF
+        GKurHlxAQ+AiwiERWH7O2w91se1j3Sm7advPsydTXzZ0z/1dykFbCrnqKqSiV1AcVl+TZo8+OhdL
+        wCBmiSImsAwoq9Bm42swiMrjI+VPlftsDp1d7MH1JOmBFAL5aiUrRWkdikvGpFqDkw9vwZOtAaI2
+        wZekyTnxSmnrqi3P6JAIO/bvuWxb86Ql/m+duTzZg+tE5px0QFtCBFeqEvVtNEWlUAmjK0xcIBWX
+        2TlIjjiT0MoxAVpNz+jMLyJ5vd32ZfdC+koHfOrhLk/m6r2pxmrt2WZInKzJFlialbilauUghkgH
+        87o4h07XCMgWwafqtT3Ilv0S3wUhSWZSRHJc8RVIRyMSU2EfSnEqGSiR5dtzAlBBBQ1GulhmaVVa
+        5/pvZuP07X42lE1ZS06d1ZJOZdEUVqIPbxJcGVMSJp5NZmOyribWiA6cdQqlA6dvu1q3i+qQi/Xw
+        AG29uHw5Q0/ztitHhGQxFmlfSQISEsltAwaCNK9N8ZZoQ/ZSP86rpAq4FFnygzZ5UJEOjNA/de98
+        D26pKNYEIlVjEnDFRQBMVdJWDGYbxFht0CgwHqgEHVONEkMqgCGU/G3u7bwc/gVJaWZw2QoAAA==
     headers:
       cache-control: ['max-age=0, private, must-revalidate']
-      connection: [close]
+      content-encoding: [gzip]
       content-type: [application/json; charset=utf-8]
-      date: ['Mon, 21 Mar 2016 01:58:17 GMT']
-      etag: ['"7a816bfb51dfc3935cf3bbb5b4b35828"']
+      date: ['Tue, 29 Mar 2016 22:51:42 GMT']
+      etag: ['"7a816bfb51dfc3935cf3bbb5b4b35828--gzip"']
       expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
-      set-cookie: ['JSESSIONID=1ats0mu33zu0r14n223bzul26u;Path=/go;Expires=Mon, 04-Apr-2016
-          01:58:17 GMT']
+      set-cookie: ['JSESSIONID=17mlj8s7amjgi1hsrpfy89jupb;Path=/go;Expires=Tue, 12-Apr-2016
+          22:51:42 GMT']
       vary: ['Accept-Encoding, User-Agent']
       x-content-type-options: [nosniff]
       x-frame-options: [SAMEORIGIN]
-      x-request-id: [d82e0477-1903-4abd-9ef5-df25d124b615]
-      x-runtime: ['0.005000']
+      x-request-id: [e6e911fd-1646-4ada-871f-79516912882d]
+      x-runtime: ['0.006000']
       x-ua-compatible: [chrome=1]
       x-xss-protection: [1; mode=block]
     status: {code: 200, message: OK}
 - request:
     body: null
     headers:
-      Connection: [close]
-      Host: [!!python/unicode 'localhost:8153']
-      User-Agent: [Python-urllib/2.7]
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Basic Y2hlc3RlcjpiYWRnZXI=]
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.9.1]
     method: GET
     uri: http://localhost:8153/go/api/pipelines/FunctionalTests/history/0
   response:
-    body: {string: !!python/unicode '{"pipelines":[{"build_cause":{"approver":"","material_revisions":[{"modifications":[{"email_address":null,"id":33,"modified_time":1458423067438,"user_name":"Unknown","comment":"Unknown","revision":"AppDevelopment/7/Package/1"}],"material":{"description":"AppDevelopment","fingerprint":"713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a","type":"Pipeline","id":5},"changed":false},{"modifications":[{"email_address":null,"id":35,"modified_time":1458438055000,"user_name":"Kurt
-        Yoder \u003Cktygithub@yoderhome.com\u003E","comment":"Update run.sh","revision":"e6bace8a6a972ff1ac80ac0191f81602103fe3d2"}],"material":{"description":"URL:
-        https://github.com/greenmoss/gocd_source, Branch: FT","fingerprint":"6ce0a4977c6f3238d0117d59229ff759ff6346c3f7481276d91c55cc80135f3d","type":"Git","id":8},"changed":true}],"trigger_forced":false,"trigger_message":"modified
-        by Kurt Yoder \u003Cktygithub@yoderhome.com\u003E"},"name":"FunctionalTests","natural_order":9.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"changes","jobs":[{"name":"deployApplications","result":"Failed","state":"Completed","id":126,"scheduled_date":1458437085073}],"can_run":true,"result":"Failed","approval_type":"success","counter":"1","id":111,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"functionalTests","approved_by":null,"jobs":[],"can_run":true,"approval_type":null,"counter":"1","id":0,"operate_permission":true,"rerun_of_counter":null,"scheduled":false}],"counter":9,"id":53,"preparing_to_schedule":false,"label":"9"},{"build_cause":{"approver":"","material_revisions":[{"modifications":[{"email_address":null,"id":33,"modified_time":1458423067438,"user_name":"Unknown","comment":"Unknown","revision":"AppDevelopment/7/Package/1"}],"material":{"description":"AppDevelopment","fingerprint":"713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a","type":"Pipeline","id":5},"changed":true},{"modifications":[{"email_address":null,"id":31,"modified_time":1458423698000,"user_name":"Kurt
-        Yoder \u003Cktygithub@yoderhome.com\u003E","comment":"fail FT","revision":"f8ac58380b2f53c1f55ebef181e23c38468d54ef"}],"material":{"description":"URL:
-        https://github.com/greenmoss/gocd_source, Branch: FT","fingerprint":"6ce0a4977c6f3238d0117d59229ff759ff6346c3f7481276d91c55cc80135f3d","type":"Git","id":8},"changed":false}],"trigger_forced":false,"trigger_message":"triggered
-        by AppDevelopment/7/Package/1"},"name":"FunctionalTests","natural_order":8.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"changes","jobs":[{"name":"deployApplications","result":"Failed","state":"Completed","id":120,"scheduled_date":1458423091232}],"can_run":true,"result":"Failed","approval_type":"success","counter":"1","id":105,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"functionalTests","approved_by":null,"jobs":[],"can_run":true,"approval_type":null,"counter":"1","id":0,"operate_permission":true,"rerun_of_counter":null,"scheduled":false}],"counter":8,"id":49,"preparing_to_schedule":false,"label":"8"},{"build_cause":{"approver":"","material_revisions":[{"modifications":[{"email_address":null,"id":22,"modified_time":1458404255932,"user_name":"Unknown","comment":"Unknown","revision":"AppDevelopment/5/Package/1"}],"material":{"description":"AppDevelopment","fingerprint":"713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a","type":"Pipeline","id":5},"changed":false},{"modifications":[{"email_address":null,"id":31,"modified_time":1458423698000,"user_name":"Kurt
-        Yoder \u003Cktygithub@yoderhome.com\u003E","comment":"fail FT","revision":"f8ac58380b2f53c1f55ebef181e23c38468d54ef"}],"material":{"description":"URL:
-        https://github.com/greenmoss/gocd_source, Branch: FT","fingerprint":"6ce0a4977c6f3238d0117d59229ff759ff6346c3f7481276d91c55cc80135f3d","type":"Git","id":8},"changed":true}],"trigger_forced":false,"trigger_message":"modified
-        by Kurt Yoder \u003Cktygithub@yoderhome.com\u003E"},"name":"FunctionalTests","natural_order":7.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"changes","jobs":[{"name":"deployApplications","result":"Failed","state":"Completed","id":116,"scheduled_date":1458423011163}],"can_run":true,"result":"Failed","approval_type":"success","counter":"1","id":101,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"functionalTests","approved_by":null,"jobs":[],"can_run":true,"approval_type":null,"counter":"1","id":0,"operate_permission":true,"rerun_of_counter":null,"scheduled":false}],"counter":7,"id":47,"preparing_to_schedule":false,"label":"7"},{"build_cause":{"approver":"","material_revisions":[{"modifications":[{"email_address":null,"id":22,"modified_time":1458404255932,"user_name":"Unknown","comment":"Unknown","revision":"AppDevelopment/5/Package/1"}],"material":{"description":"AppDevelopment","fingerprint":"713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a","type":"Pipeline","id":5},"changed":true},{"modifications":[{"email_address":null,"id":23,"modified_time":1458403792000,"user_name":"Kurt
-        Yoder \u003Cktygithub@yoderhome.com\u003E","comment":"Get diagnostic output
-        from run.sh","revision":"dd154416726d3e813145777baef747f411dc1fca"}],"material":{"description":"URL:
-        https://github.com/greenmoss/gocd_source, Branch: FT","fingerprint":"6ce0a4977c6f3238d0117d59229ff759ff6346c3f7481276d91c55cc80135f3d","type":"Git","id":8},"changed":true}],"trigger_forced":false,"trigger_message":"triggered
-        by AppDevelopment/5/Package/1"},"name":"FunctionalTests","natural_order":6.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"changes","jobs":[{"name":"deployApplications","result":"Passed","state":"Completed","id":104,"scheduled_date":1458404289561}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":91,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"functionalTests","approved_by":"changes","jobs":[{"name":"TestSuite001","result":"Passed","state":"Completed","id":105,"scheduled_date":1458404308639},{"name":"TestSuite002","result":"Passed","state":"Completed","id":106,"scheduled_date":1458404308639},{"name":"TestSuite003","result":"Passed","state":"Completed","id":107,"scheduled_date":1458404308639}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":92,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":6,"id":42,"preparing_to_schedule":false,"label":"6"},{"build_cause":{"approver":"","material_revisions":[{"modifications":[{"email_address":null,"id":17,"modified_time":1458403446145,"user_name":"Unknown","comment":"Unknown","revision":"AppDevelopment/4/Package/1"}],"material":{"description":"AppDevelopment","fingerprint":"713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a","type":"Pipeline","id":5},"changed":false},{"modifications":[{"email_address":null,"id":19,"modified_time":1458403792000,"user_name":"Kurt
-        Yoder \u003Cktygithub@yoderhome.com\u003E","comment":"Get diagnostic output
-        from run.sh","revision":"dd154416726d3e813145777baef747f411dc1fca"}],"material":{"description":"URL:
-        https://github.com/greenmoss/gocd_source, Branch: master","fingerprint":"871ca4e80381f5d1a4d07e6259c6a65288ff4aa527a7890e5ada217471cfe7af","type":"Git","id":6},"changed":true}],"trigger_forced":false,"trigger_message":"modified
-        by Kurt Yoder \u003Cktygithub@yoderhome.com\u003E"},"name":"FunctionalTests","natural_order":5.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"changes","jobs":[{"name":"deployApplications","result":"Passed","state":"Completed","id":96,"scheduled_date":1458404139459}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":85,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"functionalTests","approved_by":"changes","jobs":[{"name":"TestSuite001","result":"Passed","state":"Completed","id":97,"scheduled_date":1458404156303},{"name":"TestSuite002","result":"Passed","state":"Completed","id":98,"scheduled_date":1458404156303},{"name":"TestSuite003","result":"Passed","state":"Completed","id":99,"scheduled_date":1458404156303}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":86,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":5,"id":39,"preparing_to_schedule":false,"label":"5"},{"build_cause":{"approver":"","material_revisions":[{"modifications":[{"email_address":null,"id":17,"modified_time":1458403446145,"user_name":"Unknown","comment":"Unknown","revision":"AppDevelopment/4/Package/1"}],"material":{"description":"AppDevelopment","fingerprint":"713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a","type":"Pipeline","id":5},"changed":true},{"modifications":[{"email_address":null,"id":11,"modified_time":1458403249000,"user_name":"Kurt
-        Yoder \u003Cktygithub@yoderhome.com\u003E","comment":"Create run.sh","revision":"7bbd2e379efd90532bb351758409f682cd4df2dc"}],"material":{"description":"URL:
-        https://github.com/greenmoss/gocd_source, Branch: master","fingerprint":"871ca4e80381f5d1a4d07e6259c6a65288ff4aa527a7890e5ada217471cfe7af","type":"Git","id":6},"changed":false}],"trigger_forced":false,"trigger_message":"triggered
-        by AppDevelopment/4/Package/1"},"name":"FunctionalTests","natural_order":4.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"changes","jobs":[{"name":"deployApplications","result":"Passed","state":"Completed","id":91,"scheduled_date":1458403470039}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":82,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"functionalTests","approved_by":"changes","jobs":[{"name":"TestSuite001","result":"Passed","state":"Completed","id":93,"scheduled_date":1458403486160},{"name":"TestSuite002","result":"Passed","state":"Completed","id":94,"scheduled_date":1458403486160},{"name":"TestSuite003","result":"Passed","state":"Completed","id":95,"scheduled_date":1458403486160}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":84,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":4,"id":37,"preparing_to_schedule":false,"label":"4"},{"build_cause":{"approver":"","material_revisions":[{"modifications":[{"email_address":null,"id":2,"modified_time":1458082599508,"user_name":"Unknown","comment":"Unknown","revision":"AppDevelopment/1/Package/1"}],"material":{"description":"AppDevelopment","fingerprint":"713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a","type":"Pipeline","id":5},"changed":false},{"modifications":[{"email_address":null,"id":11,"modified_time":1458403249000,"user_name":"Kurt
-        Yoder \u003Cktygithub@yoderhome.com\u003E","comment":"Create run.sh","revision":"7bbd2e379efd90532bb351758409f682cd4df2dc"}],"material":{"description":"URL:
-        https://github.com/greenmoss/gocd_source, Branch: master","fingerprint":"871ca4e80381f5d1a4d07e6259c6a65288ff4aa527a7890e5ada217471cfe7af","type":"Git","id":6},"changed":true}],"trigger_forced":false,"trigger_message":"modified
-        by Kurt Yoder \u003Cktygithub@yoderhome.com\u003E"},"name":"FunctionalTests","natural_order":3.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"changes","jobs":[{"name":"deployApplications","result":"Passed","state":"Completed","id":76,"scheduled_date":1458403239883}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":69,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"functionalTests","approved_by":"changes","jobs":[{"name":"TestSuite001","result":"Passed","state":"Completed","id":77,"scheduled_date":1458403256378},{"name":"TestSuite002","result":"Passed","state":"Completed","id":78,"scheduled_date":1458403256378},{"name":"TestSuite003","result":"Passed","state":"Completed","id":79,"scheduled_date":1458403256378}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":70,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":3,"id":32,"preparing_to_schedule":false,"label":"3"},{"build_cause":{"approver":"","material_revisions":[{"modifications":[{"email_address":null,"id":2,"modified_time":1458082599508,"user_name":"Unknown","comment":"Unknown","revision":"AppDevelopment/1/Package/1"}],"material":{"description":"AppDevelopment","fingerprint":"713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a","type":"Pipeline","id":5},"changed":false},{"modifications":[{"email_address":null,"id":8,"modified_time":1458402596000,"user_name":"Kurt
-        Yoder \u003Cktygithub@yoderhome.com\u003E","comment":"Initial commit","revision":"2e81363b8eee9627286a3531844e140ff0fb8f51"}],"material":{"description":"URL:
-        https://github.com/greenmoss/gocd_source, Branch: master","fingerprint":"871ca4e80381f5d1a4d07e6259c6a65288ff4aa527a7890e5ada217471cfe7af","type":"Git","id":6},"changed":true}],"trigger_forced":false,"trigger_message":"modified
-        by Kurt Yoder \u003Cktygithub@yoderhome.com\u003E"},"name":"FunctionalTests","natural_order":2.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"changes","jobs":[{"name":"deployApplications","result":"Passed","state":"Completed","id":68,"scheduled_date":1458402879661}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":63,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"functionalTests","approved_by":"changes","jobs":[{"name":"TestSuite001","result":"Passed","state":"Completed","id":69,"scheduled_date":1458402897310},{"name":"TestSuite002","result":"Passed","state":"Completed","id":70,"scheduled_date":1458402897310},{"name":"TestSuite003","result":"Passed","state":"Completed","id":71,"scheduled_date":1458402897310}],"can_run":true,"result":"Passed","approval_type":"success","counter":"1","id":64,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":2,"id":29,"preparing_to_schedule":false,"label":"2"},{"build_cause":{"approver":"","material_revisions":[{"modifications":[{"email_address":null,"id":2,"modified_time":1458082599508,"user_name":"Unknown","comment":"Unknown","revision":"AppDevelopment/1/Package/1"}],"material":{"description":"AppDevelopment","fingerprint":"713c7bf1ffb68604d5af6f91e6a68558d7a75b874327e855030a3b26f72aa06a","type":"Pipeline","id":5},"changed":true}],"trigger_forced":false,"trigger_message":"triggered
-        by AppDevelopment/1/Package/1"},"name":"FunctionalTests","natural_order":1.0,"can_run":true,"comment":null,"stages":[{"name":"Deploy","approved_by":"anonymous","jobs":[{"name":"deployApplications","result":"Passed","state":"Completed","id":45,"scheduled_date":1458159145022}],"can_run":true,"result":"Passed","approval_type":"success","counter":"3","id":42,"operate_permission":true,"rerun_of_counter":null,"scheduled":true},{"name":"functionalTests","approved_by":"changes","jobs":[{"name":"TestSuite001","result":"Passed","state":"Completed","id":46,"scheduled_date":1458159155811},{"name":"TestSuite002","result":"Passed","state":"Completed","id":47,"scheduled_date":1458159155811},{"name":"TestSuite003","result":"Passed","state":"Completed","id":48,"scheduled_date":1458159155811}],"can_run":true,"result":"Passed","approval_type":"success","counter":"2","id":43,"operate_permission":true,"rerun_of_counter":null,"scheduled":true}],"counter":1,"id":3,"preparing_to_schedule":false,"label":"1"}],"pagination":{"offset":0,"total":9,"page_size":10}}'}
+    body:
+      string: !!binary |
+        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
     headers:
       cache-control: ['max-age=0, private, must-revalidate']
-      connection: [close]
+      content-encoding: [gzip]
       content-type: [application/json; charset=utf-8]
-      date: ['Mon, 21 Mar 2016 01:58:17 GMT']
-      etag: ['"a21151aaa757c617ef7b602a9095c00d"']
+      date: ['Tue, 29 Mar 2016 22:51:42 GMT']
+      etag: ['"7fde04ec28b4925d2dd1d8a57ea3bcf7--gzip"']
       expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
-      set-cookie: ['JSESSIONID=5aehw1qbr7zuz17qmrkazthz;Path=/go;Expires=Mon, 04-Apr-2016
-          01:58:17 GMT']
+      set-cookie: ['JSESSIONID=qbzr110ymeywsidkar0at4u;Path=/go;Expires=Tue, 12-Apr-2016
+          22:51:42 GMT']
       vary: ['Accept-Encoding, User-Agent']
       x-content-type-options: [nosniff]
       x-frame-options: [SAMEORIGIN]
-      x-request-id: [624bda60-d9aa-4203-9149-1d4e4d2ace3f]
-      x-runtime: ['0.016000']
+      x-request-id: [60ba62e9-b4bd-4595-91c3-73aa5dcc6b0d]
+      x-runtime: ['0.025000']
       x-ua-compatible: [chrome=1]
       x-xss-protection: [1; mode=block]
     status: {code: 200, message: OK}
 - request:
     body: null
     headers:
-      Connection: [close]
-      Host: [!!python/unicode 'localhost:8153']
-      User-Agent: [Python-urllib/2.7]
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Basic Y2hlc3RlcjpiYWRnZXI=]
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.9.1]
     method: GET
     uri: http://localhost:8153/go/api/pipelines/FunctionalTests/status/
   response:
-    body: {string: !!python/unicode '{"paused":false,"schedulable":true,"pausedBy":"","pausedCause":"","locked":false}'}
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAKtWKkgsLU5NUbJKS8wpTtVRKk7OSE0pzUlMyklVsiopKgUKQVQ4VSpZKSnBeM4g
+        EiKQk5+cDTegFgDjYEoAUQAAAA==
     headers:
       cache-control: ['max-age=0, private, must-revalidate']
-      connection: [close]
+      content-encoding: [gzip]
       content-type: [application/json; charset=utf-8]
-      date: ['Mon, 21 Mar 2016 01:58:17 GMT']
-      etag: ['"c5e866f279ed30423c9733e7ca7bc274"']
+      date: ['Tue, 29 Mar 2016 22:51:42 GMT']
+      etag: ['"c5e866f279ed30423c9733e7ca7bc274--gzip"']
       expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
-      set-cookie: ['JSESSIONID=ntpnsezpgv1b1u3ex77079q3b;Path=/go;Expires=Mon, 04-Apr-2016
-          01:58:17 GMT']
+      set-cookie: ['JSESSIONID=mkcri172hqgy1j9bpzg17444e;Path=/go;Expires=Tue, 12-Apr-2016
+          22:51:42 GMT']
       vary: ['Accept-Encoding, User-Agent']
       x-content-type-options: [nosniff]
       x-frame-options: [SAMEORIGIN]
-      x-request-id: [58c4eaf3-545c-41ba-9f72-ee2cdcb26ea7]
-      x-runtime: ['0.002000']
+      x-request-id: [6de5713b-97e1-410e-a70d-abb3f351a3c0]
+      x-runtime: ['0.004000']
       x-ua-compatible: [chrome=1]
       x-xss-protection: [1; mode=block]
     status: {code: 200, message: OK}
 - request:
     body: null
     headers:
-      Connection: [close]
-      Host: [!!python/unicode 'localhost:8153']
-      User-Agent: [Python-urllib/2.7]
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Basic Y2hlc3RlcjpiYWRnZXI=]
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.9.1]
     method: GET
-    uri: http://localhost:8153/go/compare/FunctionalTests/6/with/9
+    uri: http://localhost:8153/go/compare/FunctionalTests/6/with/10
   response:
-    body: {string: !!python/unicode "<!DOCTYPE HTML>\n<html xmlns=\"http://www.w3.org/1999/xhtml\"\
-        >\n<head>\n    <title>\n    Compare Pipelines Page - Go\n</title>\n\n<link\
-        \ debug=\"false\" href=\"/go/assets/application-0c38ae3274f34c249ee39369d62a0da2220fba353c0895beb80f4c93ed2662e2.css\"\
-        \ media=\"all\" rel=\"stylesheet\" />\n<link debug=\"false\" href=\"/go/assets/patterns/application-c9db0dc0617cde7ef9b33ba196098beaae0b2c749ab3fa4515eb27c5aab6f3f1.css\"\
-        \ media=\"all\" rel=\"stylesheet\" />\n\n<!-- START: prototype hooks for css\
-        \ injection -->\n\n<!-- END: prototype hooks for css injection -->\n\n<script\
-        \ debug=\"false\" src=\"/go/assets/application-b0bab36c6e9691da261d135487d21a953c97f12d7297e152665bedbfdf9217f0.js\"\
-        ></script>\n<![if !IE]>\n    <script src=\"/go/assets/lib/d3-3.1.5.min-a8bc188bf658d35d44f7dfc030984253b60843821bffa82b54edd65740c8174b.js\"\
-        ></script>\n<![endif]>\n<!--[if gt IE 8]><!-->\n    <script src=\"/go/assets/lib/d3-3.1.5.min-a8bc188bf658d35d44f7dfc030984253b60843821bffa82b54edd65740c8174b.js\"\
-        ></script>\n<!--<![endif]-->\n\n\n<link rel=\"shortcut icon\" href=\"/go/assets/cruise-1592088ba651470e554a54371b6be6b1336462c2186e74fb24f54f177377b538.ico\"\
-        />\n</head>\n<body id=\"comparison\" class=\"comparison\">\n<div id=\"body_bg\"\
-        >\n    <div id=\"header\">\n        <div class=\"header clear_float\">\n \
-        \ <a href=\"/go/pipelines\" id=\"application_logo\">&nbsp;</a>\n  <div class=\"\
-        application_nav\">\n  <input id=\"server_timestamp\" name=\"server_time\"\
-        \ type=\"hidden\" value=\"1458525497\" />        <ul class=\"user\">\n   \
-        \       <li class=\"help\">\n            <a href=\"https://go.cd/help\" target=\"\
-        _blank\">Need Help?</a>\n          </li>\n        </ul>\n\n\n    <ul class=\"\
-        tabs\">\n        <li id='cruise-header-tab-pipelines' class=\"\">\n      \
-        \      <a href=\"/go/pipelines\">PIPELINES</a>        </li>\n        <li id='cruise-header-tab-environments'\
-        \ class=\"\">\n            <a href=\"/go/environments\">ENVIRONMENTS</a> \
-        \       </li>\n        <li id='cruise-header-tab-agents' class=\"\">\n   \
-        \         <a href=\"/go/agents\">AGENTS</a>        </li>\n        <li id=\"\
-        cruise-header-tab-admin\" class=\"\">\n                <a class=\"dropdown-arrow-icon\"\
-        \ data-toggle=\"dropdown\" href=\"#\">ADMIN</a>                <ul class=\"\
-        dropdown-menu\" role=\"menu\">\n                        <li role=\"presentation\"\
-        >\n    <a href=\"/go/admin/pipelines\">Pipelines</a></li>\n<li role=\"presentation\"\
-        >\n    <a href=\"/go/admin/templates\">Templates</a></li>\n<li role=\"presentation\"\
-        >\n    <a href=\"/go/admin/config_xml\">Config XML</a></li>\n<li role=\"presentation\"\
-        >\n    <a href=\"/go/admin/config/server\">Server Configuration</a></li>\n\
-        <li role=\"presentation\">\n    <a href=\"/go/admin/users\">User Summary</a></li>\n\
-        <li role=\"presentation\">\n    <a href=\"/go/oauth/admin/clients\">OAuth\
-        \ Clients</a></li>\n<li role=\"presentation\">\n    <a href=\"/go/admin/gadgets/oauth_clients\"\
-        >OAuth Enabled Gadget Providers</a></li>\n<li role=\"presentation\">\n   \
-        \ <a href=\"/go/admin/backup\">Backup</a></li>\n<li role=\"presentation\"\
-        >\n    <a href=\"/go/admin/plugins\">Plugins</a></li>\n<li role=\"presentation\"\
-        >\n    <a href=\"/go/admin/package_repositories/new\">Package Repositories</a></li>\n\
-        \                </ul>\n        </li>\n    </ul>\n    <div class=\"error_messaging_counter\"\
-        >\n  <div id=\"cruise_message_counts\" class=\"cruise_messages\">\n  </div>\n\
-        \  <div id=\"cruise_message_body\" style=\"display:none;\">\n  </div>\n\n\
-        \     <script type=\"text/javascript\">\n        Util.on_load(function() {new\
-        \ AjaxRefresher('/go/server/messages.json', null);});\n     </script>\n</div>\n\
-        </div>\n<div id=\"back_to_top\" class='back_to_top' title=\"Scroll to Top\"\
-        >Top</div>\n\n</div>\n    </div>\n\n    <div id='body_content'>\n        <div\
-        \ class=\"messaging_wrapper\" id=\"messaging_wrapper\">\n            <div\
-        \ class=\"flash\" id=\"message_pane\">\n</div>\n\n        </div>\n       \
-        \ <div id=\"pipeline_header\">\n            <div class=\"entity_status_wrapper\
-        \ page_header\">\n                <ul class=\"entity_title\">\n    <!--<li><a\
-        \ href=\"/go/pipelines\">Pipelines</a></li>-->\n    <li class=\"name\"><a\
-        \ href=\"/go/tab/pipeline/history/FunctionalTests\">FunctionalTests</a></li>\n\
-        \n         <li class=\"last\"><h1>Compare</h1> </li>\n\n</ul>\n          \
-        \  </div>\n        </div>\n        <div class=\"content_wrapper_outer\"><div\
-        \ class=\"content_wrapper_inner\">\n        <div id=\"pipeline_status_bar\"\
-        \ class=\"pipeline_flow\">\n            <table>\n                <tbody>\n\
-        \                    <tr>\n                        <td width=\"360px\" valign=\"\
-        top\"><div class=\"compare_pipeline_page pipeline\">\n    <div class=\"current_instance\"\
-        \ id='compare_pipeline_from'>\n        <input class=\"compare_pipeline_input\"\
-        \ id=\"from_pipeline\" name=\"from_pipeline\" type=\"text\" value=\"6\" />\
-        \        <div class=\"autocomplete\"></div>\n        <div class=\"enhanced_dropdown\
-        \ from hidden\">\n            <div class=\"compare_search_instructions\">\n\
-        \                <p>Search for a pipeline instance by label, commiter, date,\
-        \ etc.</p>\n                <p>or</p>\n                <p><a class=\"more_pipelines\"\
-        \ id=\"browse_timeline_link_from\">\n                    Browse the timeline\n\
-        \                 </a></p>\n            </div>\n        </div>\n    </div>\n\
-        \        <div class=\"selected_pipeline_from stages\">\n            <div class=\"\
-        pipeline_details\">\n                \n    <div style='width: 48.0%' class=\"\
-        stage\">\n        <div class=\"stage_bar_wrapper\">\n                <a href=\"\
-        /go/pipelines/FunctionalTests/6/Deploy/1\">\n                    <div  class=\"\
-        stage_bar Passed\" title=\"Deploy (Passed)\">\n                        \n\
-        \                    </div>\n                </a>\n        </div>\n    </div>\n\
-        \n    <div style='width: 48.0%' class=\"stage\">\n        <div class=\"stage_bar_wrapper\"\
-        >\n                <a href=\"/go/pipelines/FunctionalTests/6/functionalTests/1\"\
-        >\n                    <div  class=\"stage_bar Passed\" title=\"functionalTests\
-        \ (Passed)\">\n                        \n                    </div>\n    \
-        \            </a>\n        </div>\n    </div>\n<div class=\"triggered_by\"\
-        >\n    <span class='label'>Automatically triggered</span>&nbsp;on&nbsp;<span\
-        \ class='time'>19 Mar, 2016 at 16:18:09 [+0000]</span></div>\n           \
-        \ </div>\n        </div>\n</div>\n\n<script type=\"text/javascript\">\n  \
-        \  Util.on_load(function() {\n        var pipelineSelector = \"#from_pipeline\"\
-        ;\n        jQuery(pipelineSelector).autocomplete(\"/go/compare/FunctionalTests/list/compare_with/9\"\
-        , {\n            minChars: 1,\n            width: 500,\n            scrollHeight:\
-        \ 500,\n            matchContains: \"word\",\n            selectFirst: false,\n\
-        \            autoFill: false,\n            delay: 1000,\n            cacheLength:\
-        \ 0,\n            multiClickTrigger: false,\n            formatItem: function(row,\
-        \ i, max) {\n                return row;\n            },\n            formatMatch:\
-        \ function(row, i, max) {\n                return \"\";\n            },\n\
-        \            formatResult: function(row) {\n                return row.value;\n\
-        \            },\n            parse: function(data) {\n                return\
-        \ data.html;\n            },\n            dataType: 'json',\n            highlight:\
-        \ function(value, term) {\n                return value;//no-op\n        \
-        \    }\n        });\n        jQuery(pipelineSelector).result(function(event,\
-        \ data, formatted) {\n            var dest = compare_path(\"from\", formatted,\
-        \ \"9\");\n            if (formatted == -1) { // indicates no match, see list.json.erb\n\
-        \                resetField(event.target);\n            } else {\n       \
-        \         window.location.href = dest;\n            }\n        });\n     \
-        \   jQuery(pipelineSelector).blur(function(event) {\n            var val =\
-        \ jQuery.trim(jQuery(event.target).val());\n            if (val == \"\" ||\
-        \ val != '6') {\n                resetField(event.target);\n            }\n\
-        \        });\n        function resetField(field) {\n            jQuery(field).val('6');\n\
-        \        }\n\n        ;\n        function compare_path(suffix, counter, fixed_counter)\
-        \ {\n            if (suffix == \"from\") {\n                var from_counter\
-        \ = counter;\n                var to_counter = fixed_counter;\n          \
-        \  } else {\n                var from_counter = fixed_counter;\n         \
-        \       var to_counter = counter;\n            }\n            return \"/go/compare/FunctionalTests/\"\
-        \ + from_counter + \"/with/\" + to_counter;\n        }\n\n        var instructionsPopup\
-        \ = new MicroContentPopup(jQuery('.enhanced_dropdown.from').get(0), new MicroContentPopup.NoOpHandler());\n\
-        \        var instructionsPopupShower = new MicroContentPopup.ClickShower(instructionsPopup);\n\
-        \        jQuery(pipelineSelector).bind('keypress', function(event){\n    \
-        \        instructionsPopupShower.close();\n        });\n        instructionsPopupShower.bindShowButton(\
-        \ jQuery(pipelineSelector).get(0));\n\n        jQuery(\"#browse_timeline_link_from\"\
-        ).click(function(event) {\n           Modalbox.show('/go/compare/FunctionalTests/timeline/1?other_pipeline_counter=9&amp;suffix=from',\n\
-        \                {\n                    overlayClose: false,\n           \
-        \         title: \"Select a pipeline to compare\"\n                });\n \
-        \       });\n    });\n</script></td>\n                        <td valign=\"\
-        top\"><div class=\"compared_to\">compared to</div></td>\n                \
-        \        <td width=\"360px\" valign=\"top\"><div class=\"compare_pipeline_page\
-        \ pipeline\">\n    <div class=\"current_instance\" id='compare_pipeline_to'>\n\
-        \        <input class=\"compare_pipeline_input\" id=\"to_pipeline\" name=\"\
-        to_pipeline\" type=\"text\" value=\"9\" />        <div class=\"autocomplete\"\
-        ></div>\n        <div class=\"enhanced_dropdown to hidden\">\n           \
-        \ <div class=\"compare_search_instructions\">\n                <p>Search for\
-        \ a pipeline instance by label, commiter, date, etc.</p>\n               \
-        \ <p>or</p>\n                <p><a class=\"more_pipelines\" id=\"browse_timeline_link_to\"\
-        >\n                    Browse the timeline\n                 </a></p>\n  \
-        \          </div>\n        </div>\n    </div>\n        <div class=\"selected_pipeline_to\
-        \ stages\">\n            <div class=\"pipeline_details\">\n              \
-        \  \n    <div style='width: 48.0%' class=\"stage\">\n        <div class=\"\
-        stage_bar_wrapper\">\n                <a href=\"/go/pipelines/FunctionalTests/9/Deploy/1\"\
-        >\n                    <div  class=\"stage_bar Failed\" title=\"Deploy (Failed)\"\
-        >\n                        \n                    </div>\n                </a>\n\
-        \        </div>\n    </div>\n\n    <div style='width: 48.0%' class=\"stage\"\
-        >\n        <div class=\"stage_bar_wrapper\">\n                <div  class=\"\
-        stage_bar Unknown\" title=\"functionalTests (Unknown)\"></div>\n        </div>\n\
-        \    </div>\n<div class=\"triggered_by\">\n    <span class='label'>Automatically\
-        \ triggered</span>&nbsp;on&nbsp;<span class='time'>20 Mar, 2016 at 01:24:45\
-        \ [+0000]</span></div>\n            </div>\n        </div>\n</div>\n\n<script\
-        \ type=\"text/javascript\">\n    Util.on_load(function() {\n        var pipelineSelector\
-        \ = \"#to_pipeline\";\n        jQuery(pipelineSelector).autocomplete(\"/go/compare/FunctionalTests/list/compare_with/6\"\
-        , {\n            minChars: 1,\n            width: 500,\n            scrollHeight:\
-        \ 500,\n            matchContains: \"word\",\n            selectFirst: false,\n\
-        \            autoFill: false,\n            delay: 1000,\n            cacheLength:\
-        \ 0,\n            multiClickTrigger: false,\n            formatItem: function(row,\
-        \ i, max) {\n                return row;\n            },\n            formatMatch:\
-        \ function(row, i, max) {\n                return \"\";\n            },\n\
-        \            formatResult: function(row) {\n                return row.value;\n\
-        \            },\n            parse: function(data) {\n                return\
-        \ data.html;\n            },\n            dataType: 'json',\n            highlight:\
-        \ function(value, term) {\n                return value;//no-op\n        \
-        \    }\n        });\n        jQuery(pipelineSelector).result(function(event,\
-        \ data, formatted) {\n            var dest = compare_path(\"to\", formatted,\
-        \ \"6\");\n            if (formatted == -1) { // indicates no match, see list.json.erb\n\
-        \                resetField(event.target);\n            } else {\n       \
-        \         window.location.href = dest;\n            }\n        });\n     \
-        \   jQuery(pipelineSelector).blur(function(event) {\n            var val =\
-        \ jQuery.trim(jQuery(event.target).val());\n            if (val == \"\" ||\
-        \ val != '9') {\n                resetField(event.target);\n            }\n\
-        \        });\n        function resetField(field) {\n            jQuery(field).val('9');\n\
-        \        }\n\n        ;\n        function compare_path(suffix, counter, fixed_counter)\
-        \ {\n            if (suffix == \"from\") {\n                var from_counter\
-        \ = counter;\n                var to_counter = fixed_counter;\n          \
-        \  } else {\n                var from_counter = fixed_counter;\n         \
-        \       var to_counter = counter;\n            }\n            return \"/go/compare/FunctionalTests/\"\
-        \ + from_counter + \"/with/\" + to_counter;\n        }\n\n        var instructionsPopup\
-        \ = new MicroContentPopup(jQuery('.enhanced_dropdown.to').get(0), new MicroContentPopup.NoOpHandler());\n\
-        \        var instructionsPopupShower = new MicroContentPopup.ClickShower(instructionsPopup);\n\
-        \        jQuery(pipelineSelector).bind('keypress', function(event){\n    \
-        \        instructionsPopupShower.close();\n        });\n        instructionsPopupShower.bindShowButton(\
-        \ jQuery(pipelineSelector).get(0));\n\n        jQuery(\"#browse_timeline_link_to\"\
-        ).click(function(event) {\n           Modalbox.show('/go/compare/FunctionalTests/timeline/1?other_pipeline_counter=6&amp;suffix=to',\n\
-        \                {\n                    overlayClose: false,\n           \
-        \         title: \"Select a pipeline to compare\"\n                });\n \
-        \       });\n    });\n</script></td>\n                    </tr>\n        \
-        \        </tbody>\n            </table>\n        </div>\n\n        <script\
-        \ src=\"/go/gadgets/js/rpc.js?v=1.1-beta5\" type=\"text/javascript\"></script>\n\
-        <script type=\"text/javascript\">\n    Util.on_load(function() {\n       \
-        \ tw_gadget.init('/go/gadgets/ifr');\n    });\n</script>\n<div class=\"clear-float\"\
-        ></div>\n<div class=\"sub_tab_container rounded-corner-for-tab-container\"\
-        >\n    <div class=\"sub_tabs_container\">\n        <ul>\n            <li class=\"\
-        checkins current_tab\">\n                <a class=\"tab_button_body_match_text\"\
-        >checkins</a>\n                <a>Changes</a>\n            </li>\n       \
-        \     <li class=\"card_activity\">\n                <a class=\"tab_button_body_match_text\"\
-        >card_activity</a>\n                <a>Card Activity</a>\n            </li>\n\
-        \        </ul>\n    </div>\n    <div class=\"sub_tab_container_content\">\n\
-        \        <div id=\"tab-content-of-card_activity\">\n                     \
-        \   <div id=\"card_activity_gadget\" class=\"gadget-container\">\n       \
-        \             <div class=\"information\">No mingle project configured for\
-        \ this pipeline. <a href=\"http://www.go.cd/documentation/user/current/integration/mingle_card_activity_gadget.html\"\
-        \ target=\"_blank\">More Information</a></div>\n                <!-- gadget\
-        \ goes here -->\n            </div>\n        </div>\n        <div id=\"tab-content-of-checkins\"\
-        \ class=\"material_revision_diff\">\n                        <div style=\"\
-        padding: 1em;\">\n                \n        <div>\n    <div class=\"material_title\"\
-        >\n        <strong> Git - URL: https://github.com/greenmoss/gocd_source, Branch:\
-        \ AD</strong>\n    </div>\n    <table class=\"list_table material_modifications\"\
-        >\n        <tr>\n            <th class=\"revision\">Revision</th>\n      \
-        \      <th class=\"modified_by\">Modified by</th>\n            <th class=\"\
-        comment\">Comment: </th>\n        </tr>\n            <tr class=\"change\"\
-        >\n                <td class=\"revision\">\n                    c64c66a620e7c3e<wbr/>2ce49ed43<wbr/>4f85210cf5e519fd\
-        \                </td>\n                <td class=\"modified_by\">\n     \
-        \               Kurt Yoder &lt;<wbr/>ktygithub<wbr/>@yoderhome.com&gt;   \
-        \                 <br/>\n                    2016-<wbr/>03-<wbr/>19T21:41:10+00:<wbr/>00\
-        \                </td>\n                <td class=\"comment\">\n         \
-        \               <p>pass AD</p>                </td>\n            </tr>\n \
-        \           <tr class=\"change\">\n                <td class=\"revision\"\
-        >\n                    ef7b1cb587f0164<wbr/>6ecd30221<wbr/>50b0ba4b5dbddd58\
-        \                </td>\n                <td class=\"modified_by\">\n     \
-        \               Kurt Yoder &lt;<wbr/>ktygithub<wbr/>@yoderhome.com&gt;   \
-        \                 <br/>\n                    2016-<wbr/>03-<wbr/>19T21:35:14+00:<wbr/>00\
-        \                </td>\n                <td class=\"comment\">\n         \
-        \               <p>Fail the AD branch</p>                </td>\n         \
-        \   </tr>\n    </table>\n\n        </div>\n\n        <div>\n    <div class=\"\
-        material_title\">\n        <strong> Git - URL: https://github.com/greenmoss/gocd_source,\
-        \ Branch: FT</strong>\n    </div>\n    <table class=\"list_table material_modifications\"\
-        >\n        <tr>\n            <th class=\"revision\">Revision</th>\n      \
-        \      <th class=\"modified_by\">Modified by</th>\n            <th class=\"\
-        comment\">Comment: </th>\n        </tr>\n            <tr class=\"change\"\
-        >\n                <td class=\"revision\">\n                    e6bace8a6a972ff<wbr/>1ac80ac01<wbr/>91f81602103fe3d2\
-        \                </td>\n                <td class=\"modified_by\">\n     \
-        \               Kurt Yoder &lt;<wbr/>ktygithub<wbr/>@yoderhome.com&gt;   \
-        \                 <br/>\n                    2016-<wbr/>03-<wbr/>20T01:40:55+00:<wbr/>00\
-        \                </td>\n                <td class=\"comment\">\n         \
-        \               <p>Update run.sh</p>                </td>\n            </tr>\n\
-        \            <tr class=\"change\">\n                <td class=\"revision\"\
-        >\n                    f8ac58380b2f53c<wbr/>1f55ebef1<wbr/>81e23c38468d54ef\
-        \                </td>\n                <td class=\"modified_by\">\n     \
-        \               Kurt Yoder &lt;<wbr/>ktygithub<wbr/>@yoderhome.com&gt;   \
-        \                 <br/>\n                    2016-<wbr/>03-<wbr/>19T21:41:38+00:<wbr/>00\
-        \                </td>\n                <td class=\"comment\">\n         \
-        \               <p>fail FT</p>                </td>\n            </tr>\n \
-        \   </table>\n\n        </div>\n        <div>\n    <div class=\"material_title\"\
-        >\n    <strong> Pipeline - AppDevelopment</strong>\n</div>\n<table class=\"\
-        list_table dependency_material_modifications\">\n    <tr>\n        <th class=\"\
-        dmr revision\">Revision</th>\n        <th class=\"dmr label\">Label</th>\n\
-        \        <th class=\"dmr completed_at\">Completed at</th>\n    </tr>\n   \
-        \     <tr class=\"change\">\n            <td class=\"revision\">\n       \
-        \         <a href=\"/go/pipelines/AppDevelopment/7/Package/1\">AppDevelopment/7/Package/1</a>\
-        \            </td>\n            <td class=\"label\">\n                <a href=\"\
-        /go/pipelines/value_stream_map/AppDevelopment/7\">7</a>            </td>\n\
-        \            <td class=\"completed_at\">\n                2016-<wbr/>03-<wbr/>19T21:31:07+00:<wbr/>00\
-        \            </td>\n        </tr>\n</table>\n\n        </div>\n          \
-        \  </div>\n        </div>\n    </div>\n</div>\n<script type=\"text/javascript\"\
-        >\n    new TabsManager(undefined, 'comparison_page', 'FunctionalTests>', 'checkins');\n\
-        </script>\n        </div></div>\n    </div>\n\n    <div id='footer'>\n   \
-        \     <ul class=\"copyright\" onclick=\"dashboard_periodical_executer.stop();\"\
-        >\n    <li>Copyright &copy; 2016 <a href=\"http://www.thoughtworks.com/products\"\
-        \ target='_blank'>ThoughtWorks, Inc.</a> Licensed under <a href=\"http://www.apache.org/licenses/LICENSE-2.0\"\
-        \ target=\"_blank\">Apache License, Version 2.0</a>. Go includes <a href=\"\
-        /go/NOTICE/cruise_notice_file.pdf\" target=\"_blank\">third-party software</a>.</li>\n\
-        \    <li class=\"last\">Go Version: 16.2.1(3027-07834a1f2ce79a13d42b03601698ef48f128a012)</li>\n\
-        </ul>\n<ul class=\"links\">\n    <li><a href=\"/go/cctray.xml\">(cc) CCTray\
-        \ Feed</a></li>\n    <li><a href=\"http://api.go.cd\" target=\"_blank\">APIs</a></li>\n\
-        \    <li><a href=\"http://www.go.cd/community/plugins.html\" target=\"_blank\"\
-        >Plugins</a></li>\n    <li><a href=\"http://www.go.cd/community/resources.html\"\
-        \ target=\"_blank\">Community</a></li>\n    <li><a href=\"/go/about\">Server\
-        \ Details</a></li>\n    <li class=\"last\"><a href=\"https://go.cd/help\"\
-        \ target=\"_blank\">Need Help?</a></li>\n</ul>\n    <script type=\"text/javascript\"\
-        >\n        var updater = new VersionUpdater('http://localhost:8153/go/api/version_infos/stale',\
-        \ 'http://localhost:8153/go/api/version_infos/go_server');\n        updater.update();\n\
-        \    </script>\n\n    </div>\n</div>\n</body>\n</html>\n\n"}
+    body:
+      string: !!binary |
+        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
+        gE1VLjfo8n+gEIwDEVEAAA==
     headers:
       cache-control: ['max-age=0, private, must-revalidate']
-      connection: [close]
+      content-encoding: [gzip]
       content-type: [text/html; charset=UTF-8]
-      date: ['Mon, 21 Mar 2016 01:58:17 GMT']
-      etag: ['"10df54ee5118936b47c888b41edaf5a0"']
+      date: ['Tue, 29 Mar 2016 22:51:42 GMT']
+      etag: ['"77cec33abd04418e71d8fc30f1bbf152--gzip"']
       expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
-      set-cookie: ['JSESSIONID=15gr1g6vojquojbuiomw28k7j;Path=/go;Expires=Mon, 04-Apr-2016
-          01:58:17 GMT']
+      set-cookie: ['JSESSIONID=6ibusxlc3r9z6brmt6lmsc88;Path=/go;Expires=Tue, 12-Apr-2016
+          22:51:42 GMT']
       vary: ['Accept-Encoding, User-Agent']
       x-content-type-options: [nosniff]
       x-frame-options: [SAMEORIGIN]
-      x-request-id: [9691d3ce-56a1-402c-8c6a-855b854b745c]
-      x-runtime: ['0.041000']
+      x-request-id: [2719993f-2235-4f46-affc-373368494639]
+      x-runtime: ['0.045000']
+      x-ua-compatible: [chrome=1]
+      x-xss-protection: [1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Basic Y2hlc3RlcjpiYWRnZXI=]
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.9.1]
+    method: GET
+    uri: http://localhost:8153/go/api/pipelines/UserAcceptance/history/0
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAO1awXLbNhD9FQ3PmgggAILQqW7S5tAePJ3xodNkOCABSmxIgkOA6age/3sXIiXZ
+        seTICq1WjU+yQAC7eIt9b5fybdAUjS6LWttg/sdtkHZFqZJMdlYH89tANk1rPus2mAfBNKik020h
+        y6TVnwtbmLpfUxlV5EUm3XZEV7IoE6lUqy2M1F1ZToNCBXMSTYfpWiWuqMAIpiyOGY04ohGaBmC4
+        TWrpnwQ39afa/FWD5cxUla7dg7GNEzB41TTv9GddmsbPmvHZtcw+yYWekeDu485vfyKlbdYWjdu3
+        EDbNi3qh26Yt1sY4JhlPc5znaRRHiCom8ygXWEcyihmLFZecpTGnJOQaBhBBkqRhlPNQShRJ2NCt
+        Gn+U6wHloMeB3cGZlhJswRfXdvpu+iwcQ7oXR4oIFyFCX+D4S9e6ye9G6XbyoUOIvP3kVovCLbv0
+        h5UfXZpKvwGI1w9/egD3e+0mqpCL2lhXZBPTuaZzk7w11aTt6jd2+TAQSmFGKY54GCmiY0zAK855
+        KnXOKc8pxirDeSa/Epab336dT5bONXY+m/Weev9mi1brujLWzhYmU4k1XZvp6eTHVtbZcj65uXoU
+        QcZYlgrMJVE8pkzliINncaiQ4OBHzJTOtKJCsVQzRgXLdJpBpNNYUElwtovg+8INwRP3g5fL0mp/
+        GtcWCzCc5AZ82jzYDVcQQbiRsNEwotUkXU2eurnTYJMHEMurLNONg3P6K1RL17WQh6ZVPjf5Gwh4
+        JusEQrI1vI1hf2usg137WzXs+k43pVnBbkOSqyRdwXB/Mgvjf5r0wQK1XgAel9tL6oNvu9IjfS2t
+        hXOvLTk//a2pmlK79ZiHDRPw0mZLrboSjKn1rCH7OYW7yz2MXx7j8f69u3D6ITC2A2isXV/brnZr
+        ssIbm5hNA9PoFowl8FEVtr+pPuf85mAqMXmyXTmAtfFyl5wDBlcDVntg09bv8Bi2YckzsaJ7sRJh
+        LIQICROnYVXJuoOEuw9VuIVKjAHVx3t784HsIAZNqxsJOblInEk2a7aOlzLVpefbwEN9WINkbepV
+        ZTo7jhiR/SQaEhQBpcdjixG+BDHq+exVjf5natQn8WMx+nn93CvRLreOF55oTOG5n9xjS08Y7pce
+        GjLGGYpPpNMnpQfxM0nPU8CdJD7hfvEBtASQCo3D0cRnB9bo4hMN5IaPFZ/oK+LzqjmvDdCr5Jyt
+        AcLP0CF2GQ1QiA/xKkECWPclGiAUnUeF+nUDYnuO8YXT/fTH/qJv9HZ7G7dT2EA46FgdYOfQAV+Q
+        7OUvX5EIEo6jA+yydOC197hkIdhUYEfrwCZsXgaeGZjjpYFehjSg+IA0IEogFiIaXxoEudT+xDcL
+        B8BioKOndnNP9CeCjt2e0H5jSo6VJfoqS/9mezJWgctOKnDJhbAYOZiYIRegQC/AYt9aMV56fUsG
+        Ijn6PQc5B5FgfqgsozSCv8YhEvodEwk9iUjCiyASceh1LVwfjlD0AtVQfKZq6D/LI+HwgjI+lkfC
+        sxQke2kExSETgqGRXpfi75hG8Ek0gi+CRvCB921wfSKMRYRf4h8OLrWpig5iFWMc8RNLt6d+8xm9
+        p8JDKXQsg/XZ3shFUcs+wW8Dk+dWuzXBOuM8B/D1FJ3Y4m+PCbq7+wfC4A6+NScAAA==
+    headers:
+      cache-control: ['max-age=0, private, must-revalidate']
+      content-encoding: [gzip]
+      content-type: [application/json; charset=utf-8]
+      date: ['Tue, 29 Mar 2016 22:51:42 GMT']
+      etag: ['"287677df53d4c4b37870434552b32407--gzip"']
+      expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
+      set-cookie: ['JSESSIONID=1sgcjcr5uq8wqqht8h2tw1iax;Path=/go;Expires=Tue, 12-Apr-2016
+          22:51:42 GMT']
+      vary: ['Accept-Encoding, User-Agent']
+      x-content-type-options: [nosniff]
+      x-frame-options: [SAMEORIGIN]
+      x-request-id: [61979d2d-f009-4670-a50e-452fd93ff0c1]
+      x-runtime: ['0.017000']
+      x-ua-compatible: [chrome=1]
+      x-xss-protection: [1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Basic Y2hlc3RlcjpiYWRnZXI=]
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.9.1]
+    method: GET
+    uri: http://localhost:8153/go/api/pipelines/UserAcceptance/status/
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAKtWKkgsLU5NUbIqKSpN1VEqTs5ITSnNSUzKSVWySkvMKQaKQVQ4VSpZKQFli0tS
+        i5Rggs4gEihelJpYnJ9XDBTPyU/OBhkH1lsLAC1Lt15fAAAA
+    headers:
+      cache-control: ['max-age=0, private, must-revalidate']
+      content-encoding: [gzip]
+      content-type: [application/json; charset=utf-8]
+      date: ['Tue, 29 Mar 2016 22:51:42 GMT']
+      etag: ['"fd893bdd21919b6b3c1ee6668ff2acae--gzip"']
+      expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
+      set-cookie: ['JSESSIONID=1doq3kn5i4xgt18dag4onnyzdx;Path=/go;Expires=Tue, 12-Apr-2016
+          22:51:42 GMT']
+      vary: ['Accept-Encoding, User-Agent']
+      x-content-type-options: [nosniff]
+      x-frame-options: [SAMEORIGIN]
+      x-request-id: [ef710a80-b8af-403f-8b48-0371b87f2e21]
+      x-runtime: ['0.005000']
       x-ua-compatible: [chrome=1]
       x-xss-protection: [1; mode=block]
     status: {code: 200, message: OK}
