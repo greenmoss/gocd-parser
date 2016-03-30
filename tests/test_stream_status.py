@@ -62,3 +62,12 @@ class TestStreamStatus:
         assert external['blocking']['UserAcceptance']['human_time'] is not None
         assert external['blocking']['UserAcceptance']['paused']['paused_by'] == 'chester'
         assert external['blocking']['UserAcceptance']['paused']['pause_reason'] == 'reasons'
+
+    @vcr.use_cassette(f+'deleted_pipeline.yaml')
+    def test_deleted_pipeline(self):
+        '''Ensure a stream containing a deleted pipeline still returns results.'''
+        status = S(g, 'DeployProduction', '16')
+        assert status.pipeline.name == 'DeployProduction'
+        assert status.value_stream.purged_nodes == ['transient']
+        assert len(status.value_stream.graph) == 13
+        assert len(status.value_stream.graph.edges()) == 13

@@ -12,7 +12,7 @@ class ValueStream(object):
     and repos are connected to each other by "depends_on" and "parent_of"
     edges.'''
 
-    def __init__(self, go_server, pipeline_name, label):
+    def __init__(self, go_server, pipeline_name, label, purge_deleted=True):
         self.go_server = go_server
         self.pipeline_name = pipeline_name
         self.label = label
@@ -32,6 +32,7 @@ class ValueStream(object):
                 self.graph.add_node(node['id'])
                 self.graph.node[node['id']] = node
                 self.graph.node[node['id']]['level'] = level_index
+        logger.debug('graph nodes are %s',self.graph.nodes())
 
         # populate edges
         for level in data['levels']:
@@ -41,12 +42,21 @@ class ValueStream(object):
                     self.graph.add_edge(parent_id, my_id, relationship='parent_of', parent_of=True)
                 # node['dependents'] contains same connection in reverse
                 # to keep things simple, we will only set a parent relationship
+        logger.debug('graph edges %s',self.graph.edges(data='relationship'))
+
+        # purge deleted nodes, if requested
+        self.purged_nodes = []
+        if purge_deleted:
+            for level in data['levels']:
+                for node in level['nodes']:
+                    id = node['id']
+                    if node.has_key('view_type') and node['view_type'] == 'DELETED':
+                        self.purged_nodes.append(id)
+                        self.graph.remove_node(id)
+        logger.debug('purged nodes %s',self.purged_nodes)
 
         # create a sub-graph with only the pipelines
         self.pipeline_graph = self.filter_by_type('PIPELINE')
-
-        logger.debug('graph nodes are %s',self.graph.nodes())
-        logger.debug('graph edges %s',self.graph.edges(data='relationship'))
 
     def filter_by_type(self, node_types):
         '''Return a subgraph containing only the desired node types.'''

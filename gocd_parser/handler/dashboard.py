@@ -19,6 +19,7 @@ class Dashboard(object):
         for group in data['_embedded']['pipeline_groups']:
             for pipeline in group['_embedded']['pipelines']:
                 name = pipeline['name']
+                logger.debug('adding dashboard pipeline %s',name)
                 assert name not in self.pipelines
                 self.pipelines[name] = pipeline
 
