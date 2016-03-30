@@ -11,7 +11,8 @@ import gocd_parser.stream_status
 from gocd_parser.retriever import server
 from gocd_parser import gocd_argparse, gocd_logger
 
-logger = gocd_logger.get()
+# uncomment to set a default "INFO" logger
+#logger = gocd_logger.get()
 
 arg_parser = gocd_argparse.get()
 arg_parser.add_argument(
