@@ -39,6 +39,7 @@ setup(
     packages=find_packages(),
     install_requires=req('requirements.txt'),
     scripts=scripts,
-    tests_require=req('requirements-testing.txt'),
+    # incompatible with "pip install" :(
+    #tests_require=req('requirements-testing.txt'),
     test_suite='py.test',
     )
