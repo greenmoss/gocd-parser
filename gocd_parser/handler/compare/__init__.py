@@ -41,7 +41,8 @@ class Compare(object):
     def set_materials(self, retrieved):
         '''Set the materials, using an xpath search of the page.'''
 
-        tree = html.fromstring(''.join(retrieved.contents))
+        # stupid <wbr/>!
+        tree = html.fromstring(''.join(retrieved.contents).replace('<wbr/>',''))
         materials = tree.xpath(
                 '//div[@id="tab-content-of-checkins"]/descendant::div[@class="material_title"]/strong/../..'
                 )

@@ -1,5 +1,5 @@
 import logging
-#logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.DEBUG)
 
 import pytest
 import vcr
@@ -44,6 +44,17 @@ class TestCompare:
         '''Unrecognized material should raise an exception.'''
         with pytest.raises(gocd_parser.handler.compare.CompareException):
             c = C(g, 'DeployProduction', '12', '13')
+
+    @vcr.use_cassette(f+'pipeline_non_alphanum.yaml')
+    def test_pipeline_non_alphanum(self):
+        '''Ensure pipeline non-alphanumeric characters are detected properly
+        for setting the pipeline name. Note the problem is actually with
+        <wbr/>, not with the non-alphanumeric characters.'''
+
+        g = gocd_parser.retriever.server.Server('http://localhost:8153/go', 'chester', 'badger')
+        c = C(g, 'DeployProduction', '14', '15')
+        print c.materials
+        assert c.materials[0].name == 'with-dashes.dots'
 
     def test_stripped_tags(self):
         '''Ensure weird tags are properly stripped from change info.'''
