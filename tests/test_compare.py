@@ -5,6 +5,7 @@ import pytest
 import vcr
 
 import gocd_parser.handler.compare
+import gocd_parser.handler.compare.change as change
 import gocd_parser.retriever.server
 
 # reduce typing!
@@ -43,3 +44,9 @@ class TestCompare:
         '''Unrecognized material should raise an exception.'''
         with pytest.raises(gocd_parser.handler.compare.CompareException):
             c = C(g, 'DeployProduction', '12', '13')
+
+    def test_stripped_tags(self):
+        '''Ensure weird tags are properly stripped from change info.'''
+        assert change.convert_tags('Things') == 'Things'
+        assert change.convert_tags('User Name &lt;uname@some.domain>') == 'User Name <uname@some.domain>'
+        assert change.convert_tags('User Name <uname@some.domain&gt;') == 'User Name <uname@some.domain>'

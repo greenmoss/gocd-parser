@@ -1,5 +1,6 @@
 from datetime import datetime
 from email.utils import parseaddr
+from six.moves import html_parser
 import logging
 logger = logging.getLogger(__name__)
 
@@ -49,12 +50,17 @@ class GitChange(CommonChange):
         self.set_revision()
 
         # Kurt Yoder <kurt@example.xyz>                                        2016-03-19T21:41:10+00:00
-        parts = self.text_from_class('modified_by').split()
+        modified_by_text = self.text_from_class('modified_by')
+        logger.debug("change modifier text: %s",modified_by_text)
+        parts = modified_by_text.split()
         assert len(parts) > 2
         self.modifier_time = self.to_epoch(parts.pop())
-        (self.modifier_name, self.modifier_email) = parseaddr(' '.join(parts))
+        modifier_info = convert_tags(' '.join(parts))
+        (self.modifier_name, self.modifier_email) = parseaddr(modifier_info)
 
-        self.comment = self.text_from_class('comment')
+        comment = convert_tags(self.text_from_class('comment'))
+        logger.debug("change comment: %s",comment)
+        self.comment = comment
 
 class PipelineChange(CommonChange):
     '''Add information about a pipeline change from a GoCD material.'''
@@ -69,3 +75,10 @@ class PipelineChange(CommonChange):
         self.label_url = self.href_from_class('label')
 
         self.completed = self.to_epoch( self.text_from_class('completed_at') )
+
+def convert_tags(text):
+    '''GoCD leaves errant partial tags in some of its output. Strip them out of
+    the given text.'''
+    # ignoring Python 3.4, because reasons
+    # http://stackoverflow.com/questions/2087370/decode-html-entities-in-python-string
+    return html_parser.HTMLParser().unescape(text)
