@@ -18,8 +18,11 @@ how to do this, refer to the scripts in the `bin` directory.
 
 # Installation
 
-* Works with Python 2 and 3
 * See `requirements.txt`.
+
+## Ubuntu
+
+* `apt-get install libz-dev liblz-dev libxslt1-dev python-dev`
 
 # Testing
 
