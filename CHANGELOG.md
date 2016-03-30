@@ -1,3 +1,8 @@
+# 1.1.2
+* Handle stream and parser corner cases
+* Switch to dashboard api to retrieve overall status
+    * cctray did not include paused pipelines
+
 # 1.1.1
 * Switch to Python requests; handles non-api authentication for free!
 * Handle corner case of cctray parser
