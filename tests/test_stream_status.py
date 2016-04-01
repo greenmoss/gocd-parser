@@ -71,3 +71,11 @@ class TestStreamStatus:
         assert status.value_stream.purged_nodes == ['transient']
         assert len(status.value_stream.graph) == 13
         assert len(status.value_stream.graph.edges()) == 13
+
+    @vcr.use_cassette(f+'blocker_info.yaml')
+    def test_blocker_info(self):
+        '''Ensure blocker info is set correctly.'''
+        status = S(g, 'DeployProduction')
+        assert status.get_blocker_names() == ['upstream2']
+        assert status.get_ancestor_groups('upstream2') == ['upstream1']
+        assert status.get_ancestor_groups('DeployProduction') == ['Development', 'upstream1', 'upstream2']

@@ -147,7 +147,8 @@ class StreamStatus(object):
 
     def get_ancestor_groups(self, pipeline_name):
         groups = []
-        for ancestor in self.ancestors:
+        ancestors = nx.ancestors(self.value_stream.pipeline_graph, pipeline_name)
+        for ancestor in ancestors:
             logger.debug('ancestor of %s: %s', pipeline_name, ancestor)
             groups.append(self.pipeline_groups.pipelines[ancestor][0])
         return list(set(groups))

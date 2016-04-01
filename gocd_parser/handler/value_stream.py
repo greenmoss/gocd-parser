@@ -55,6 +55,8 @@ class ValueStream(object):
                         self.graph.remove_node(id)
         logger.debug('purged nodes %s',self.purged_nodes)
 
+        # TODO: purge "DUMMY" nodes that are used for graphical VSM representation
+
         # create a sub-graph with only the pipelines
         self.pipeline_graph = self.filter_by_type('PIPELINE')
 

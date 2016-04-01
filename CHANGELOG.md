@@ -1,3 +1,10 @@
+# 1.1.4
+* Fix incorrect ancestor groups
+    * Was being set from ancestors of the base pipeline, not the blocker pipeline
+
+# 1.1.3
+* Fix broken pip install
+
 # 1.1.2
 * Handle stream and parser corner cases
 * Switch to dashboard api to retrieve overall status
