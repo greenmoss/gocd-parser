@@ -10,7 +10,13 @@ import pytz
 class CommonChange(object):
     '''Common methods for handling material changes.'''
     def set_revision(self):
-        self.revision = self.text_from_class('revision')
+        # 15.4 uses this:
+        my_class_name = 'revision wrapped_word'
+        if self.change.find( 'td[@class="revision wrapped_word"]' ) is None:
+            # 15.3 uses this:
+            my_class_name = 'revision'
+            assert self.change.find('td[@class="revision"]') is not None
+        self.revision = self.text_from_class(my_class_name)
         logger.debug('adding change revision %s',self.revision)
 
     def href_from_class(self, class_name):
@@ -47,6 +53,7 @@ class GitChange(CommonChange):
     def __init__(self, change):
         self.change = change
 
+        logger.debug('setting revision')
         self.set_revision()
 
         # Kurt Yoder <kurt@example.xyz>                                        2016-03-19T21:41:10+00:00
@@ -74,7 +81,13 @@ class PipelineChange(CommonChange):
         self.label = self.text_from_class('label')
         self.label_url = self.href_from_class('label')
 
-        self.completed = self.to_epoch( self.text_from_class('completed_at') )
+        # 15.4 uses this:
+        my_class_name = 'completed_at wrapped_word'
+        if self.change.find( 'td[@class="completed_at wrapped_word"]' ) is None:
+            # 15.3 uses this:
+            my_class_name = 'completed_at'
+            assert self.change.find('td[@class="completed_at"]') is not None
+        self.completed = self.to_epoch( self.text_from_class(my_class_name) )
 
 def convert_tags(text):
     '''GoCD leaves errant partial tags in some of its output. Strip them out of

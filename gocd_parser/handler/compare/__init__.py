@@ -46,6 +46,8 @@ class Compare(object):
         materials = tree.xpath(
                 '//div[@id="tab-content-of-checkins"]/descendant::div[@class="material_title"]/strong/../..'
                 )
+
+        logger.debug("found %d materials", len(materials))
         for index, material in enumerate(materials):
             title = material.find('div').find('strong').text
             logger.debug('parsing %s',title)

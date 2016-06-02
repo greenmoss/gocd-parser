@@ -1,3 +1,7 @@
+# 1.1.5
+* Update comparison page parser to handle new format in GoCD server 16.4
+    * For good measure, we also test against 16.5
+
 # 1.1.4
 * Fix incorrect ancestor groups
     * Was being set from ancestors of the base pipeline, not the blocker pipeline
