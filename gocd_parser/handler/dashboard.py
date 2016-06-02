@@ -39,4 +39,12 @@ class Dashboard(object):
         for instance in self.pipelines[pipeline_name]['_embedded']['instances']:
             for stage in instance['_embedded']['stages']:
                 if stage['status'] == 'Unknown': return False
+                if stage['status'] == 'Building': return False
+        return True
+
+    def building(self, pipeline_name):
+        assert pipeline_name in self.pipelines
+        for instance in self.pipelines[pipeline_name]['_embedded']['instances']:
+            for stage in instance['_embedded']['stages']:
+                if stage['status'] == 'Building': return True
         return True

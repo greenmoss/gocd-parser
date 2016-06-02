@@ -25,3 +25,10 @@ class TestDashboard:
         assert d.passing('FunctionalTests') is False
         assert d.completed('DeployProduction') is True
         assert d.completed('FunctionalTests') is False
+
+    @vcr.use_cassette(f+'in_progress.yaml')
+    def test_in_progress(self):
+        '''Ensure dashboard properly sets pipelines that are in progress.'''
+        d = D(g)
+        assert d.completed('AppDevelopment') is False
+        assert d.building('AppDevelopment') is True

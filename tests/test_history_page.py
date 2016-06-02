@@ -67,3 +67,17 @@ class TestHistoryPage:
         p2 = HP(g, 'UserAcceptance', '')
         with pytest.raises(gocd_parser.handler.history.history_page.HistoryPageException):
             p.add(p2)
+
+    @vcr.use_cassette(f+'passed_failed_running.yaml')
+    def test_passed_failed_running(self):
+        '''Pipeline passed, then failed, and is now building.'''
+        g = gocd_parser.retriever.server.Server('http://localhost:8153/go', 'chester', 'badger')
+        p = HP(g, 'FunctionalTests', '')
+        p.set_info()
+        assert p.first['name'] == 'FunctionalTests'
+        assert p.passing is False
+        assert p.last_completed['counter'] == 15
+        assert p.last_passing['counter'] == 13
+        assert p.first_of_current_failures is not None
+        assert p.first_of_current_failures['counter'] == 14
+        assert p.failure_duration is not None
