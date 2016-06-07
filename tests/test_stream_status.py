@@ -1,5 +1,5 @@
 import logging
-#logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.DEBUG)
 
 import pytest
 import vcr
@@ -76,6 +76,17 @@ class TestStreamStatus:
     def test_blocker_info(self):
         '''Ensure blocker info is set correctly.'''
         status = S(g, 'DeployProduction')
-        assert status.get_blocker_names() == ['upstream2']
+        assert status.blockers.keys() == ['upstream2']
         assert status.get_ancestor_groups('upstream2') == ['upstream1']
         assert status.get_ancestor_groups('DeployProduction') == ['Development', 'upstream1', 'upstream2']
+
+    @vcr.use_cassette(f+'passed_failed_running.yaml')
+    def test_passed_failed_running(self):
+        '''Pipeline passed, then failed, and is now building.'''
+        status = S(g, 'DeployProduction')
+
+        external = status.dump()
+        assert external['status'] == 'blocked'
+        assert external['base_status']['status'] == 'passing'
+
+        assert 'DeployStaging' in external['blocking'].keys()

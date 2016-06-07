@@ -31,13 +31,7 @@ class StreamStatus(object):
         self.pipeline.set_from_groups_handler(self.pipeline_groups)
         self.pipeline.set_failing_comparison()
 
-        self.blockers = {}
-        for blocker_name in self.get_blocker_names():
-            logger.debug('getting blocker info for %s', blocker_name)
-            pipeline = gocd_parser.pipeline.Pipeline(blocker_name, self.go_server)
-            pipeline.set_from_groups_handler(self.pipeline_groups)
-            pipeline.set_failing_comparison()
-            self.blockers[blocker_name] = pipeline
+        self.set_blockers()
 
         self.status = 'passing'
         if len(self.blockers) > 0:
@@ -131,11 +125,14 @@ class StreamStatus(object):
 
         return changes
 
-    def get_blocker_names(self):
+    def set_blockers(self):
         '''Look through dashboard for any failing pipelines that are my
         ancestors.'''
 
+        self.blockers = {}
+
         blockers = []
+        incomplete = []
         for pipeline_name in self.ancestors:
             if self.dashboard.paused(pipeline_name):
                 blockers.append(pipeline_name)
@@ -143,7 +140,18 @@ class StreamStatus(object):
             if not self.dashboard.passing(pipeline_name):
                 blockers.append(pipeline_name)
                 continue
-        return blockers
+            if not self.dashboard.completed(pipeline_name):
+                blockers.append(pipeline_name)
+                incomplete.append(pipeline_name)
+
+        for blocker_name in blockers:
+            logger.debug('getting blocker info for %s', blocker_name)
+            pipeline = gocd_parser.pipeline.Pipeline(blocker_name, self.go_server)
+            if blocker_name in incomplete and pipeline.history.passing:
+                continue
+            pipeline.set_from_groups_handler(self.pipeline_groups)
+            pipeline.set_failing_comparison()
+            self.blockers[blocker_name] = pipeline
 
     def get_ancestor_groups(self, pipeline_name):
         groups = []

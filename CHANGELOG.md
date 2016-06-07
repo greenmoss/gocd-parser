@@ -1,6 +1,11 @@
+# 1.2.0
+* Fix: pipeline that is building, but previously failing, counts as a blocker
+* StreamStatus object get_blocker_names() is deprecated, replaced by set_blockers()
+
 # 1.1.5
 * Update comparison page parser to handle new format in GoCD server 16.4
     * For good measure, we also test against 16.5
+* Fix: pipelines that are building are not complete
 
 # 1.1.4
 * Fix incorrect ancestor groups
