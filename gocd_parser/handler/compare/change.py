@@ -60,7 +60,7 @@ class GitChange(CommonChange):
         modified_by_text = self.text_from_class('modified_by')
         logger.debug("change modifier text: %s",modified_by_text)
         parts = modified_by_text.split()
-        assert len(parts) > 2
+        assert (len(parts) > 2 or parts[0] == 'anonymous')
         self.modifier_time = self.to_epoch(parts.pop())
         modifier_info = convert_tags(' '.join(parts))
         (self.modifier_name, self.modifier_email) = parseaddr(modifier_info)
