@@ -1,3 +1,6 @@
+# 1.2.1
+* Permit anonymous commits - PR #2
+
 # 1.2.0
 * Fix: pipeline that is building, but previously failing, counts as a blocker
 * StreamStatus object get_blocker_names() is deprecated, replaced by set_blockers()

@@ -41,5 +41,6 @@ how to do this, refer to the scripts in the `bin` directory.
 
 # Authors
 
-* Kurt Yoder (kyoder@gmail.com)
 * Dustin Spicuzza (dustin@virtualroadside.com)
+* kneecapped
+* Kurt Yoder (kyoder@gmail.com)
